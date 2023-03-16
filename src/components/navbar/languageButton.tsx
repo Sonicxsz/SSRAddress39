@@ -7,10 +7,11 @@ import styles from '../../styles/navbar.module.css'
 function LanguageButton() {
   const lang = useAppSelector(state => state.languageSlice.language)
   const [showLang, setShowLang] = useState(false);
-
+  
   const languages = ['EN', 'RU'];
   const ref = useRef(null);
   const dispatch = useAppDispatch();
+
   const handleChangeLang = (lang:string) => {
     return () => dispatch(changeLanguage(lang))
   }

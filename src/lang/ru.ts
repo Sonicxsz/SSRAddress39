@@ -28,3 +28,11 @@ export const modalRuTitle: modalTitle = {
 }
 
 
+export const cardInterfaceRU = {
+    composition: 'Состав',
+    grams: 'гр',
+    currency: 'руб',
+    description: 'Описание',
+    addbtn: 'Добавить в заказ',
+}
+

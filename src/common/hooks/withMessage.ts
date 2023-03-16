@@ -4,11 +4,13 @@ import {GrUserManager, GrTime} from 'react-icons/gr'
 import Spinner from '../../components/svg/Spinner';
 import { interfaceModalMessages } from '../../components/modal/modalData';
 
-function withMessage(BaseComponent, cart=false, lang) {
+function withMessage(BaseComponent, cart=false, lang:string) {
     
     const succesMessage = interfaceModalMessages.succesMessage[lang];
     const failMessage = interfaceModalMessages.failMessage[lang];
     const loadingMessage = interfaceModalMessages.loadingMessage[lang];
+
+    
 
     return (props) => {
         const [send, setSend] = useState(false);

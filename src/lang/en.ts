@@ -24,3 +24,11 @@ export const messageEn: messageInterface = {
     status: 'Application Status',
     backBtn: 'Back to home page'
   }
+
+export const cardInterfaceEN = {
+        composition: 'Composition',
+        grams: 'g.',
+        currency: 'rub',
+        description: 'Description',
+        addbtn: 'Add to order'
+    }

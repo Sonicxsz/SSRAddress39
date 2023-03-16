@@ -25,3 +25,34 @@ export interface MenuItemProps {
     img: string,
     src:string
 }
+
+
+
+
+export interface CardBase {
+    name: {
+        RU: string,
+        EN: string
+    },
+    count: number,
+    price: number,
+    id: number,
+    img: string, 
+    gramm: number,
+    lang: 'RU' | 'EN'
+}
+
+export interface CardProps extends CardBase{
+	title:string, 
+	modifier: {
+        RU: string[],
+        EN: string[]
+    },
+	
+}
+
+export interface CartButtonProps {
+    openCart: () => void
+}
+
+

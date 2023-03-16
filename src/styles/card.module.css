@@ -1,0 +1,330 @@
+:root {
+	--index: calc(1vw + 1vh);
+}
+
+.deliveryItem {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 310px;
+	min-height: 410px;
+	max-height: 480px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #000;
+	transition: box-shadow 0.3s linear;
+}
+
+.deliveryItem:hover{
+	box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.129);
+}
+.deliverySubtitleContainer {
+	display: inline;
+	align-items: center;
+	display: flex;
+}
+
+.deliveryItemImage {
+	width: 100%;
+	height: 200px;
+	border-radius: 10px 10px 0 0;
+	position: relative;
+	object-fit: cover;
+
+}
+
+.deleveryContentGroup{
+	display: flex;
+	gap: 5px;
+	align-items:center;
+	
+	
+}
+
+.deliveryItemGramm{
+    font-size: 14px;
+    color: rgba(18, 18, 18, 0.775);
+}
+
+.deleveryContentWrapper{
+	display: flex;
+	flex-direction: column;
+	padding: 0 10px 10px;
+	gap: 10px;
+	flex-grow: 3;
+	
+	
+}
+.deliveryItemDescription {
+	max-width: auto;
+	max-height: 66px;
+	font-size: 19px;
+	font-weight: 400;
+	
+}
+.titleButton{
+	width: 100px;
+	cursor: pointer;
+	border: unset;
+	font-weight: 400;
+	position: relative;
+}
+.itemModifier{
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 2px;
+	width: 50%;
+	outline: none;
+	font-size: 14px;
+}
+.deleveryItemGroupInfo{
+	display: flex;
+	margin-top: auto;
+	justify-content: space-between;
+}
+.titleButtonActive{
+	color: rgb(248, 165, 49);
+}
+.title{
+	position: absolute;
+	z-index: 2;
+	height: 0;
+	overflow: hidden;
+	background-color: #bda89c;
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 0 10px;
+	left: 0;
+	transition: height 0.2s cubic-bezier(0, 1, 0, 1);
+	border-radius:2px;
+	margin-top: auto;
+	width: 100%;
+	overflow-y: auto;
+	    
+	
+}
+
+.title span{
+    font-size: 15px;
+}
+
+.title::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgba(26, 24, 47, 0.15);
+    border-radius: 5px;
+    height: 6px;
+}
+
+
+.title:hover::-webkit-scrollbar {
+    width: 6px;
+	
+}
+
+
+.title::-webkit-scrollbar-thumb {
+    background: #1A182F;
+    border-radius: 5px;
+	
+}
+
+.titleActive{
+	position: absolute;
+	left: 0;
+	transition: height  0.2s cubic-bezier(0, 1, 0, 1);
+	height: 82px;
+	padding: 5px 10px;
+	width: 100%;
+ 
+}
+
+
+.cardMiniWrapper{
+	display: flex;
+	color:black;
+	gap: 20px;
+	justify-content: center;
+	align-items:center;
+	
+	
+}
+.miniCardButton{
+    margin: 0;
+}
+
+.cardMiniName{
+    width: 440px;
+    font-size: 22px;
+    font-weight: 600;
+    
+}
+
+.cardMiniName span{
+    color: rgba(18, 18, 18, 0.775);
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+.deliveryItemButton {
+	background-color: #ac6c4a;
+	width: 185px;
+	height: 50px;
+	border: unset;
+	border-radius: 30px;
+	font-weight: 600;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.2s linear;
+
+}
+.cardMiniControl{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	
+}
+
+.cardMiniControl span{
+    align-self: center;
+}
+.deliveryItemButton:hover{
+	background-color: #ca7f57;
+}
+.deliveryItemButton:active{
+	background-color: #e59063;
+}
+
+@media (max-width: 1024px) {
+	.deliveryItem {
+		width: 280px;
+		min-height: 385px;
+		max-height: 465px;
+	}
+	.deliveryItemImage {
+		width: 100%;
+		height: 180px;
+	}
+
+	
+}
+
+@media (max-width:850px) {
+
+    .cardMiniName{
+        width: 380px;
+        font-size: 17px;
+        font-weight: 600;
+       
+    }
+    .cardMiniName span{
+        color: rgba(18, 18, 18, 0.775);
+        font-size: 13px;
+        padding-left: 10px;
+    }
+    .miniCardButton{
+        margin: 0;
+    }
+}
+@media (max-width:700px) {
+	.cardMiniWrapper{
+		display: flex;
+		color:black;
+		gap: 20px;
+		justify-content: center;
+		align-items:center;
+		
+		
+	}
+    .cardMiniName{
+        width: 320px;
+        font-size: 15px;
+        font-weight: 600;
+        
+    }
+    .cardMiniName span{
+        color: rgba(18, 18, 18, 0.775);
+        font-size: 13px;
+        padding-left: 10px;
+    }
+    .miniCardButton{
+        margin: 0;
+        width: 140px;
+    }
+}
+@media (max-width:560px) {
+	.cardMiniWrapper{
+		display: flex;
+		flex-direction: column;
+		padding-left: 20px;
+		align-items:flex-start;
+		
+		
+	}
+
+    .cardMiniName{
+        width: 100%;
+        font-size: 18px;
+        font-weight: 600;
+        
+    }
+    .cardMiniName span{
+        color: rgba(18, 18, 18, 0.775);
+        font-size: 15px;
+        padding-left: 10px;
+    }
+    .miniCardButton{
+        margin: 0;
+        width: 180px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+	.title{
+		font-size: 14px;
+	}
+	.deliveryItem {
+		width: 250px;
+		
+		min-height: 385px;
+		max-height: 465px;
+
+	}
+	.deliveryItemDescription{
+		font-weight: 300;
+	}
+	.deliveryItemImage {
+		min-width: 100%;
+		height: 180px;
+	}
+}
+
+
+
+@media (max-width: 519px) {
+	.title{
+		font-size: 16px;
+	}
+	.deliveryItem {
+		width: 350px;
+		min-height: 430px;
+		max-height: 500px;
+		display: flex;
+		flex-direction: column;
+		
+	}
+	.deliveryItemImage {
+		min-width: 100%;
+		height: 225px;
+	}
+	
+	
+
+	.deliveryItemButton {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
