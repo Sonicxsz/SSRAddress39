@@ -5,33 +5,30 @@
     margin-top: 100px;
     margin-bottom: 50px;
     min-width: 60%;
-  }
-  .wrapperDescriptor p {
-    font-family: "Open Sans", sans-serif;
+}
+.wrapperDescriptor p {
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 16px;
     line-height: 1.625;
-    grid-area: "textDescr";
-    
-  }
+    grid-area: 'textDescr';
+}
 
-  .wrapperDescriptor p span{
+.wrapperDescriptor p span {
     font-size: 20px;
     font-weight: 300;
-    font-family: "IBM Plex Sans", sans-serif;
-  }
+    font-family: 'IBM Plex Sans', sans-serif;
+}
 
-  .wrapperDescriptor  h2 {     
+.wrapperDescriptor h2 {
     font-weight: 300;
-  }
-  
-  .flex {
+}
+
+.flex {
     display: flex;
     gap: 10px;
-    
-   
-  }
-  .descrButton {
+}
+.descrButton {
     background: unset;
     color: white;
     height: 40px;
@@ -39,42 +36,40 @@
     padding: 5px;
     cursor: pointer;
     transition: color, border-color 0.2s linear;
-  }
-  .descrButton:hover {
+}
+.descrButton:hover {
     color: var(--whiteHover);
     border-color: var(--whiteHover);
-  }
-  @media (max-width:425px) {
+}
+@media (max-width: 425px) {
     .wrapperDescriptor {
-    margin-bottom: 80px;}
-  }
-  
-  @media (max-width:560px) {
-    .wrapperDescriptor {
-      padding: 0 10px;
+        margin-bottom: 80px;
     }
-  }
-  
-  @media (max-width: 1440px) {
+}
+
+@media (max-width: 560px) {
+    .wrapperDescriptor {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 1440px) {
     .wrapper-descriptor {
-      margin-top: 60px;
-      
-  
+        margin-top: 60px;
     }
 
     .wrapperDescriptor p {
         font-size: 16px;
-        
-      }
-  }
-  
-  @media (max-width: 1024px) {
+    }
+}
+
+@media (max-width: 1024px) {
     .wrapperDescriptor {
-      margin-top: 0;
-      margin-bottom: 50px;
+        margin-top: 0;
+        margin-bottom: 50px;
     }
 
     .wrapperDescriptor p {
         font-size: 16px;
-      }
-  }
+    }
+}

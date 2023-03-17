@@ -6,23 +6,17 @@
     transition: all 0.2s linear;
     border-radius: 3px;
     overflow: hidden;
-   
-  }
+}
 
-  .imgBlockWrapper  img {
+.imgBlockWrapper img {
     width: 100%;
-  }
-  .imgBlockWrapper:hover {
+}
+.imgBlockWrapper:hover {
     transform: scale(105%);
-  }
-  
-  
-  
-  @media (max-width: 760px) {
-  
+}
+
+@media (max-width: 760px) {
     .imgBlockWrapper:hover {
-      transform: scale(100%);
+        transform: scale(100%);
     }
-    
-  }
-  
+}

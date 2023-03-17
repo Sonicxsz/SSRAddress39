@@ -1,28 +1,25 @@
-.messageFlex{
+.messageFlex {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     gap: 20px;
     border-bottom: 1px solid var(--secondary);
     height: 98%;
 }
 
-.messageText{
+.messageText {
     font-size: 18px;
     text-align: center;
     padding: 0 30px;
     font-weight: 300;
-    
 }
 
-.messageBtn{
+.messageBtn {
     padding: 0 50px;
-    
-
 }
 
-.messageBtn button{
+.messageBtn button {
     width: 100%;
     height: 40px;
     font-size: 18px;
@@ -34,16 +31,15 @@
     transition: background-color 0.2s linear;
 }
 
-.messageBtn button:hover{
+.messageBtn button:hover {
     background-color: var(--green);
 }
 
-
-.messageWrapper{
+.messageWrapper {
     display: flex;
     position: fixed;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     z-index: 998;
     top: 0;
     left: 0;
@@ -51,5 +47,4 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.914);
-
 }

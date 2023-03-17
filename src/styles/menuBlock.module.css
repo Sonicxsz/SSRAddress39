@@ -1,27 +1,27 @@
-.mainMenuWrapper{
+.mainMenuWrapper {
     display: flex;
     flex-direction: column;
-    align-items:center;
-  
+    align-items: center;
 }
 
-.mainMenuWrapper h1{
+.mainMenuWrapper h1 {
     color: rgba(0, 0, 0, 0.964);
     font-size: 50px;
     font-family: var(--imb);
-    }
+}
 
-.mainMenuItem{
+.mainMenuItem {
     margin: 0 auto;
     overflow: hidden;
-        
+
 }
-.img{
-    max-width: 1600px !important;
-    max-height: 1600px !important;
+.img {
+    max-width: 1600px ;
+    max-height: 1600px ;
     object-fit: contain;
+  
 }
-.mainMenuBtn{
+.mainMenuBtn {
     width: 300px;
     height: 40px;
     border-radius: 10px;
@@ -35,41 +35,40 @@
     cursor: pointer;
     transition: background-color 0.3s linear;
 }
-.mainMenuBtn:hover{
-background-color: rgb(49, 234, 24);
+.mainMenuBtn:hover {
+    background-color: rgb(49, 234, 24);
 }
-
 
 @media (max-width: 1210px) {
     .img {
-        max-width: 940px !important;
+        max-width: 940px ;
+        height: 100%;
         object-fit: contain;
     }
 }
 
 @media (max-width: 960px) {
-    .img{
+    .img {
         max-width: 740px !important;
         object-fit: contain;
     }
 }
 
-
 @media (max-width: 750px) {
-    .img{
+    .img {
         max-width: 600px !important;
         object-fit: contain;
     }
 }
 
 @media (max-width: 610px) {
-    .img{
+    .img {
         width: 100% !important;
         object-fit: contain;
     }
-    .mainMenuWrapper .mainMenuBtn{
+    .mainMenuWrapper .mainMenuBtn {
         width: 200px;
         height: 30px;
         font-size: 12px;
-   }
+    }
 }

@@ -1,125 +1,120 @@
-body{
-  margin: 0;
+body {
+    margin: 0;
 }
 
-body{
-  height: 100%;
-  width: 100%;
+body {
+    height: 100%;
+    width: 100%;
 }
 @font-face {
-	font-family: 'Open Sans'; 
-  font-weight: 300;
-	src: url('../../public/assets/fonts/OpenSans-Light.ttf'); 
-}
-
-@font-face {
-	font-family: 'Open Sans'; 
-  font-weight: 400;
-	src: url('../../public/assets/fonts/OpenSans-Regular.ttf'); 
-}
-@font-face {
-	font-family: 'Open Sans'; 
-  font-weight: 500;
-	src: url('../../public/assets/fonts/OpenSans-Medium.ttf'); 
-}
-@font-face {
-	font-family: 'IBM Plex Sans'; 
-  font-weight: 400;
-	src: url('../../public/assets/fonts/IBMPlexSans-Regular.ttf'); 
+    font-family: 'Open Sans';
+    font-weight: 300;
+    src: url('../../public/assets/fonts/OpenSans-Light.ttf');
 }
 
 @font-face {
-	font-family: 'IBM Plex Sans'; 
-  font-weight: 500;
-	src: url('../../public/assets/fonts/IBMPlexSans-Medium.ttf'); 
+    font-family: 'Open Sans';
+    font-weight: 400;
+    src: url('../../public/assets/fonts/OpenSans-Regular.ttf');
 }
 @font-face {
-	font-family: 'IBM Plex Sans'; 
-  font-weight: 600;
-	src: url('../../public/assets/fonts/IBMPlexSans-Bold.ttf'); 
+    font-family: 'Open Sans';
+    font-weight: 500;
+    src: url('../../public/assets/fonts/OpenSans-Medium.ttf');
 }
-*{
-  box-sizing: border-box;
-  --black: rgb(0,0,0);
-  --grey: rgb(66,66,66);
-  --pink: rgb(224, 180, 177);
-  --white: rgb(255,255,255);
-  --green: #28bc00;
-  --whiteHover: rgba(255, 255, 255, 0.759);
-  --secondary: #ededed;
-  --ibm: 'IBM Plex Sans', sans-serif;
-  --open: 'Open Sans', sans-serif;
-  padding: 0;
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-}
-.book-wrapper{
-  display: grid;
-  grid-template-rows: 70px 1fr 90px;
-  grid-template-areas:
-    "label"
-    "main"
-    "control";
-  width: 520px;
-  min-height: 580px;
-  max-height: 850px;
-  background-color: var(--white);
-  margin: 40px auto 100px;
-  color: var(--black);
-  justify-content: center;
-  align-items:center;
+@font-face {
+    font-family: 'IBM Plex Sans';
+    font-weight: 400;
+    src: url('../../public/assets/fonts/IBMPlexSans-Regular.ttf');
 }
 
-
-
+@font-face {
+    font-family: 'IBM Plex Sans';
+    font-weight: 500;
+    src: url('../../public/assets/fonts/IBMPlexSans-Medium.ttf');
+}
+@font-face {
+    font-family: 'IBM Plex Sans';
+    font-weight: 600;
+    src: url('../../public/assets/fonts/IBMPlexSans-Bold.ttf');
+}
+* {
+    box-sizing: border-box;
+    --black: rgb(0, 0, 0);
+    --grey: rgb(66, 66, 66);
+    --pink: rgb(224, 180, 177);
+    --white: rgb(255, 255, 255);
+    --green: #28bc00;
+    --whiteHover: rgba(255, 255, 255, 0.759);
+    --secondary: #ededed;
+    --ibm: 'IBM Plex Sans', sans-serif;
+    --open: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.book-wrapper {
+    display: grid;
+    grid-template-rows: 70px 1fr 90px;
+    grid-template-areas:
+        'label'
+        'main'
+        'control';
+    width: 520px;
+    min-height: 580px;
+    max-height: 850px;
+    background-color: var(--white);
+    margin: 40px auto 100px;
+    color: var(--black);
+    justify-content: center;
+    align-items: center;
+}
 
 @media (max-width: 760px) {
-  .book-wrapper {
-    width: 440px;
-  }
-
+    .book-wrapper {
+        width: 440px;
+    }
 }
 
 @media (max-width: 550px) {
-  .book-wrapper {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
+    .book-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
-.menu-link{
-  color:white;
-  text-decoration: none;
- } 
-
-.error-message{
-  color: red;
-  font-size: 10px;
+.menu-link {
+    color: white;
+    text-decoration: none;
 }
 
-.error-border{
-  border: 2px solid red!important; 
+.error-message {
+    color: red;
+    font-size: 10px;
 }
 
-.succes-border{
-  border: 2px solid var(--green);
+.error-border {
+    border: 2px solid red !important;
 }
 
-.logo{
-  width: 90px;
-  grid-area: 'logo';
+.succes-border {
+    border: 2px solid var(--green);
 }
 
-.black{
-  color: var(--black)
-}
-.h-100{
-  height: 100%;
+.logo {
+    width: 90px;
+    grid-area: 'logo';
 }
 
-.f-c{
-  display: flex;
-  justify-content: center;
-  align-items:center;
+.black {
+    color: var(--black);
+}
+.h-100 {
+    height: 100%;
+}
+
+.f-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

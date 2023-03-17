@@ -1,33 +1,36 @@
-
-.App{
+.App {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: var(--white);
     /* background-color: rgb(155 45 45); */
-   
 }
 @keyframes snow {
-    0%{
+    0% {
         background-position: 0px 0px, 0px 0px, 0px 0px;
     }
-    100%{
+    100% {
         background-position: 600px 1800px, 600px 1200px, 600px 600px;
     }
-    
 }
-.show{
+.show {
     width: 100%;
     min-height: 100vh;
-    background-image: url('../../public/assets/show/show2.png'), url('../../public/assets/show/show3.png');
-    animation: snow 30s linear infinite; 
+    background-image: url('../../public/assets/show/show2.png'),
+        url('../../public/assets/show/show3.png');
+    animation: snow 30s linear infinite;
     /* pointer-events: none; */
-} 
+}
 
-.main{
+.main {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%), url('../../public/assets/bg/bg1.jpg');
+    background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.3) 100%
+        ),
+        url('../../public/assets/bg/bg1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,5 +39,4 @@
     font-weight: 600;
     color: white;
     position: relative;
-   
 }

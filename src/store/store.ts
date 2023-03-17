@@ -1,48 +1,60 @@
-import { createWrapper } from "next-redux-wrapper";
-import { configureStore, combineReducers, Action, ThunkAction } from "@reduxjs/toolkit";
-import cartItemsSlice from './cartSlice'
-import languageSlice from "./language";
-import { persistStore,
-    persistReducer, 
+import { createWrapper } from 'next-redux-wrapper';
+import {
+    configureStore,
+    combineReducers,
+    Action,
+    ThunkAction,
+} from '@reduxjs/toolkit';
+import cartItemsSlice from './cartSlice';
+import languageSlice from './language';
+import {
+    persistStore,
+    persistReducer,
     FLUSH,
     REHYDRATE,
     PAUSE,
     PERSIST,
     PURGE,
-    REGISTER, } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+    REGISTER,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['cartItemsSlice']
-  }
+    blacklist: ['cartItemsSlice'],
+};
 
 const rootReducer = combineReducers({
     cartItemsSlice,
-    languageSlice
-})
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+    languageSlice,
+});
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
- const store = configureStore({
+const store = configureStore({
     reducer: persistedReducer,
-    middleware: (getDefaultMiddleware:any) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
-  })
+    middleware: (getDefaultMiddleware: any) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: [
+                    FLUSH,
+                    REHYDRATE,
+                    PAUSE,
+                    PERSIST,
+                    PURGE,
+                    REGISTER,
+                ],
+            },
+        }),
+});
 
-  export type RootState = ReturnType<typeof store.getState>;
-  export type AppDispatch = typeof store.dispatch;
-  export type AppThunk<ReturnType = void> = ThunkAction<
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export type AppThunk<ReturnType = void> = ThunkAction<
     ReturnType,
     RootState,
     unknown,
     Action<string>
-    >
-  export const persister = persistStore(store)
+>;
+export const persister = persistStore(store);
 
- 
-
-  export default store
+export default store;
