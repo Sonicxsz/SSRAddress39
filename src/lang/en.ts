@@ -54,3 +54,34 @@ export const contactsEN = {
     address: '39A Marshal Zhukov Ave. 1,',
     addressTitle: 'Address:',
 };
+
+
+export const cartEN = {
+    order: 'Your order',
+    sum: 'Order amount'
+}
+
+export const countOfPeopleEN = [
+    'for 1 person',
+    'for 2 persons',
+    'for 3 persons',
+    'for 4 persons',
+    'for 5 persons',
+    'for 6 persons',
+    'for 7 persons',
+    'for 8 persons',
+    'for 9 persons',
+    'for 10 people',
+    'more than 10 people'
+]
+  
+
+
+  export const DialogModalMessagesEN = {
+    succesMessage:'Your application has been successfully sent. Our manager will call you back shortly',
+    failMessage:'Something went wrong, please try again later or call us at the number: + 7(985)039-00-39',
+    loadingMessage:'Data sending in progress',
+    notice:'By submitting the form you agree to the processing of your data',
+    description: 'at the restaurant Address 39' 
+  }
+  

@@ -4,8 +4,8 @@ import { calcTotalPrice, calcTotal } from '../common/utils/calc';
 export interface cartItem {
     img: string;
     name: {
-        EN: string;
-        RU: string;
+        'EN': string;
+        'RU': string;
     };
     variable: string | null;
     price: number;

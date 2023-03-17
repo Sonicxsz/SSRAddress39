@@ -1,8 +1,10 @@
+import Spinner from "@/components/svg/Spinner";
+
 export type messageProps = {
     message: string;
-    Icon: React.Component;
+    Icon: ({size}:{size:number}) => JSX.Element;
     loading: boolean;
-    clearCart: () => void;
+    clearCart?: () => void;
     cart: boolean;
 };
 
@@ -63,4 +65,19 @@ export interface ImgBlockProps {
 
 export interface ContactsProps {
     refs: React.LegacyRef<HTMLDivElement>;
+}
+
+
+export interface ModalProps {
+     closeCart, 
+     closeCartbtn, 
+     succes:() => void, 
+     error:() => void, 
+     loading: () => void
+}
+
+export interface withMessageArgs {
+    BaseComponent: JSX.Element,
+    cart: boolean,
+    lang: string
 }

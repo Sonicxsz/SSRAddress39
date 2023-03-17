@@ -23,7 +23,7 @@ function Message({
                 <div className="book-label">
                     {!loading && (
                         <>
-                            <span>{interfaceLang.status} </span>{' '}
+                            <span>{interfaceLang.status} </span>
                             <span className="logo black">
                                 <LogoComponent color="black" />
                             </span>
@@ -32,9 +32,7 @@ function Message({
                 </div>
                 <div className="message-flex">
                     <div>
-                        {' '}
-                        <Icon size={50} />{' '}
-                    </div>
+                        <Icon size={50} />
                     <div className="message-text">{message}</div>
                 </div>
                 {!loading && (
@@ -42,7 +40,7 @@ function Message({
                         <Link href={'/'}>
                             <button
                                 onClick={() => {
-                                    if (cart) {
+                                    if (cart && clearCart) {
                                         clearCart();
                                     }
                                 }}
@@ -53,6 +51,7 @@ function Message({
                     </div>
                 )}
             </div>
+        </div>
         </div>
     );
 }
