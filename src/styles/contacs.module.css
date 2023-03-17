@@ -1,0 +1,88 @@
+.contactsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    height: 800px;
+    padding-top: 60px;
+   }
+   
+   .contacts-connection {
+     color: white;
+     flex-direction: column;
+     gap: 25px;
+     display: flex;
+     margin-top: 30px;
+     
+   }
+   .contacts-connection a {
+    font-family: var(--ibm);
+    font-size: 18px;
+    font-weight: 300;
+  }
+   .mapWrapper{
+     margin-top: 10px;
+   }
+   
+   .contactsNumber {
+     color: var(--white);
+   }
+   
+   .contactsWhats {
+     color: var(--white);
+   }
+   
+   .contactsMail {
+     color: var(--white);
+   }
+   
+   .timeWork {
+     margin-top: 25px;
+     color: var(--whiteHover);
+     font-size: 16px;
+     font-weight: 200;
+   }
+   
+   .timeWorkText {
+     color: var(--white);
+     font-size: 18px;
+     font-weight: 300;
+     margin-top: 5px;
+   }
+   
+   .contactsAdress {
+     margin-top: 25px;
+     color: var(--whiteHover);
+     font-size: 16px;
+     font-weight: 200;
+   }
+   
+   .contactsAdressText {
+     color: var(--white);
+     font-size: 18px;
+     font-weight: 300;
+     margin-top: 5px;
+   }
+   
+   .map {
+     width: 100%;
+     height: 100%;
+   }
+   
+   .mapWrapper{
+     display: block;
+     position: absolute;
+     margin-top: 10px;
+     height: 30%;
+     bottom: 0;
+     left: 0;
+     right: 0;
+   
+   }
+   
+   @media (max-width: 426px) {
+     .contactsWrapper {
+       margin-top: 40px;
+     }     
+   }

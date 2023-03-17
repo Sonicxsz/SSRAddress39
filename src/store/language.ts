@@ -14,17 +14,21 @@ const languageSlice = createSlice({
               'RU': 'Отправить',
               'EN': 'Send'
             }
-           }
+           }, 
+           middle: false
             
         },
         reducers: {
             changeLanguage(state, action){
                 state.language = action.payload
+            },
+            changeMidl(state, action) {
+              state.middle = action.payload
             }
         },
        
 })
 
  
-export const { changeLanguage } = languageSlice.actions
+export const { changeLanguage, changeMidl } = languageSlice.actions
 export default languageSlice.reducer

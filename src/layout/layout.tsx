@@ -1,3 +1,5 @@
+import Footer from '@/components/footer/footer'
+import IconsBar from '@/components/iconBar/iconBar'
 import Navigation from '@/components/navbar/navigation'
 import styles from '../styles/layout.module.css'
 import { useLayoutLogic } from './useLayoutLogic'
@@ -16,6 +18,7 @@ function Layout({children}:{children:React.ReactNode }) {
 		modalDelevery, 
 		setModalDelevery, 
 		modalBooking, 
+		isMidl,
 		setModalBooking,
 		modalCarreer, setModalCarreer,
 		toContact} = useLayoutLogic()
@@ -33,6 +36,14 @@ function Layout({children}:{children:React.ReactNode }) {
         />
         {children}
         </div>
+		
+	
+			<Footer>
+				<IconsBar />
+			</Footer>
+	
+		
+		
     </div>
   )
 }

@@ -56,3 +56,18 @@ export interface CartButtonProps {
 }
 
 
+export interface DescriptorProps {
+    openModal: () => void,
+    openDelevery: () => void
+}
+
+
+export interface ImgBlockProps {
+    src:string, 
+    click: () => void, 
+    styles: string
+}
+
+export interface ContactsProps {
+    refs: React.LegacyRef<HTMLDivElement>
+}

@@ -20,7 +20,7 @@ function Message({message, Icon, loading, clearCart, cart=false}: messageProps) 
           {!loading && <><span>{interfaceLang.status} </span> <span  className='logo black'><LogoComponent color='black'/></span></>}
       </div>
       <div className='message-flex'>
-          <div><Icon size={50} /></div>
+          <div> <Icon size={50}/> </div>
           <div className='message-text'>{message}</div>
       </div>
         {!loading && <div className={styles.messageBtn}>

@@ -1,39 +1,40 @@
 import { useEffect, useRef, useState } from "react";
-import { useAppSelector} from "../common/hooks/useRedux";
+import { useAppSelector, useAppDispatch} from "../common/hooks/useRedux";
+import { changeMidl } from "@/store/language";
 import {modalEnTitle, } from '@/lang/en';
 import { modalRuTitle } from "@/lang/ru";
-
-type setter = (state:boolean) => void
-
+import { closeModal, openModal } from "@/common/utils/setters";
 
 export function useLayoutLogic() {
     const lang = useAppSelector(state => state.languageSlice.language)
+    const isMidl = useAppSelector(state => state.languageSlice.middle)
+	const dispatch = useAppDispatch()
 	const [toContact, setToContact] = useState(false);
 
 	const [modalCarreer, setModalCarreer] = useState(false);
 	const [modalBooking, setModalBooking] = useState(false);
 	
 	const [modalDelevery, setModalDelevery] = useState(false);
-	const [isMidl, setIsMidl] = useState(false)
+	
 	const contactsRef = useRef<HTMLInputElement>(null);
 
 	const modalLang = lang === 'EN' ? modalEnTitle : modalRuTitle;
 
-    useEffect(() => {
-		const scroll = () => {
-			const halfOfWindow = Math.floor(document.body.getBoundingClientRect().height / 2)
-			const scrollY = window.scrollY
-			if(scrollY >= halfOfWindow){
-				setIsMidl(true)
-			}
-		}
-		if(!isMidl){
-			window.addEventListener('scroll', scroll)
-		}
-		return () =>{
-			window.removeEventListener('scroll', scroll)
-		}
-	}, [])
+	useEffect(() => {
+		  const scroll = () => {
+			  const halfOfWindow = Math.floor(document.body.getBoundingClientRect().height / 2)
+			  const scrollY = window.scrollY
+			  if(scrollY >= halfOfWindow){
+				  dispatch(changeMidl(true))
+			  }
+		  }
+		  if(!isMidl){
+			  window.addEventListener('scroll', scroll)
+		  }
+		  return () =>{
+			  window.removeEventListener('scroll', scroll)
+		  }
+	  }, [])
 
 
 	const scroll = () =>{
@@ -49,23 +50,19 @@ export function useLayoutLogic() {
 	}
   
 	
-	const openModal = (setter:setter) => {
-		setter(true)
-	}
-	function closeModal(setter:setter) {
-		setter(false)
-	}
 
-
+	
 	return {closeModal, 
 		openModal, 
 		moveToContact, 
 		scroll, 
 		modalLang, 
 		modalDelevery, 
-		setModalDelevery, 
+		setModalDelevery,
 		modalBooking, 
+		isMidl,
 		setModalBooking,
+		contactsRef,
 		modalCarreer, setModalCarreer,
 		toContact}
 }

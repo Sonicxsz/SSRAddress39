@@ -1,0 +1,28 @@
+.imgBlockWrapper {
+    box-shadow: 5px 5px 6px rgb(23, 23, 23);
+    width: 260px;
+    height: 380px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    border-radius: 3px;
+    overflow: hidden;
+   
+  }
+
+  .imgBlockWrapper  img {
+    width: 100%;
+  }
+  .imgBlockWrapper:hover {
+    transform: scale(105%);
+  }
+  
+  
+  
+  @media (max-width: 760px) {
+  
+    .imgBlockWrapper:hover {
+      transform: scale(100%);
+    }
+    
+  }
+  

@@ -1,11 +1,26 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import Layout from '@/layout/layout'
+import Contacts from '@/components/contacts/contacs'
+import { useEffect } from 'react';
+import { useLayoutLogic } from '@/layout/useLayoutLogic';
+import Descriptor from '@/components/descriptor/descriptot';
+import Corousel from '@/components/carousel/carousel';
+import MainMenu from '@/components/MenuBlock/MenuBlock';
+import styles from '../styles/mainPage.module.css'
 
+export default function Home({openModalBooking, openModalDelevery }) {
+  const {scroll, toContact, contactsRef}  = useLayoutLogic()
+  useEffect(() =>{
+    let timeout:any;
+    if(toContact){
+      timeout = setTimeout(() => {
+        scroll()
+      },200)
+    }
+    return () =>{
+      clearTimeout(timeout)
+    }
+  }, [toContact])
 
-
-export default function Home() {
   return (
     <>
       <Head>
@@ -14,9 +29,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main >
-        
-      </main>
+    
+      <div>
+    <div className={styles.mainContent}>
+            <Descriptor openDelevery={openModalDelevery} openModal={openModalBooking}/>
+            <div className={styles.corouselMain}>
+              <Corousel />
+            </div>     
+    </div>
+   <div style={{backgroundColor: '#fff', padding: '20px 0 20px'}}>
+      <MainMenu />
+    </div>
+    <Contacts refs={contactsRef} /> 
+
+   </div>
+      
+   
     </>
   )
 }
