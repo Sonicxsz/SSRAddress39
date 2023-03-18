@@ -1,0 +1,36 @@
+.new{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+    padding: 20px 20px 10px;
+   
+  
+}
+
+.newLabel{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.btnNew{
+    width: 70%;
+    border: unset;
+    background: #a91801;
+    font-size: 17px;
+    color: var(--white);
+    cursor: pointer;
+    transition: background 0.2s linear;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+
+.btnNew:hover{
+    background: #f22404;
+}

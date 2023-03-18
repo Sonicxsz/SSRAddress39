@@ -3,24 +3,31 @@ import IconsBar from '@/components/iconBar/iconBar';
 import Navigation from '@/components/navbar/navigation';
 import styles from '../styles/layout.module.css';
 import { useLayoutLogic } from './useLayoutLogic';
-
+import { useAppDispatch } from '@/common/hooks/useRedux';
+import Modal from '@/components/modal/modal';
 function Layout({ children }: { children: React.ReactNode }) {
+    const dispatch =useAppDispatch()
     const {
-        closeModal,
-        openModal,
         moveToContact,
         scroll,
         modalLang,
-        modalDelevery,
-        setModalDelevery,
-        modalBooking,
         isMidl,
-        setModalBooking,
-        modalCarreer,
-        setModalCarreer,
         toContact,
+        modalBooking, 
+        modalCarreer, 
+        modalDelevery,
+        setModalDelevery, 
+        setModalBooking, 
+        setModalCarreer 
     } = useLayoutLogic();
 
+    const closeModal = (setter:any): void => {
+        dispatch(setter(false))
+    }
+    const openModal = (setter:any): void => {
+        dispatch(setter(true))
+    }
+    
     return (
         <div className={styles.app}>
             <div className={styles.main}>
@@ -30,6 +37,9 @@ function Layout({ children }: { children: React.ReactNode }) {
                     openModalBooking={() => openModal(setModalBooking)}
                     moveToContact={moveToContact}
                 />
+                <Modal label={modalLang.vacancy} showModal={modalCarreer} closeModal={() => closeModal(setModalCarreer)} type="career"/>
+				<Modal label={modalLang.booking} showModal={modalBooking} closeModal={() => closeModal(setModalBooking)} type="booking"/>
+				<Modal label={modalLang.delevery} showModal={modalDelevery} closeModal={() => closeModal(setModalDelevery)} type="delivery"/>
                 {children}
             </div>
             <Footer>

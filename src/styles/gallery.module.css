@@ -1,0 +1,33 @@
+
+
+.galleryImgWrapper{
+    margin-bottom: 20px;
+    max-height: 85vh;
+    width: 100%;
+    overflow: hidden;
+    user-select:none;
+    margin-right: 10px;
+   
+  }
+  .galleryImg{
+    max-width: 100%;
+    max-height: 1000px;
+    object-fit: contain;
+   }
+.carouselItem{
+ margin-right: 10px;
+}
+
+@media (max-width: 765px) {
+  .carouselItem{
+    margin-right: 0;
+   }
+}
+
+.galleryButton{
+  width: 200px;
+  height: 30px;
+  border: unset;
+  font-size: 16px;
+  margin: 0 auto;
+}

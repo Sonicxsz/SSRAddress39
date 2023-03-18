@@ -2,7 +2,7 @@ import Spinner from "@/components/svg/Spinner";
 
 export type messageProps = {
     message: string;
-    Icon: ({size}:{size:number}) => JSX.Element;
+    Icon: Icon;
     loading: boolean;
     clearCart?: () => void;
     cart: boolean;
@@ -59,8 +59,8 @@ export interface DescriptorProps {
 
 export interface ImgBlockProps {
     src: string;
-    click: () => void;
-    styles: string;
+    click?: () => void;
+    styles?: string;
 }
 
 export interface ContactsProps {
@@ -68,16 +68,38 @@ export interface ContactsProps {
 }
 
 
-export interface ModalProps {
-     closeCart, 
-     closeCartbtn, 
-     succes:() => void, 
-     error:() => void, 
-     loading: () => void
-}
+// export interface ModalProps {
+//      closeCart, 
+//      closeCartbtn, 
+//      succes:() => void, 
+//      error:() => void, 
+//      loading: () => void
+// }
 
 export interface withMessageArgs {
     BaseComponent: JSX.Element,
     cart: boolean,
     lang: string
+}
+
+export interface newMessageProps  {
+    Icon: Icon, 
+    message: string, 
+    loading: boolean , 
+    finalClose?: () => void
+}
+
+type Icon = ({size}:{size:number}) => JSX.Element
+
+export interface HomeProps {
+    openModalBooking: () => void, 
+    openModalDelevery: () => void
+}
+
+
+export interface ModalProps {
+    showModal:boolean,
+    type: 'booking' | 'delivery' | 'career',
+    closeModal: () => void,
+    label: string
 }

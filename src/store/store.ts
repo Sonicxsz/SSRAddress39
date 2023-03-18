@@ -1,12 +1,9 @@
-import { createWrapper } from 'next-redux-wrapper';
 import {
-    configureStore,
-    combineReducers,
-    Action,
-    ThunkAction,
+    configureStore, combineReducers, Action, ThunkAction,
 } from '@reduxjs/toolkit';
 import cartItemsSlice from './cartSlice';
 import languageSlice from './language';
+import controlSlice from './controlSlice';
 import {
     persistStore,
     persistReducer,
@@ -27,6 +24,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
     cartItemsSlice,
     languageSlice,
+    controlSlice
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

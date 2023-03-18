@@ -8,6 +8,12 @@ import MainMenu from '@/components/MenuBlock/MenuBlock';
 import styles from '../styles/mainPage.module.css';
 
 const Contacts = dynamic(() => import('../components/contacts/contacs'));
+
+export interface HomeProps {
+    openModalBooking: () => void, 
+    openModalDelevery: () => void
+}
+
 export default function Home({ openModalBooking, openModalDelevery }) {
     const { scroll, toContact, contactsRef } = useLayoutLogic();
     useEffect(() => {

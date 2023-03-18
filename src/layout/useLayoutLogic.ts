@@ -8,13 +8,10 @@ import { closeModal, openModal } from '@/common/utils/setters';
 export function useLayoutLogic() {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const isMidl = useAppSelector((state) => state.languageSlice.middle);
+    const {modalBooking, modalCarreer, modalDelevery} = useAppSelector(state => state.controlSlice)
     const dispatch = useAppDispatch();
     const [toContact, setToContact] = useState(false);
 
-    const [modalCarreer, setModalCarreer] = useState(false);
-    const [modalBooking, setModalBooking] = useState(false);
-
-    const [modalDelevery, setModalDelevery] = useState(false);
 
     const contactsRef = useRef<HTMLInputElement>(null);
 
@@ -57,15 +54,9 @@ export function useLayoutLogic() {
         openModal,
         moveToContact,
         scroll,
-        modalLang,
-        modalDelevery,
-        setModalDelevery,
-        modalBooking,
+        modalLang,  
         isMidl,
-        setModalBooking,
         contactsRef,
-        modalCarreer,
-        setModalCarreer,
         toContact,
     };
 }
