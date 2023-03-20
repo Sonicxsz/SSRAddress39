@@ -2,7 +2,7 @@ import { useAppSelector } from '@/common/hooks/useRedux';
 import './message.scss';
 import { messageProps } from '../../types/types';
 import LogoComponent from '../svg/LogoComponent';
-import styles from '../../styles/message.module.css';
+import styles from './message.module.css';
 import Link from 'next/link';
 import { messageEn } from '@/lang/en';
 import { messageRu } from '@/lang/ru';

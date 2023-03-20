@@ -6,15 +6,13 @@ import Descriptor from '@/components/descriptor/descriptot';
 import Corousel from '@/components/carousel/carousel';
 import MainMenu from '@/components/MenuBlock/MenuBlock';
 import styles from '../styles/mainPage.module.css';
+import { HomeProps } from '@/types/types';
 
 const Contacts = dynamic(() => import('../components/contacts/contacs'));
 
-export interface HomeProps {
-    openModalBooking: () => void, 
-    openModalDelevery: () => void
-}
 
-export default function Home({ openModalBooking, openModalDelevery }) {
+
+export default function Home({ openModalBooking, openModalDelevery }:HomeProps) {
     const { scroll, toContact, contactsRef } = useLayoutLogic();
     useEffect(() => {
         let timeout: any;

@@ -1,4 +1,4 @@
-import styles from '../../styles/descriptor.module.css';
+import styles from './descriptor.module.css';
 import { descriptorEN } from '@/lang/en';
 import { descriptorRU } from '@/lang/ru';
 import { useAppSelector } from '@/common/hooks/useRedux';

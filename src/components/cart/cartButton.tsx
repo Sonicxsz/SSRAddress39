@@ -1,6 +1,6 @@
 import { CiShoppingCart } from 'react-icons/ci';
 import { useAppSelector } from '@/common/hooks/useRedux';
-import styles from '../../styles/cart.module.css';
+import styles from './cart.module.css';
 import { CartButtonProps } from '../../types/types';
 
 function CartButton({ openCart }: CartButtonProps) {

@@ -4,7 +4,7 @@ import { changeMidl } from '@/store/language';
 import { modalEnTitle } from '@/lang/en';
 import { modalRuTitle } from '@/lang/ru';
 import { closeModal, openModal } from '@/common/utils/setters';
-
+import { setModalDelevery, setModalBooking, setModalCarreer } from '@/store/controlSlice';
 export function useLayoutLogic() {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const isMidl = useAppSelector((state) => state.languageSlice.middle);
@@ -58,5 +58,12 @@ export function useLayoutLogic() {
         isMidl,
         contactsRef,
         toContact,
+        modalBooking, 
+        modalCarreer, 
+        modalDelevery,
+        setModalDelevery, 
+        setModalBooking, 
+        setModalCarreer 
+
     };
 }

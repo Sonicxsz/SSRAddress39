@@ -112,3 +112,51 @@ export const cartRU = {
     notice:'Отправляя форму вы соглашаетесь на обработку ваших данных',
     description:'в ресторане Адрес 39' 
   }
+
+
+
+
+
+  export const messFieldsRU = {
+    name: {
+      min:'Минимум 3 символа',
+      type: 'Должны быть только буквы',
+      type_error: 'Должно быть строкой',
+     
+    },
+    phone: {
+      min: 'Укажите полный номер телефона 10 цифр',
+      max: 'Введите корректный номер',
+     
+    },
+    comment: {
+     
+    },
+    date: {
+      typeError: 'Выберите актуальную дату'
+    },
+    required: 'Обязательное поле',
+    address: {
+      min: 'Минимум 3 символа',
+    },  
+  }
+  
+  
+  export const modalFieldsInterfaceRU = {
+      name: 'Имя',
+      name_Title: 'Имя и фамилия',
+      phone: 'Телефон',
+      address: 'Адрес',
+      comment:'Комментарий к заказу',
+      commentCareer: 'Расскажи нам о себе и вашем опыте работе(при наличии)',
+      date: 'Дата',
+      datemm: 'дд:мм:гггг',
+      commentBooking: 'Пожелания, будут учтены по возможности',
+      time: 'Время',
+      type: {
+          self: 'Самовывоз',
+          delevery: 'Доставка'
+      }
+  } 
+  
+  

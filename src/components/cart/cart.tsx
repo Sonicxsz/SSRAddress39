@@ -1,6 +1,5 @@
 
-import styles from '../../styles/cart.module.css';
-import cn from 'classnames';
+import styles from './cart.module.css';
 import CartItem from '../cartItem/cartItem';
 import {AiOutlineClose} from 'react-icons/ai';
 import { PhoneInput } from '../phoneInput/PhoneInput';

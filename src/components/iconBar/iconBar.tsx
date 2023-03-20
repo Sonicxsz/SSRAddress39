@@ -1,4 +1,4 @@
-import styles from '../../styles/iconBar.module.css';
+import styles from './iconBar.module.css';
 import { FaInstagram } from 'react-icons/fa';
 import { BsTelegram, BsWhatsapp } from 'react-icons/bs';
 import { IoCall } from 'react-icons/io5';

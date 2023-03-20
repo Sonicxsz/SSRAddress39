@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/common/hooks/useRedux'
 import { newMessageProps } from '@/types/types'
-import styles from '../../styles/newMessage.module.css'
+import styles from './newMessage.module.css'
 
 
 

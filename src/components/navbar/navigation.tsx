@@ -4,7 +4,7 @@ import React, { useState, useMemo } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import LogoComponent from '../svg/LogoComponent';
 import LanguageButton from './languageButton';
-import styles from '../../styles/navbar.module.css';
+import styles from './navbar.module.css';
 import { NavbarEN } from '@/lang/en';
 import { NavbarRu } from '@/lang/ru';
 import { NavBarProps } from '@/types/types';

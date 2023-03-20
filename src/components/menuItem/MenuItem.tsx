@@ -1,5 +1,5 @@
 import { MenuItemProps } from '@/types/types';
-import styles from '../../styles/menuItem.module.css';
+import styles from './menuItem.module.css';
 import Image from 'next/image';
 
 function MenuItem({ name, img, src }: MenuItemProps) {

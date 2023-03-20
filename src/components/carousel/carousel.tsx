@@ -1,7 +1,7 @@
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Image from 'next/image';
-import styles from '../../styles/carousel.module.css';
+import styles from './carousel.module.css';
 function Corousel() {
     const images = [
         '/assets/slider/1.jpg',

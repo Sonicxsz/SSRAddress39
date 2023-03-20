@@ -85,3 +85,47 @@ export const countOfPeopleEN = [
     description: 'at the restaurant Address 39' 
   }
   
+
+  export const messFieldsEN = {
+    name: {
+      min:'Minimum of 3 characters',
+      type: 'There should only be letters',
+      type_error: 'It should be a line',
+     
+    },
+    phone: {
+      min: 'Provide a full 10-digit phone number',
+      max: 'Enter the correct number',
+     
+    },
+    comment: {
+     
+    },
+    date: {
+      typeError: 'Select the actual date'
+    },
+    required: 'Required field',
+    address: {
+      min: 'Minimum of 3 characters',
+    }  
+  }
+  
+  
+  export const modalFieldsInterfaceEN = {
+      name: 'Name',
+      name_Title: 'First name and last name',
+      phone: 'Phone',
+      address: 'Address',
+      comment: 'Comment to order',
+      commentCareer: 'Tell us about yourself and your work experience (if any)',
+      date: 'Date',
+      datemm: 'dd:mm:yyyy',
+      commentBooking: 'Wishes, will be taken into account if possible',
+      time: 'Time',
+      type: {
+          self: 'Self-delivery',
+          delevery: 'Delevery'
+      }
+  } 
+  
+  

@@ -1,7 +1,7 @@
 import { useAppSelector } from '@/common/hooks/useRedux';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../../styles/menuBlock.module.css';
+import styles from './menuBlock.module.css';
 
 function MainMenu() {
     const lang = useAppSelector((state) => state.languageSlice.language);

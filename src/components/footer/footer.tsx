@@ -1,4 +1,4 @@
-import styles from '../../styles/footer.module.css';
+import styles from './footer.module.css';
 import { useAppSelector } from '@/common/hooks/useRedux';
 import { footerRU } from '@/lang/ru';
 import { footerEN } from '@/lang/en';

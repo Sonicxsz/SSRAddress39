@@ -8,9 +8,10 @@ import Spinner from '../svg/Spinner';
 import {DialogModalMessagesEN} from '../../lang/en'
 import {DialogModalMessagesRU} from '../../lang/ru'
 
-import styles from '../../styles/modal.module.css'
+import styles from './modal.module.css'
 import { ModalProps } from '@/types/types';
 import { useAppSelector } from '@/common/hooks/useRedux';
+import { Booking } from './booking';
 
 
 function Modal({ showModal, type, closeModal, label}:ModalProps) {
@@ -52,7 +53,7 @@ function Modal({ showModal, type, closeModal, label}:ModalProps) {
     closeModal()
   }
 
-//   const Component = type === 'carreer' ? CareerForm : type === 'delivery' ? DeleveryModal : Booking
+  const Component = type === 'carreer' ? CareerForm : type === 'delivery' ? DeleveryModal : Booking
 
   return (
     <AnimatePresence>

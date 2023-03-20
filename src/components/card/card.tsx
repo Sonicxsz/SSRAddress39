@@ -5,7 +5,7 @@ import { cardInterfaceEN } from '../../lang/en';
 import { cardInterfaceRU } from '../../lang/ru';
 import Image from 'next/image';
 import { CardProps } from '@/types/types';
-import styles from '../../styles/card.module.css';
+import styles from './card.module.css';
 
 export function Card({
     img,
