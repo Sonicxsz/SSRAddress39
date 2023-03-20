@@ -1,17 +1,27 @@
 import { useState, useEffect } from 'react'
 import {GrUserManager, GrTime} from 'react-icons/gr'
-import LogoComponent from '../svg/LogoComponent'
+import LogoComponent from '../../svg/LogoComponent'
 
 import { motion, AnimatePresence } from "framer-motion"
 import NewMessage from '../newMessage/newMessage';
-import Spinner from '../svg/Spinner';
-import {DialogModalMessagesEN} from '../../lang/en'
-import {DialogModalMessagesRU} from '../../lang/ru'
+import Spinner from '../../svg/Spinner';
+import {DialogModalMessagesEN} from '../../../lang/en'
+import {DialogModalMessagesRU} from '../../../lang/ru'
 
 import styles from './modal.module.css'
 import { ModalProps } from '@/types/types';
 import { useAppSelector } from '@/common/hooks/useRedux';
-import { Booking } from './booking';
+import DeleveryModal from '../deleveryModal/deleveryModal';
+import dynamic from 'next/dynamic';
+
+
+const CareerForm = dynamic(() => import('./career'), {
+  ssr: false
+});
+const Booking = dynamic(() => import('./booking'),{
+  ssr: false
+});
+
 
 
 function Modal({ showModal, type, closeModal, label}:ModalProps) {
@@ -53,7 +63,7 @@ function Modal({ showModal, type, closeModal, label}:ModalProps) {
     closeModal()
   }
 
-  const Component = type === 'carreer' ? CareerForm : type === 'delivery' ? DeleveryModal : Booking
+  const Component = type === 'career' ? CareerForm : type === 'delivery' ? DeleveryModal : Booking
 
   return (
     <AnimatePresence>

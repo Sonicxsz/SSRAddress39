@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { useOnClickOutside } from '@/common/hooks/useOutsideClick';
-import { changeLanguage } from '../../store/language';
+import { changeLanguage } from '../../../store/language';
 import { useAppSelector, useAppDispatch } from '@/common/hooks/useRedux';
 import styles from './navbar.module.css';
 

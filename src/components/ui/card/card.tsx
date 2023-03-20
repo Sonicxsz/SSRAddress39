@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { addItem } from '../../store/cartSlice';
+import { addItem } from '../../../store/cartSlice';
 import { useDispatch } from 'react-redux';
-import { cardInterfaceEN } from '../../lang/en';
-import { cardInterfaceRU } from '../../lang/ru';
+import { cardInterfaceEN } from '../../../lang/en';
+import { cardInterfaceRU } from '../../../lang/ru';
 import Image from 'next/image';
 import { CardProps } from '@/types/types';
 import styles from './card.module.css';

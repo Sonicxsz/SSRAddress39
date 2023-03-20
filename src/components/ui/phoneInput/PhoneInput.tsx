@@ -1,4 +1,4 @@
-import { PhoneInputProps } from '../../types/types';
+import { PhoneInputProps } from '../../../types/types';
 
 export function PhoneInput({ handleChange, value, clazz }: PhoneInputProps) {
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {

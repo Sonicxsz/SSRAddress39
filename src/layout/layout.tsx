@@ -1,10 +1,10 @@
-import Footer from '@/components/footer/footer';
-import IconsBar from '@/components/iconBar/iconBar';
-import Navigation from '@/components/navbar/navigation';
+import Footer from '@/components/ui/footer/footer';
+import IconsBar from '@/components/ui/iconBar/iconBar';
+import Navigation from '@/components/ui/navbar/navigation';
 import styles from '../styles/layout.module.css';
 import { useLayoutLogic } from './useLayoutLogic';
 import { useAppDispatch } from '@/common/hooks/useRedux';
-import Modal from '@/components/modal/modal';
+import Modal from '@/components/ui/modal/modal';
 function Layout({ children }: { children: React.ReactNode }) {
     const dispatch =useAppDispatch()
     const {

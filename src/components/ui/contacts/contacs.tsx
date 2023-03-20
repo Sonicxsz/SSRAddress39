@@ -1,6 +1,6 @@
 import styles from './contacs.module.css';
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
-import LogoComponent from '../../components/svg/LogoComponent';
+import LogoComponent from '../../svg/LogoComponent';
 import { useAppSelector } from '@/common/hooks/useRedux';
 import { contactsRU } from '@/lang/ru';
 import { contactsEN } from '@/lang/en';

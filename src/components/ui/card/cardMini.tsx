@@ -1,8 +1,8 @@
-import { addItem } from '../../store/cartSlice';
+import { addItem } from '../../../store/cartSlice';
 import { CardBase } from '@/types/types';
 import { useAppDispatch } from '@/common/hooks/useRedux';
-import { cardInterfaceRU } from '../../lang/ru';
-import { cardInterfaceEN } from '../../lang/en';
+import { cardInterfaceRU } from '../../../lang/ru';
+import { cardInterfaceEN } from '../../../lang/en';
 import styles from './styles/card.module.css';
 
 function CardMini({ name, count, price, id, img, gramm, lang }: CardBase) {

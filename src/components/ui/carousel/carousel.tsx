@@ -24,6 +24,7 @@ function Corousel() {
                         <div key={ind}>
                             {' '}
                             <Image
+                                priority
                                 style={{height: 'auto'}}
                                 width={690}
                                 height={460}

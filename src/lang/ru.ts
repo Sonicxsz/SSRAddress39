@@ -160,3 +160,9 @@ export const cartRU = {
   } 
   
   
+  export const deleveryModalRU = {
+    delevery:'Доставка по ЖК Wellton Park', 
+    or:'или', 
+    self:'Самовывоз', 
+    yandex:'Доставка через Яндекс еду', 
+  }

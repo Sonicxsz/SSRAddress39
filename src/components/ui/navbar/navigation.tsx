@@ -2,7 +2,7 @@ import { useAppSelector } from '@/common/hooks/useRedux';
 import Link from 'next/link';
 import React, { useState, useMemo } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import LogoComponent from '../svg/LogoComponent';
+import LogoComponent from '../../svg/LogoComponent';
 import LanguageButton from './languageButton';
 import styles from './navbar.module.css';
 import { NavbarEN } from '@/lang/en';

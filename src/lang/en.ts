@@ -129,3 +129,10 @@ export const countOfPeopleEN = [
   } 
   
   
+
+  export const deleveryModalEN = {
+    delevery:'Delivery on Wellton Park Complex', 
+    or: 'or', 
+    self:'Self-delivery', 
+    yandex:'Delivery via Yandex food', 
+  }

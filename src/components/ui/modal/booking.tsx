@@ -1,17 +1,19 @@
 import {useRef} from 'react'
 import { Formik } from "formik";
 import * as yup from "yup";
-import { getDateToday } from '../../common/utils/getDate'
+import { getDateToday } from '../../../common/utils/getDate'
 import { PhoneInput } from '../phoneInput/PhoneInput'
-import cn from 'classnames'
-import './form.scss'
+import styles from './form.module.css'
 import { countOfPeopleEN } from '@/lang/en';
 import { countOfPeopleRU, timePickCommon } from '@/lang/ru';
 import { messFieldsEN, modalFieldsInterfaceEN} from '@/lang/en';
 import { messFieldsRU, modalFieldsInterfaceRU } from '@/lang/ru';
 import { useAppSelector } from '@/common/hooks/useRedux';
+import { FormProps } from '@/types/types';
 
-export function Booking({closeModal, loadingSend, successSend, errorSend}) {
+
+
+ function Booking({closeModal, loadingSend, successSend, errorSend}: FormProps) {
 
   const lang = useAppSelector(state => state.languageSlice.language)
   const btns = useAppSelector(state => state.languageSlice.btns)
@@ -69,13 +71,13 @@ export function Booking({closeModal, loadingSend, successSend, errorSend}) {
     }}
     >
       {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
-        <form ref={form} onSubmit={handleSubmit} className='form-wrapper'>
-           <div className='form-date-wrapper'>
-            <div className='form-input-wrapper'>
-                     <div className='arrow'>
+        <form ref={form} onSubmit={handleSubmit} className={styles.formWrapper}>
+           <div className={styles.formDateWrapper}>
+            <div className={styles.formInputWrapper}>
+                     <div className={styles.arrow}>
                      <select onChange={(e) => {handleChange(e)}} 
                           value={values.user_count}  
-                          className='form-input'
+                          className={styles.formInput}
                           placeholder='Колличество' 
                           name='user_count'
                           >
@@ -89,24 +91,24 @@ export function Booking({closeModal, loadingSend, successSend, errorSend}) {
                     
               </div>
             
-            <div className='form-input-wrapper'>
-                        <label className='label'   htmlFor='user_date'>{modalFieldsInterface.date}</label>
+            <div className={styles.formInputWrapper}>
+                        <label className={styles.label}  htmlFor='user_date'>{modalFieldsInterface.date}</label>
                       
                           <input placeholder={modalFieldsInterface.datemm}  
                           onChange={(e) => {handleChange(e)}} 
                           value={values.user_date}  min={minDate} max={maxDate}  
-                          type={'date'} className={cn('form-input', {'wrong': touched.user_date  &&  errors.user_date} )}  
+                          type={'date'} className={`${styles.formInput} ${touched.user_date  &&  errors.user_date && styles.wrong}`}  
                           name='user_date'/>
                       
                         
               </div>
-              <div className='form-input-wrapper'>
+              <div className={styles.formInputWrapper}>
                        
-                        <label className='label'   htmlFor='user_time'>{modalFieldsInterface.time}</label>
-                          <div className='arrow'>
+                        <label className={styles.label}   htmlFor='user_time'>{modalFieldsInterface.time}</label>
+                          <div className={styles.arrow}>
                             <select onChange={(e) => {handleChange(e)}} 
                               value={values.user_time}  
-                              className='form-time '  name='user_time' >
+                              className={styles.formTime}  name='user_time' >
                             {timePickCommon.map((i, ind) => {
                               return (
                                 <option value={i} key={ind}>{i}</option>
@@ -119,28 +121,28 @@ export function Booking({closeModal, loadingSend, successSend, errorSend}) {
               </div>
            </div>
 
-           <div className='form-date-wrapper'>
-           <div className='form-input-wrapper'>
+           <div className={styles.formDateWrapper}>
+           <div className={styles.formInputWrapper}>
                         <label htmlFor='user_name ' className='pr-20'>{modalFieldsInterface.name}</label>
                         <input onChange={(e) => {handleChange(e)}} 
                          value={values.user_name}   
-                         className={cn('form-input', {'wrong': touched.user_name  &&  errors.user_name} )} 
+                         className={`${styles.formInput} ${touched.user_name  &&  errors.user_name && styles.wrong}`} 
                          placeholder={modalFieldsInterface.name_Title}  name='user_name' />
             </div>
-            <div className='form-input-wrapper w-100'>
-                        <label htmlFor='user_phone' className='pr-20 mobile-label'>{modalFieldsInterface.phone}</label>
-                        <PhoneInput clazz={cn('form-input', {'wrong': touched.user_phone  &&  errors.user_phone} )} value={values.user_phone} handleChange={handleChange}  />
+            <div className={`${styles.formInputWrapper} ${styles.w100}`}>
+                        <label htmlFor='user_phone' className={`${styles.mobileLabel} ${styles.p20}`}>{modalFieldsInterface.phone}</label>
+                        <PhoneInput clazz={`${styles.formInput} ${touched.user_phone  &&  errors.user_phone && styles.wrong}`}  value={values.user_phone} handleChange={handleChange}  />
             </div>
 
 
 
            </div>
-           <div className='form-date-wrapper'>
-            <textarea onChange={(e) => {handleChange(e)}} value={values.user_comment}  className='form-input-textArea' placeholder={modalFieldsInterface.commentBooking}  name='user_comment' />   
+           <div className={styles.formDateWrapper}>
+            <textarea onChange={(e) => {handleChange(e)}} value={values.user_comment}  className={styles.formInputTextArea} placeholder={modalFieldsInterface.commentBooking}  name='user_comment' />   
            </div>
-           <div className='form-controls w-100'>
-               <button type='button' onClick={closeModal} className='danger'>{btns.btnClose[lang]}</button>
-               <button  type={'submit'} className='success'>{btns.btnSend[lang]}</button>
+           <div className={`${styles.formControls} ${styles.w100}`}>
+               <button type='button' onClick={closeModal} className={styles.danger}>{btns.btnClose[lang]}</button>
+               <button  type={'submit'} className={`${styles.success}`}>{btns.btnSend[lang]}</button>
 
         </div>
            
@@ -151,3 +153,4 @@ export function Booking({closeModal, loadingSend, successSend, errorSend}) {
   )
 }
 
+export default Booking;

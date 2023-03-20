@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Message from '@/components/message/message';
+import Message from '@/components/ui/message/message';
 import { GrUserManager, GrTime } from 'react-icons/gr';
 import Spinner from '../../components/svg/Spinner';
 import {DialogModalMessagesEN} from '../../lang/en'

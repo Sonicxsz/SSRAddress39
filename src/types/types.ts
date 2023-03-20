@@ -103,3 +103,10 @@ export interface ModalProps {
     closeModal: () => void,
     label: string
 }
+
+export interface FormProps {
+    closeModal: () => void,
+    loadingSend: () => void,
+    successSend: () => void,
+    errorSend: () => void
+}

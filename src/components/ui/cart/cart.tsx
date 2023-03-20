@@ -5,7 +5,7 @@ import {AiOutlineClose} from 'react-icons/ai';
 import { PhoneInput } from '../phoneInput/PhoneInput';
 import { Formik } from 'formik';
 import { useSelector } from 'react-redux';
-import { messFields,modalFieldsInterface } from '../modal/language';
+import { messFields,modalFieldsInterface } from '../ui/modal/language';
 import { useCartLogic } from './useCartLogic';
 
 interface baseCartProps {

@@ -1,0 +1,210 @@
+.formDate{
+    display: flex;
+    gap: 20px;
+    
+}
+
+.formDateWrapper{
+    display: flex;
+    justify-content: flex-start;
+    
+    width: 100%;
+    gap: 30px;
+    
+   
+}
+
+.formInputWrapper{
+    width: 100%;
+   
+}
+.formInputWrapper select{
+    width: 100%;
+}
+.formInputWrapper input{
+    -webkit-appearance: none;
+    width: 100%;
+    min-width: 60%;
+}
+
+.formDate{
+    display: flex;
+}
+
+.formDate select{
+    width: 50%;
+}
+.formInputTextArea{
+    width: 100%;
+    height: 70px;
+    font-size: 17px;
+    resize: none;
+    padding: 5px 20px;
+}
+
+.formTime{
+    height: 40px;
+    padding: 5px;
+    border: 1px solid black;
+    background: unset;
+    color: black;
+}
+.arrow{
+    width: 100%;
+    position: relative;
+}
+.arrow:after{
+    content: '\0025BC';
+    color: rgb(24, 24, 24);
+    right: 5px;
+    top: -5px;
+    height: 20px;
+    font-size: 14px;
+    padding: 15px 0 0 8px;
+    position: absolute;
+    pointer-events: none;
+}
+.formInputWrapper{
+    display: flex;
+    gap: 10px;
+    align-items:center;
+  
+  
+    
+}
+
+.formInputWrapper select{
+    -webkit-appearance: none;
+    background: unset;
+    color: black;
+    font-size: 16px;
+    
+}
+
+.formInputWrapper select option{
+    -webkit-appearance: none;
+    font-size: 16px;
+}
+
+
+.formInput{
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid black;
+    background: unset;
+    color: black;
+   
+}
+.wrong{
+    border: 2px solid rgba(255, 40, 40, 0.891);
+    border-radius: 5px;
+    outline: none;
+}
+.formControls{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+   
+}
+
+.formControls button{
+    width: 35%;
+    height: 40px;
+
+    border: none;
+    font-size: 17px;
+    color: var(--white);
+    cursor: pointer;
+    transition: background 0.2s linear;
+    border-radius: 5px;
+}
+
+.formControls button:disabled:hover{
+    background: #9a9e98;
+}
+.formControls button:disabled{
+    background: #9a9e98;
+}
+
+.formControls .success{
+    background: #29ad05;
+}
+.formControls .success:hover{
+    background: #34d707;
+}
+.formControls .danger{
+    background: #a91801;
+}
+.formControls .danger:hover{
+    background: #f22404;
+}
+
+.mobileLabel{
+    display: none;
+}
+.select{
+    max-height: 50px;
+    overflow-y: auto;
+}
+
+.formWrapper{
+    display: flex;
+    padding: 0 20px;
+    width: 100%;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #555;
+    padding-top: 15px;
+    flex-direction: column;
+}
+
+
+@media (max-width: 769px) {
+    .formDateWrapper{
+        flex-flow: wrap;
+       
+    }
+
+    .formInputWrapper{
+        width: 45%;
+    }
+    .formInputWrapper:first-child{
+        width: 100%;
+    }
+    .w100{
+        width: 100%;
+    }
+
+    .mobileLabel{
+        display: block;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    .formDateWrapper{
+        gap: 18px;
+       
+    }
+
+    .formInputWrapper{
+        width: 100%;
+    }
+  
+    .w100{
+        width: 100%;
+    }
+
+    .form-controls button{
+        width: 40%;
+    }
+    .mobileLabel{
+        display: block;
+    }
+
+  
+}
