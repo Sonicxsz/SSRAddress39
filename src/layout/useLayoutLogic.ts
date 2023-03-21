@@ -4,15 +4,15 @@ import { changeMidl } from '@/store/language';
 import { modalEnTitle } from '@/lang/en';
 import { modalRuTitle } from '@/lang/ru';
 import { closeModal, openModal } from '@/common/utils/setters';
-import { setModalDelevery, setModalBooking, setModalCarreer } from '@/store/controlSlice';
+import { setModalDelevery, setModalBooking, setModalCarreer, setToContact } from '@/store/controlSlice';
 export function useLayoutLogic() {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const isMidl = useAppSelector((state) => state.languageSlice.middle);
-    const {modalBooking, modalCarreer, modalDelevery} = useAppSelector(state => state.controlSlice)
+    const modalBooking = useAppSelector(state => state.controlSlice.modalBooking)
+    const modalCarreer = useAppSelector(state => state.controlSlice.modalCarreer)
+    const modalDelevery = useAppSelector(state => state.controlSlice.modalDelevery)
+    const toContact = useAppSelector(state => state.controlSlice.toContact)
     const dispatch = useAppDispatch();
-    const [toContact, setToContact] = useState(false);
-
-
     const contactsRef = useRef<HTMLInputElement>(null);
 
     const modalLang = lang === 'EN' ? modalEnTitle : modalRuTitle;
@@ -41,12 +41,12 @@ export function useLayoutLogic() {
                 contactsRef.current.getBoundingClientRect().top +
                 window.scrollY;
             window.scrollTo({ top: coord, behavior: 'smooth' });
-            setToContact(false);
+            dispatch(setToContact(false));
         }
     };
 
     const moveToContact = () => {
-        setToContact(true);
+        dispatch(setToContact(true));
     };
 
     return {

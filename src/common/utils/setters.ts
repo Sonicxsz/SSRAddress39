@@ -1,8 +1,7 @@
-type setter = (state: boolean) => void;
-import { useAppDispatch } from "../hooks/useRedux";
-export function openModal(setter: setter) {
-    setter(true);
+export const openModal = (setter:any, value:any): void => {
+    setter(value(true))
+    
 }
-export function closeModal(setter: setter) {
-    setter(false);
+export  const closeModal = (setter:any, value:any): void => {
+    setter(value(false))
 }

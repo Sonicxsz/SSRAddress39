@@ -12,10 +12,10 @@ function DeleveryModal({closeModal}: {closeModal: () => void}) {
   return (
     <div className={styles.deleveryModal}>
         <div className={styles.deleveryModalBtns}>
-        <Link href={'/delivery'} onClick={closeModal} className={styles.deleveryModalBtn}>{interfaceLang.delevery}<br /> {interfaceLang.or} <br /> {interfaceLang.self}</Link>
+        <Link href={'/delivery'} onClick={closeModal} className={styles.deleveryModalButton}>{interfaceLang.delevery}<br /> {interfaceLang.or} <br /> {interfaceLang.self}</Link>
         <a 
         href='https://eda.yandex.ru/moscow/r/adres_39?placeSlug=adres_39_ewrhd&utm_campaign=rest_card&utm_content=desktop&utm_medium=yp&utm_source=ymaps' 
-        onClick={closeModal} className={styles.deleveryModalBtn}>{interfaceLang.yandex}</a>
+        onClick={closeModal} className={styles.deleveryModalButton}>{interfaceLang.yandex}</a>
 
         </div>
         <hr/>

@@ -5,10 +5,11 @@ import { useAppSelector } from '@/common/hooks/useRedux';
 import { contactsRU } from '@/lang/ru';
 import { contactsEN } from '@/lang/en';
 import { ContactsProps } from '@/types/types';
+import { useEffect } from 'react';
 function Contacts({ refs }: ContactsProps) {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const isMidl = useAppSelector((state) => state.languageSlice.middle);
-
+    
     const defaultState = {
         center: [55.7744855, 37.471647],
         zoom: 16,

@@ -4,7 +4,16 @@
     margin-bottom: 0;
     margin-top: 10px;
 }
-
+.formControls button{
+    width: 35%;
+    height: 40px;
+    border: none;
+    font-size: 17px;
+    color: var(--white);
+    cursor: pointer;
+    transition: background 0.2s linear;
+    border-radius: 5px;
+}
 
 
 .deleveryModalBtns{
@@ -14,7 +23,7 @@
     padding: 0 20px;
 }
 
-.deleveryModalButton{
+ .deleveryModalButton{
     display: flex;
     justify-content: center;
     align-items: center;

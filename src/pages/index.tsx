@@ -8,11 +8,7 @@ export default function Home() {
 
     return (
         <Layout>
-            <HomePage openModalBooking={function (): void {
-                throw new Error('Function not implemented.');
-            } } openModalDelevery={function (): void {
-                throw new Error('Function not implemented.');
-            } } />
+            <HomePage />
         </Layout>
     );
 }

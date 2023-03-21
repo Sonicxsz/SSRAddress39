@@ -6,7 +6,8 @@ const controlSlice = createSlice({
     initialState: {
         modalCarreer: false,
         modalBooking: false,
-        modalDelevery: false
+        modalDelevery: false,
+        toContact: false
     },
     reducers: {
         setModalCarreer(state, action) {
@@ -18,9 +19,12 @@ const controlSlice = createSlice({
         setModalDelevery(state, action) {
             state.modalDelevery = action.payload;
         },
+        setToContact(state, action) {
+            state.toContact = action.payload
+        }
     },
 });
 
-export const { setModalDelevery, setModalBooking, setModalCarreer } = controlSlice.actions;
+export const { setModalDelevery, setModalBooking, setModalCarreer, setToContact } = controlSlice.actions;
 export default controlSlice.reducer;
 

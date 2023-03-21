@@ -2,18 +2,20 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 import { useLayoutLogic } from '@/layout/useLayoutLogic';
-import Descriptor from '@/components/ui/descriptor/descriptot';
+import Descriptor from '@/components/ui/descriptor/descriptor';
 import Corousel from '@/components/ui/carousel/carousel';
 import MainMenu from '@/components/ui/MenuBlock/MenuBlock';
 import styles from './mainPage.module.css';
-import { HomeProps } from '@/types/types';
+
 
 const Contacts = dynamic(() => import('../../ui/contacts/contacs'));
 
 
 
-export default function HomePage({ openModalBooking, openModalDelevery }:HomeProps) {
+export default function HomePage() {
     const { scroll, toContact, contactsRef } = useLayoutLogic();
+
+
     useEffect(() => {
         let timeout: any;
         if (toContact) {
@@ -43,10 +45,7 @@ export default function HomePage({ openModalBooking, openModalDelevery }:HomePro
 
             <div>
                 <div className={styles.mainContent}>
-                    <Descriptor
-                        openDelevery={openModalDelevery}
-                        openModal={openModalBooking}
-                    />
+                    <Descriptor />
                     <div className={styles.corouselMain}>
                         <Corousel />
                     </div>
