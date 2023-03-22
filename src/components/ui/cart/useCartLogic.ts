@@ -3,12 +3,12 @@ import { cartRU, messFieldsRU, modalFieldsInterfaceRU } from "@/lang/ru"
 import { cartEN, messFieldsEN, modalFieldsInterfaceEN } from "@/lang/en"    
 import { useAppSelector } from "@/common/hooks/useRedux"
 import { useRef, useState } from 'react'
-  
+import {func} from '../../../common/hooks/withMessage'
         
         
         
         
-export function useCartLogic(succes:boolean, error:boolean, loading:boolean) {
+export function useCartLogic(succes:func, error:func, loading:func) {
             
   const [height, setHeight] = useState(42)
   const items = useAppSelector(state => state.cartItemsSlice.items)
@@ -28,14 +28,21 @@ export function useCartLogic(succes:boolean, error:boolean, loading:boolean) {
       user_type: yup.string().required(messFields.name.type_error)
     }) 
 
-
+    const order = items.map((i,ind) => {
+      if(i.variable){
+        return `№ ${ind +1}: ${i.name['RU']} ${i.variable}: ${i.count}шт  <br/>`
+      }else{
+        return `№ ${ind +1}: ${i.name['RU']}: ${i.count}шт  <br/>`
+      }
+      
+    }).join('')
 
 
 
   const totalSum = items.reduce((acc, i) => acc + (i.count * i.price), 0)
   const form = useRef(null)
     ///Оптимизировать 
-    async function formSend(ref) {
+    async function formSend(ref:React.MutableRefObject<HTMLFormElement>) {
       loading()
       if(ref){
         const data = new FormData(ref.current)
@@ -55,6 +62,7 @@ export function useCartLogic(succes:boolean, error:boolean, loading:boolean) {
 
     return {
         interFaceLang,
+        order,
         items,
         btns,
         lang,

@@ -836,7 +836,7 @@ export const fishSeafood = [
   price: 899,
   count: 1,
   grams: 300,
-  img: "assets/items/2342.jpg"
+  img: "/assets/items/2342.jpg"
  },
  {
   id: 2343,
@@ -845,7 +845,7 @@ export const fishSeafood = [
   price: 890,
   count: 1,
   grams: 180,
-  img: "assets/items/2343.jpg"
+  img: "/assets/items/2343.jpg"
  }
 ];
 

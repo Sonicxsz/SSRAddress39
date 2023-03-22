@@ -48,7 +48,7 @@ export function Card({
                         height={100}
                         className={styles.deleveryItemImage}
                         key={id}
-                        src="assets/plug/1.jpg"
+                        src="/assets/plug/1.jpg"
                         alt={title}
                     />
                 )}

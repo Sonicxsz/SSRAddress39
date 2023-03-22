@@ -5,12 +5,11 @@ import {AiOutlineClose} from 'react-icons/ai';
 import { PhoneInput } from '../phoneInput/PhoneInput';
 import { Formik } from 'formik';
 import { useCartLogic } from './useCartLogic';
-import { order } from '@/common/utils/fn';
-
+import {func} from '../../../common/hooks/withMessage'
 interface baseCartProps {
-  succes:boolean, 
-  error: boolean, 
-  loading: boolean
+  succes:func, 
+  error: func, 
+  loading: func
 }
 
 interface fullCartProps extends baseCartProps{
@@ -28,10 +27,11 @@ function Cart({ closeCart, closeCartbtn, succes, error, loading}: fullCartProps)
         validationSchema,
         setHeight,
         formSend,
+        order,
         modalFieldsInterface,
         lang} = useCartLogic(succes, error, loading)
 
-
+        
   
   return (
     <div onClick={closeCart} className={styles.cartBackground}>
@@ -62,7 +62,7 @@ function Cart({ closeCart, closeCartbtn, succes, error, loading}: fullCartProps)
         }}
         validationSchema={validationSchema}
         validateOnBlur
-        onSubmit={values => formSend(form)}
+        onSubmit={values => formSend(form as unknown as React.MutableRefObject<HTMLFormElement>)}
         >
           {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
             

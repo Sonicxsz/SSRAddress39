@@ -20,6 +20,14 @@ import {filters, dessertsArray,
 	sushiArray, breakfastArray, categories} from './data'
 import { useAppSelector } from "@/common/hooks/useRedux";
 
+
+	interface cartFull {
+		closeCartbtn: () => void
+		closeCart: () => void
+	}
+
+
+
  function DeliveryPage() {
 	const [showCart, setShowCart] = useState(false);
 	const [scroll, setScroll] = useState(false);
@@ -121,10 +129,10 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 	}
 
 	return (
-		
+		//closeCartbtn={closeCartbtn} closeCart={closeCart}
 		<div className="delivery-page-wrapper">
 			 <CartButton openCart={openCart} />
-			{showCart && <CartFull  closeCartbtn={closeCartbtn} closeCart={closeCart} />}
+			{showCart && <CartFull   />}
 			<div className="delivery-title-wrapper">
 				<h1 className="delivery-title">{deleveryLang[lang].title}</h1>
 				<h2>{deleveryLang[lang].conditionsTitle}</h2>
