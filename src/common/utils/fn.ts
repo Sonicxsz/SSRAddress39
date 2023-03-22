@@ -26,3 +26,9 @@ export function scrollToContacts(active: boolean, scrollFn: () => void){
         clearTimeout(timeout);
     };
 }
+
+export const scrollTop = () => {
+		
+    window.scrollTo({top: 0, behavior: 'smooth'})
+    
+}

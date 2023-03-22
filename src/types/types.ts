@@ -42,7 +42,7 @@ export interface CardBase {
 
 export interface CardProps extends CardBase {
     title: string;
-    modifier: {
+    modifier?: {
         RU: string[];
         EN: string[];
     };

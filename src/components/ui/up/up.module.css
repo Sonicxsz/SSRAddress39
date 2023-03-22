@@ -1,0 +1,18 @@
+.upCircle{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #ac6c4a;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.2s linear;
+}
+.upCircle:hover{
+    background-color: #cd8157;
+}

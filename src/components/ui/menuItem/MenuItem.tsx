@@ -7,7 +7,7 @@ function MenuItem({ name, img, src }: MenuItemProps) {
         <div className={styles.menuItemWrapper}>
             <a href={src} target="_blank" rel="noreferrer">
                 <h2 className={styles.menuPageTitle}>{name}</h2>
-                <Image src={img} alt={name} />
+                <img src={img} alt={name}  />
             </a>
             <div className={styles.line}></div>
         </div>

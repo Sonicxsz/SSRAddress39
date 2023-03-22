@@ -1,5 +1,4 @@
 import { useAppSelector } from '@/common/hooks/useRedux';
-import './message.scss';
 import { messageProps } from '../../../types/types';
 import LogoComponent from '../../svg/LogoComponent';
 import styles from './message.module.css';

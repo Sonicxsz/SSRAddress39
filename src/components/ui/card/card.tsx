@@ -36,6 +36,7 @@ export function Card({
                 {img.length > 0 ? (
                     <Image
                         width={100}
+                        height={100}
                         className={styles.deleveryItemImage}
                         key={id}
                         src={img}
@@ -44,6 +45,7 @@ export function Card({
                 ) : (
                     <Image
                         width={100}
+                        height={100}
                         className={styles.deleveryItemImage}
                         key={id}
                         src="assets/plug/1.jpg"

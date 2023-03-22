@@ -5,8 +5,8 @@ export const NavbarRu: navbar = {
         { name: 'Главная', link: '/' },
         { name: 'Забронировать', link: '/booking' },
         { name: 'Галерея', link: '/gallery' },
-        { name: 'Меню', link: '/menu' },
-        { name: 'Доставка', link: '/delivery' },
+        { name: 'Меню', link: '/menuPage' },
+        { name: 'Доставка', link: '/delevery' },
         { name: 'Карьера', link: '/career' },
         { name: 'Контакты', link: '/', route: true },
     ],
@@ -166,3 +166,23 @@ export const cartRU = {
     self:'Самовывоз', 
     yandex:'Доставка через Яндекс еду', 
   }
+
+
+
+  export const MainMenuRU= [
+		{
+			name: "Детское меню",
+			img: "/assets/mainMenu/3.jpg",
+			src: "/assets/pdf/Child.pdf",
+		},
+		{
+			name: "Основное меню",		
+			img: "/assets/mainMenu/2.jpg",
+			src: "assets/pdf/Food.pdf",
+		},
+		{
+			name: "Вино",
+			img: "/assets/mainMenu/1.jpg",
+			src: "/assets/pdf/Wine.pdf",
+		},
+	];

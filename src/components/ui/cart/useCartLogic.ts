@@ -1,9 +1,9 @@
 import * as yup from 'yup'
-import { cartRU } from "@/lang/ru" 
-import { cartEN } from "@/lang/en"    
+import { cartRU, messFieldsRU, modalFieldsInterfaceRU } from "@/lang/ru" 
+import { cartEN, messFieldsEN, modalFieldsInterfaceEN } from "@/lang/en"    
 import { useAppSelector } from "@/common/hooks/useRedux"
 import { useRef, useState } from 'react'
-        
+  
         
         
         
@@ -17,23 +17,19 @@ export function useCartLogic(succes:boolean, error:boolean, loading:boolean) {
 
 
    const interFaceLang = lang === 'EN' ? cartEN : cartRU
+   const messFields = lang === 'EN' ? messFieldsEN : messFieldsRU
+   const modalFieldsInterface = lang === 'EN' ? modalFieldsInterfaceEN : modalFieldsInterfaceRU
 
-  const validationSchema = yup.object().shape({
-      user_name: yup.string().min(3, messFields.name.min[lang]).matches(/^[^\d]+$/, messFields.name.type[lang]).typeError(messFields.name.type_error[lang]).required(messFields.required[lang]),
-      user_phone:yup.string().min(17, messFields.phone.min[lang]).max(17, messFields.phone.max[lang]).required(messFields.name.type_error[lang]),
-      user_address: yup.string().min(3, messFields.address.min[lang]).required(messFields.name.type_error[lang]),
-      user_type: yup.string().required(messFields.name.type_error[lang])
+
+   const validationSchema = yup.object().shape({
+      user_name: yup.string().min(3, messFields.name.min).matches(/^[^\d]+$/, messFields.name.type).typeError(messFields.name.type_error).required(messFields.required),
+      user_phone:yup.string().min(17, messFields.phone.min).max(17, messFields.phone.max).required(messFields.name.type_error),
+      user_address: yup.string().min(3, messFields.address.min).required(messFields.name.type_error),
+      user_type: yup.string().required(messFields.name.type_error)
     }) 
 
 
-  const order = items.map((i,ind) => {
-    if(i.variable){
-      return `№ ${ind +1}: ${i.name['RU']} ${i.variable}: ${i.count}шт  <br/>`
-    }else{
-      return `№ ${ind +1}: ${i.name['RU']}: ${i.count}шт  <br/>`
-    }
-    
-  }).join('')
+
 
 
   const totalSum = items.reduce((acc, i) => acc + (i.count * i.price), 0)
@@ -64,7 +60,11 @@ export function useCartLogic(succes:boolean, error:boolean, loading:boolean) {
         lang,
         totalSum,
         validationSchema,
-
+        height,
+        form,
+        setHeight,
+        formSend,
+        modalFieldsInterface
     }
   
 }

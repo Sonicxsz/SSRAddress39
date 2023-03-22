@@ -5,8 +5,8 @@ export const NavbarEN: navbar = {
         { name: 'Main', link: '/' },
         { name: 'Booking', link: '/booking' },
         { name: 'Gallery', link: '/gallery' },
-        { name: 'Menu', link: '/menu' },
-        { name: 'Delevery', link: '/delivery' },
+        { name: 'Menu', link: '/menuPage' },
+        { name: 'Delevery', link: '/delevery' },
         { name: 'Career', link: '/career' },
         { name: 'Contacts', link: '/', route: true },
     ],
@@ -136,3 +136,23 @@ export const countOfPeopleEN = [
     self:'Self-delivery', 
     yandex:'Delivery via Yandex food', 
   }
+
+
+
+ export const MainMenuEN = [
+		{
+			name: "Children's menu",
+			img: "assets/mainMenu/3.jpg",
+			src: "assets/pdf/Child.pdf",
+		},
+		{
+			name: "Main menu",
+			img: "assets/mainMenu/2.jpg",
+			src: "assets/pdf/Food.pdf",
+		},
+		{
+			name:  "Wine",
+			img: "assets/mainMenu/1.jpg",
+			src: "assets/pdf/Wine.pdf",
+		},
+	];
