@@ -8,17 +8,11 @@ import CardMini from "@/components/ui/card/cardMini";
 import styles from './delevery.module.css';
 import Up from "@/components/ui/up/up";
 import { scrollTop } from "@/common/utils/fn";
-
-
-import {filters, dessertsArray, 
-	noodlesArray, souosArray, 
-	fishSeafood, snacksArray, 
-	meatPoultry, sideDishesArray, 
-	brusshettaArray, childrenMenuArray, 
-	rawbarArray, saladsArray, 
-	pastaArray,rollArray, lentenArray,
-	sushiArray, breakfastArray, categories} from './data'
 import { useAppSelector } from "@/common/hooks/useRedux";
+import { item } from "@/types/types";
+
+import {filters,  categories} from './data'
+import { GetServerSideProps, NextPage } from "next";
 
 
 	interface cartFull {
@@ -26,9 +20,22 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 		closeCart: () => void
 	}
 
+interface deleveryProps {
+	data: {
+		dessertsArray:item[], 
+			noodlesArray:item[], souosArray:item[], 
+			fishSeafood:item[], snacksArray:item[], 
+			meatPoultry:item[], sideDishesArray:item[], 
+			brusshettaArray:item[], childrenMenuArray:item[], 
+			rawbarArray:item[], saladsArray:item[], 
+			pastaArray:item[],rollArray:item[], lentenArray:item[],
+			sushiArray:item[], breakfastArray:item[]
+	 }
+}
 
-
- function DeliveryPage() {
+ const DeliveryPage:NextPage<deleveryProps> = ({data}: deleveryProps) => {
+	console.log(data)
+	
 	const [showCart, setShowCart] = useState(false);
 	const [scroll, setScroll] = useState(false);
 	const [activeFilter, setActiveFilter] = useState<string | null>(null);
@@ -37,6 +44,14 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 	const lang = useAppSelector(state => state.languageSlice.language)
 
 
+	// const {dessertsArray, 
+	// 	noodlesArray, souosArray, 
+	// 	fishSeafood, snacksArray, 
+	// 	meatPoultry, sideDishesArray, 
+	// 	brusshettaArray, childrenMenuArray, 
+	// 	rawbarArray, saladsArray, 
+	// 	pastaArray,rollArray, lentenArray,
+	// 	sushiArray, breakfastArray,} = data
 	useEffect(() =>{
 		if(scroll){
 			const elem = document.querySelector(`[data-name='${activeFilter}']`)
@@ -152,8 +167,8 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 			
 			
 		
-			
-			<div className="delevery-category-block">
+{/* 			
+			<div className={styles.categoryBlock}>
 				<h2 data-name="breakfast">{categories.breakfast[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{breakfastArray.map((i) => {
@@ -161,7 +176,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name="lenten">{categories.lenten[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{lentenArray.map((i) => {
@@ -169,7 +184,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name="rawbar">{categories.rowbar[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{rawbarArray.map((i) => {
@@ -177,7 +192,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block ">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='susi'>{categories.sushi[lang]}</h2>
 				<div className="delivery-items-wrapper mini">
 				{sushiArray.map((i) => {
@@ -185,7 +200,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block ">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='roll'>{categories.rolls[lang]}</h2>
 				<div className="delivery-items-wrapper mini">
 				{rollArray.map((i) => {
@@ -193,7 +208,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='snacks'>{categories.snacks[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{snacksArray.map((i) => {
@@ -201,7 +216,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='salads'>{categories.salads[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{saladsArray.map((i) => {
@@ -209,7 +224,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='brusshetta'>{categories.bruschetta[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{brusshettaArray.map((i) => {
@@ -217,7 +232,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='soap'>{categories.soups[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{souosArray.map((i) => {
@@ -226,7 +241,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				</div>
 			</div>
 			
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='pasta'>{categories.pastaandrisotta[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{pastaArray.map((i) => {
@@ -234,7 +249,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='noodles'>{categories.noodles[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{noodlesArray.map((i) => {
@@ -244,7 +259,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 			</div>
 			
 
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='fishSeafood'>{categories.fishandseafood[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				
@@ -254,7 +269,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='meatPoultry'>{categories.meatandpoultry[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{meatPoultry.map((i) => {
@@ -266,7 +281,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 			
 		
 			
-			<div className="delevery-category-block ">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='sideDishes'>{categories.sidedishes[lang]}</h2>
 				<div className="delivery-items-wrapper mini">
 				{sideDishesArray.map((i) => {
@@ -275,7 +290,7 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				</div>
 			</div>			
 			
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='desserts'>{categories.deserts[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{dessertsArray.map((i) => {
@@ -283,20 +298,34 @@ import { useAppSelector } from "@/common/hooks/useRedux";
 				})}
 				</div>
 			</div>
-			<div className="delevery-category-block">
+			<div className={styles.categoryBlock}>
 				<h2 data-name='children'>{categories.childrens[lang]}</h2>
 				<div className="delivery-items-wrapper">
 				{childrenMenuArray.map((i) => {
 					return <Card lang={lang} modifier={i.modifier && i.modifier} gramm={i.grams} title={i.title[lang]} count={i.count} key={i.id} id={i.id} name={i.name} price={i.price} img={i.img}  />;
 				})}
 				</div>
-			</div>
+			</div> */}
 			<Up show={showUp} handleScroll={scrollTop}/>
 
 		</div>
 	);
 }
 
+
+export  const getServerSideProps:GetServerSideProps<deleveryProps> = async (context) => {
+	// const res = await fetch('http://localhost:8081/php/rest/items.php')
+	const res = await fetch('https://picsum.photos/v2/list')
+
+	const data = await res.json() 
+	
+	return {
+	  props: {
+		data,
+	  },
+	}
+  }
+ 
 
 export default DeliveryPage
 

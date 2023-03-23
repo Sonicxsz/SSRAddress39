@@ -67,6 +67,22 @@ export interface ContactsProps {
     refs: React.LegacyRef<HTMLDivElement>;
 }
 
+export interface item {
+    id: number,
+    name:{'EN': string, 'RU':string},
+    title:{'EN': string, 'RU':string},
+    price: number,
+    modifier?: {
+      'RU':string[],
+      'EN': string[]
+    },
+    count: number,
+    grams: number,
+    img: string,
+}
+
+
+
 
 // export interface ModalProps {
 //      closeCart, 

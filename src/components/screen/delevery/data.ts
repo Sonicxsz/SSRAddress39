@@ -982,3 +982,6 @@ export const lentenArray = [
     img: "https://eda.yandex.ru/images/3682162/00c3527cf7ee4de79f4ef93660ff3ed9-450x300.jpeg",
   }
 ]
+
+
+
