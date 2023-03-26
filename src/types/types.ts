@@ -82,7 +82,17 @@ export interface item {
 }
 
 
+interface deleveryItem {
+    data: string,
+    cat: {'RU':string, 'EN':string}
+    mini: boolean,
+    items: item[]
+}
 
+
+export interface deleveryProps {
+	data: deleveryItem[]
+}
 
 // export interface ModalProps {
 //      closeCart, 

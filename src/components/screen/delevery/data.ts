@@ -38,6 +38,7 @@ export const categories = {
 
 
 
+
 export const sushiArray = [
   {
     id: 1,

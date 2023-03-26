@@ -3,11 +3,10 @@ import "react-multi-carousel/lib/styles.css";
 import ImgBlock from "@/components/ui/imgBlock/imgBlock";
 import styles from './gallery.module.css'
 import { useState, useEffect } from 'react'
-import { GetServerSideProps } from "next/types";
-
+import { GetServerSideProps, GetStaticProps } from "next/types";
+import { mainService } from "@/service/main.service";
 function Gallery({data}:{data:string[]}) {
 const [fullImages, setFullImages] = useState<string[]>([])
-
 
     async function requestImages(data:string[]) {
       let full = [];
@@ -64,16 +63,6 @@ const [fullImages, setFullImages] = useState<string[]>([])
 
 
 
-export const getServerSideProps = async () => {
-  const data = await (await fetch('http://localhost:8081/php/rest/gallery.php')).json() as string[]
-
-	return {
-	  props: {
-		data,
-	  },
-	}
-  }
- 
 
 
  

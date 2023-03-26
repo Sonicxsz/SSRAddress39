@@ -6,7 +6,7 @@ export const NavbarEN: navbar = {
         { name: 'Booking', link: '/booking' },
         { name: 'Gallery', link: '/gallery' },
         { name: 'Menu', link: '/menuPage' },
-        { name: 'Delevery', link: '/delevery' },
+        { name: 'Delivery', link: '/delivery' },
         { name: 'Career', link: '/career' },
         { name: 'Contacts', link: '/', route: true },
     ],

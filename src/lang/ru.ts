@@ -6,7 +6,7 @@ export const NavbarRu: navbar = {
         { name: 'Забронировать', link: '/booking' },
         { name: 'Галерея', link: '/gallery' },
         { name: 'Меню', link: '/menuPage' },
-        { name: 'Доставка', link: '/delevery' },
+        { name: 'Доставка', link: '/delivery' },
         { name: 'Карьера', link: '/career' },
         { name: 'Контакты', link: '/', route: true },
     ],
