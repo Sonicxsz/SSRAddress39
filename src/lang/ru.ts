@@ -186,3 +186,13 @@ export const cartRU = {
 			src: "/assets/pdf/Wine.pdf",
 		},
 	];
+
+  export const DeleveryLangRu = {
+			title: "Меню доставки",
+			conditionsTitle: "Условия доставки:",
+			deleveyWelton: "Доставка по ЖК Wellton park бесплатная",
+			deleveryYandex: "Доставка по Москве и МО осуществляется сервисом",
+			conditions: "Условия уточняйте по телефону ресторана",
+			yandex: 'Яндекс еда'	
+	
+	}

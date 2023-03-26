@@ -31,13 +31,13 @@ export function Card({
     const currentLang = lang === 'RU' ? cardInterfaceRU : cardInterfaceEN;
 
     return (
-        <div className={styles.deleveryItem}>
-            <div className={styles.deleveryItemImage}>
+        <div className={styles.deliveryItem}>
+            <div className={styles.deliveryItemImage}>
                 {img.length > 0 ? (
                     <Image
                         width={100}
                         height={100}
-                        className={styles.deleveryItemImage}
+                        className={styles.deliveryItemImage}
                         key={id}
                         src={img}
                         alt={title}
@@ -46,7 +46,7 @@ export function Card({
                     <Image
                         width={100}
                         height={100}
-                        className={styles.deleveryItemImage}
+                        className={styles.deliveryItemImage}
                         key={id}
                         src="/assets/plug/1.jpg"
                         alt={title}
@@ -117,7 +117,7 @@ export function Card({
                             }),
                         );
                     }}
-                    className="delivery-item-button"
+                    className={styles.deliveryItemButton}
                 >
                     {currentLang.addbtn}
                 </button>

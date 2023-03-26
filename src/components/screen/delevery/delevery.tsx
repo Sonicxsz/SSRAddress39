@@ -10,7 +10,8 @@ import Up from "@/components/ui/up/up";
 import { scrollTop } from "@/common/utils/fn";
 import { useAppSelector } from "@/common/hooks/useRedux";
 import { deleveryProps, item } from "@/types/types";
-
+import { DeleveryLangRu } from "@/lang/ru";
+import {DeleveryLangEN} from "@/lang/en";
 import {filters,  categories} from './data'
 import { GetStaticProps, NextPage } from "next";
 
@@ -28,19 +29,12 @@ import { GetStaticProps, NextPage } from "next";
 	const [showCart, setShowCart] = useState(false);
 	const [scroll, setScroll] = useState(false);
 	const [activeFilter, setActiveFilter] = useState<string | null>(null);
-	const [clazz, setClazz] = useState('delivery-filters');
+	const [clazz, setClazz] = useState(styles.filters);
 	const [showUp, setShowUp] = useState(false);
 	const lang = useAppSelector(state => state.languageSlice.language)
 
-
-	// const {dessertsArray, 
-	// 	noodlesArray, souosArray, 
-	// 	fishSeafood, snacksArray, 
-	// 	meatPoultry, sideDishesArray, 
-	// 	brusshettaArray, childrenMenuArray, 
-	// 	rawbarArray, saladsArray, 
-	// 	pastaArray,rollArray, lentenArray,
-	// 	sushiArray, breakfastArray,} = data
+	const deleveryLang = lang === 'EN' ? DeleveryLangEN : DeleveryLangRu
+	
 	useEffect(() =>{
 		if(scroll){
 			const elem = document.querySelector(`[data-name='${activeFilter}']`)
@@ -58,10 +52,10 @@ import { GetStaticProps, NextPage } from "next";
 			clearTimeout(timeout)
 			timeout = setTimeout(() =>{
 				if(window.scrollY > 200){
-					setClazz('delivery-filters delevery-filters-fixed') 
+					setClazz(`${styles.filters} ${styles.filtersFixed}`) 
 					setShowUp(true)
 				}else{
-					setClazz('delivery-filters')
+					setClazz(styles.filters)
 					setShowUp(false)
 				}
 			}, 120)
@@ -112,44 +106,26 @@ import { GetStaticProps, NextPage } from "next";
 	}
 
 	const CartFull = withMessage(Cart as () => JSX.Element, true, lang)
-	const deleveryLang = {
-		'RU': {
-			title: "Меню доставки",
-			conditionsTitle: "Условия доставки:",
-			deleveyWelton: "Доставка по ЖК Wellton park бесплатная",
-			deleveryYandex: "Доставка по Москве и МО осуществляется сервисом",
-			conditions: "Условия уточняйте по телефону ресторана",
-			yandex: 'Яндекс еда'
-			
-		},
-		'EN': {
-			title: "Delivery menu",
-			conditionsTitle: "Delivery terms:",
-			deleveyWelton: "Wellton park residential delivery free",
-			deleveryYandex: "Delivery in Moscow and Moscow region is carried out by the service",
-			conditions: "Check terms and conditions by phone",
-			yandex: 'Yandex Food'
-		}
-	}
+	
 
 	return (
 		//closeCartbtn={closeCartbtn} closeCart={closeCart}
-		<div className="delivery-page-wrapper">
+		<div className={styles.pageWrapper}>
 			 <CartButton openCart={openCart} />
 			{showCart && <CartFull   />}
-			<div className="delivery-title-wrapper">
-				<h1 className="delivery-title">{deleveryLang[lang].title}</h1>
-				<h2>{deleveryLang[lang].conditionsTitle}</h2>
-				<h3>{deleveryLang[lang].deleveyWelton}</h3>
-				<h3>{deleveryLang[lang].deleveryYandex} <a className="delevery-link" href="https://eda.yandex.ru/moscow/r/adres_39?placeSlug=adres_39_ewrhd&utm_campaign=rest_card&utm_content=desktop&utm_medium=yp&utm_source=ymaps">{deleveryLang[lang].yandex} </a></h3>
-				<h3>{deleveryLang[lang].conditions} + 7 (985) 039-00-39</h3>
+			<div className={styles.titleWrapper}>
+				<h1 className={styles.title}>{deleveryLang.title}</h1>
+				<h2>{deleveryLang.conditionsTitle}</h2>
+				<h3>{deleveryLang.deleveyWelton}</h3>
+				<h3>{deleveryLang.deleveryYandex} <a className={styles.link} href="https://eda.yandex.ru/moscow/r/adres_39?placeSlug=adres_39_ewrhd&utm_campaign=rest_card&utm_content=desktop&utm_medium=yp&utm_source=ymaps">{deleveryLang.yandex} </a></h3>
+				<h3>{deleveryLang.conditions} + 7 (985) 039-00-39</h3>
 			</div>
 			<div className={clazz}>
 				
 				{filters.map((i, ind) => <div onClick={() => {
 					setActiveFilter(i.data)
 					setScroll(true)
-					}} className="filters-item " key={ind}>{i.name[lang]}</div>)}
+					}} className={styles.filtersItem} key={ind}>{i.name[lang]}</div>)}
 
 			</div>
 
@@ -159,12 +135,12 @@ import { GetStaticProps, NextPage } from "next";
  			{data.map((i, ind) => {
 				return (<div className={styles.categoryBlock} key={ind}>
 				<h2 data-name={i.data}>{i.cat[lang]}</h2>
-				<div className="delivery-items-wrapper">
+				<div className={styles.itemsWrapper}>
 				{i.mini  
 				? i.items.map((i) => {
 					return <CardMini count={i.count} gramm={i.grams} id={i.id} img={i.img} lang={lang}  name={i.name} price={i.price} key={i.id} />
 				})
-				: i.items.map((i) => {
+				: i.items.map((i) => {                                      
 					return <Card lang={lang} gramm={i.grams} title={i.title[lang]} count={i.count} key={i.id} id={i.id} name={i.name} price={i.price} img={i.img}  />;
 				})}
 				</div>

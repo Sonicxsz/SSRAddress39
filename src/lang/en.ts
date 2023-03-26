@@ -156,3 +156,14 @@ export const countOfPeopleEN = [
 			src: "assets/pdf/Wine.pdf",
 		},
 	];
+
+
+  export const DeleveryLangEN = {
+			title: "Delivery menu",
+			conditionsTitle: "Delivery terms:",
+			deleveyWelton: "Wellton park residential delivery free",
+			deleveryYandex: "Delivery in Moscow and Moscow region is carried out by the service",
+			conditions: "Check terms and conditions by phone",
+			yandex: 'Yandex Food'
+		
+	}
