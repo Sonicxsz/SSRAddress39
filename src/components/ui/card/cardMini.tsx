@@ -10,7 +10,7 @@ function CardMini({ name, count, price, id, img, gramm, lang }: CardBase) {
     const interfaceLang = lang === 'RU' ? cardInterfaceRU : cardInterfaceEN;
 
     return (
-        <div className={styles.cardMiniWrapper}>
+        <div className={`${styles.cardMiniWrapper}`}>
             <div className={styles.cardMiniName}>
                 {name[lang]}{' '}
                 <span>
@@ -24,7 +24,7 @@ function CardMini({ name, count, price, id, img, gramm, lang }: CardBase) {
                     onClick={() => {
                         dispatch(addItem({ img, name, price, id, count }));
                     }}
-                    className={`${styles.deleveryItemButton} ${styles.miniCardButton}`}
+                    className={`${styles.deliveryItemButton} ${styles.miniCardButton}`}
                 >
                     {interfaceLang.addbtn}
                 </button>

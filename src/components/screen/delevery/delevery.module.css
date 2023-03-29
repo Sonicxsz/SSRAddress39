@@ -150,7 +150,14 @@
 			font-weight: 400;
 		}
 		
-		
+		.mini{
+            display: flex;
+            flex-direction: column;
+            max-width: 720px;
+            gap: 30px;
+            margin-top: 45px;
+            margin-bottom: 40px;
+        }
 	
 }
 /* 

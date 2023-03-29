@@ -60,7 +60,7 @@
     <span style="font-size: 20px;"> Комментарий</span>: <span style="color: red; font-size: 20px;">'.$comment. '</span> <br>
     <span style="font-size: 22px;"> Перезвоните клиенту для подтверждения </span>';
 	//Add recipient
-		$mail->addAddress('Addrest.39@mail.ru');
+		$mail->addAddress('arbih@mail.ru');
 	//Finally send email
 		if ( $mail->send() ) {
 			echo "Email Sent..!";

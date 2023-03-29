@@ -9,10 +9,12 @@ import { withMessageArgs } from '@/types/types';
  interface newModalProps {
     loading?: func,
     success?: func,
-    error?: func
+    error?: func,
+    closeCart?: (e:any) => void,
+    closeCartbtn?: func
 }
 export type func = () => void
-function withMessage(BaseComponent:({loading, success, error}:newModalProps) => JSX.Element, cart:boolean=false, lang:string): React.ComponentType<newModalProps> {
+function withMessage(BaseComponent:({loading, success, error, closeCart, closeCartbtn}:newModalProps) => JSX.Element, cart:boolean=false, lang:string): React.ComponentType<newModalProps> {
     const succesMessage = lang === 'EN' ? DialogModalMessagesEN.succesMessage : DialogModalMessagesRU.succesMessage;
     const failMessage = lang === 'EN' ? DialogModalMessagesEN.failMessage : DialogModalMessagesRU.failMessage;
     const loadingMessage = lang === 'EN' ? DialogModalMessagesEN.loadingMessage : DialogModalMessagesRU.loadingMessage;

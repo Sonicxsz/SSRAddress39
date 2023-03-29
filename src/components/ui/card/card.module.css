@@ -147,6 +147,15 @@
     padding-left: 10px;
 }
 
+.mini{
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    gap: 30px;
+    margin-top: 45px;
+    margin-bottom: 40px;
+}
+
 .deliveryItemButton {
     background-color: #ac6c4a;
     width: 185px;
@@ -283,8 +292,5 @@
         height: 225px;
     }
 
-    .deliveryItemButton {
-        width: 90%;
-        margin: 0 auto;
-    }
+  
 }

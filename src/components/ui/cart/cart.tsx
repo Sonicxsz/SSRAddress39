@@ -5,6 +5,8 @@ import {AiOutlineClose} from 'react-icons/ai';
 import { PhoneInput } from '../phoneInput/PhoneInput';
 import { Formik } from 'formik';
 import { useCartLogic } from './useCartLogic';
+import { useAppDispatch } from '@/common/hooks/useRedux';
+import { setCartModal } from '@/store/controlSlice';
 import {func} from '../../../common/hooks/withMessage'
 interface baseCartProps {
   succes:func, 
@@ -12,12 +14,10 @@ interface baseCartProps {
   loading: func
 }
 
-interface fullCartProps extends baseCartProps{
-  closeCart: () => void, 
-  closeCartbtn:() => void,
-}
 
-function Cart({ closeCart, closeCartbtn, succes, error, loading}: fullCartProps) {
+
+function Cart({ succes, error, loading}: baseCartProps) {
+  const dispatch = useAppDispatch()
   const {interFaceLang, 
         items,
         btns,
@@ -31,10 +31,20 @@ function Cart({ closeCart, closeCartbtn, succes, error, loading}: fullCartProps)
         modalFieldsInterface,
         lang} = useCartLogic(succes, error, loading)
 
-        
+        const closeCart = (e:any) => {
+          if(e.target instanceof Element)
+          if(e.target.className === 'cart-background'){
+            closeCartbtn()
+          }
+        } 
+      
+        const closeCartbtn = () => {
+          dispatch(setCartModal(false))
+        }
+            
   
   return (
-    <div onClick={closeCart} className={styles.cartBackground}>
+    <div onClick={(e) => closeCart(e)} className={styles.cartBackground}>
       <div className={styles.cartCloseBtn}>
           <AiOutlineClose onClick={closeCartbtn}/>
       </div>

@@ -8,33 +8,30 @@ import CardMini from "@/components/ui/card/cardMini";
 import styles from './delevery.module.css';
 import Up from "@/components/ui/up/up";
 import { scrollTop } from "@/common/utils/fn";
-import { useAppSelector } from "@/common/hooks/useRedux";
+import { useAppDispatch, useAppSelector } from "@/common/hooks/useRedux";
 import { deleveryProps, item } from "@/types/types";
 import { DeleveryLangRu } from "@/lang/ru";
 import {DeleveryLangEN} from "@/lang/en";
-import {filters,  categories} from './data'
-import { GetStaticProps, NextPage } from "next";
+import {filters} from './data'
+import { NextPage } from "next";
+import { setCartModal } from "@/store/controlSlice";
 
-
-	interface cartFull {
-		closeCartbtn: () => void
-		closeCart: () => void
-	}
+interface cartFull {
+	closeCartbtn: () => void
+	closeCart: () => void
+}
 
 
 
  const DeliveryPage:NextPage<deleveryProps> = ({data}: deleveryProps) => {
-	console.log(data)
-	
-	const [showCart, setShowCart] = useState(false);
 	const [scroll, setScroll] = useState(false);
 	const [activeFilter, setActiveFilter] = useState<string | null>(null);
 	const [clazz, setClazz] = useState(styles.filters);
 	const [showUp, setShowUp] = useState(false);
 	const lang = useAppSelector(state => state.languageSlice.language)
-
+	const showCart = useAppSelector(state => state.controlSlice.modalCart)
 	const deleveryLang = lang === 'EN' ? DeleveryLangEN : DeleveryLangRu
-	
+	const dispacth = useAppDispatch()
 	useEffect(() =>{
 		if(scroll){
 			const elem = document.querySelector(`[data-name='${activeFilter}']`)
@@ -91,20 +88,10 @@ import { GetStaticProps, NextPage } from "next";
 	}, [showCart])
 
 	const openCart = () =>{
-	setShowCart(true)
+		dispacth(setCartModal(true))
 	}
 
-	const closeCart = (e:Event) => {
-    if(e.target instanceof Element)
-	if(e.target.className === 'cart-background'){
-		setShowCart(false)
-	}
-	}
-
-	const closeCartbtn = () => {
-	    setShowCart(false)
-	}
-
+	
 	const CartFull = withMessage(Cart as () => JSX.Element, true, lang)
 	
 
@@ -121,21 +108,17 @@ import { GetStaticProps, NextPage } from "next";
 				<h3>{deleveryLang.conditions} + 7 (985) 039-00-39</h3>
 			</div>
 			<div className={clazz}>
-				
 				{filters.map((i, ind) => <div onClick={() => {
 					setActiveFilter(i.data)
 					setScroll(true)
-					}} className={styles.filtersItem} key={ind}>{i.name[lang]}</div>)}
-
+				}} className={styles.filtersItem} key={ind}>{i.name[lang]}</div>)}
 			</div>
-
-			
-			
 		
  			{data.map((i, ind) => {
+				const clazz = !i.mini ? styles.itemsWrapper : `${styles.itemsWrapper} ${styles.mini}` 
 				return (<div className={styles.categoryBlock} key={ind}>
 				<h2 data-name={i.data}>{i.cat[lang]}</h2>
-				<div className={styles.itemsWrapper}>
+				<div className={clazz}>
 				{i.mini  
 				? i.items.map((i) => {
 					return <CardMini count={i.count} gramm={i.grams} id={i.id} img={i.img} lang={lang}  name={i.name} price={i.price} key={i.id} />
@@ -146,7 +129,6 @@ import { GetStaticProps, NextPage } from "next";
 				</div>
 			</div>)
 			})}
-			
 		
 			<Up show={showUp} handleScroll={scrollTop}/>
 

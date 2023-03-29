@@ -1,3 +1,5 @@
+import { FormEvent } from "react";
+
 export function getDateToday(isFuture = 1) {
     const currentTime = new Date();
     let year = currentTime.getFullYear();
@@ -10,7 +12,7 @@ export function getDateToday(isFuture = 1) {
     }
 }
 
-export async function formSend(e, data) {
+export async function formSend(e:FormEvent, data:any) {
     e.preventDefault();
     console.log(data);
     const response = await fetch('send.php', {
