@@ -12,7 +12,7 @@ import { useAppDispatch, useAppSelector } from "@/common/hooks/useRedux";
 import { deleveryProps, item } from "@/types/types";
 import { DeleveryLangRu } from "@/lang/ru";
 import {DeleveryLangEN} from "@/lang/en";
-import {filters} from './data'
+import {filters, filter} from './data'
 import { NextPage } from "next";
 import { setCartModal } from "@/store/controlSlice";
 
@@ -108,7 +108,7 @@ interface cartFull {
 				<h3>{deleveryLang.conditions} + 7 (985) 039-00-39</h3>
 			</div>
 			<div className={clazz}>
-				{filters.map((i, ind) => <div onClick={() => {
+				{filters.map((i:filter, ind) => <div onClick={() => {
 					setActiveFilter(i.data)
 					setScroll(true)
 				}} className={styles.filtersItem} key={ind}>{i.name[lang]}</div>)}

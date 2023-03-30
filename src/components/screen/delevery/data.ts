@@ -1,3 +1,4 @@
+
 export const filters = [
 	{name:{"EN":'Breakfast',"RU":'Завтрак'}, data:'breakfast'},
 	{name:{"EN":'Lenten',"RU":'Постное'}, data:'lenten'},
@@ -15,6 +16,9 @@ export const filters = [
 	{name:{"EN":'Side dishes',"RU":'Гарниры' }, data:'sideDishes'},
   {name:{"EN": 'Desserts', "RU": 'Десерты'}, data:'desserts'},  
 	{name:{"EN":'Children`s menu',"RU":'Детское меню' }, data:'children'}]
+
+
+export type filter = typeof filters[0]
 
 export const categories = {
   breakfast:{"EN":'Breakfasts until 14:00',"RU":'Завтраки до 14:00'} ,
