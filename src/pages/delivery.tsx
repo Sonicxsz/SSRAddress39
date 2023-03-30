@@ -17,7 +17,7 @@ export default function Delevery({data}:deleveryProps) {
 
 
 export  const getStaticProps: GetStaticProps<deleveryProps> = async (context) => {
-	const res = await fetch('http://localhost:8081/php/rest/items.php')
+	const res = await fetch('/rest/items.php')
 	const data = await res.json() 
 	
 	return {
