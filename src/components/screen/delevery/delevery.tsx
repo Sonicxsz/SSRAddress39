@@ -96,7 +96,6 @@ interface cartFull {
 	
 
 	return (
-		//closeCartbtn={closeCartbtn} closeCart={closeCart}
 		<div className={styles.pageWrapper}>
 			 <CartButton openCart={openCart} />
 			{showCart && <CartFull   />}

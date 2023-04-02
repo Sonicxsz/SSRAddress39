@@ -32,7 +32,7 @@
 		$mail->Port = "587";
 		$mail->Username = "leadeer5@gmail.com";
 		//Set gmail password
-			$mail->Password = "jkvumpvmrbbevebp";
+			$mail->Password = "pukluzcpwobbxckq";
 		//Email subject
 			$mail->Subject = "Бронирование столика";
 		//Set sender email
