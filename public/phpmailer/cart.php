@@ -32,11 +32,12 @@
 		$mail->Port = "587";
 		$mail->Username = "leadeer5@gmail.com";
 		//Set gmail password
-			$mail->Password = "jkvumpvmrbbevebp";
+			$mail->Password = 'npwpqjcjwzhcxsiy';
 		//Email subject
 			$mail->Subject = "Заказ";
 		//Set sender email
-			$mail->setFrom('leadeer5@gmail.com');
+		$mail->setFrom('leadeer5@gmail.com');
+	
 	//Enable HTML
 		$mail->isHTML(true);
 		$name = $_POST['user_name'];

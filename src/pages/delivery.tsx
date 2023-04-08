@@ -17,7 +17,7 @@ export default function Delevery({data}:deleveryProps) {
 
 
 export  const getStaticProps: GetStaticProps<deleveryProps> = async (context) => {
-	const res = await fetch('http://arbihmgo.beget.tech/')
+	const res = await fetch('http://server.arbihmgo.beget.tech/rest/items.php')
 	const data = await res.json() 
 	
 	return {

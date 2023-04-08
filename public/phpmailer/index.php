@@ -32,7 +32,7 @@
 		$mail->Port = "587";
 		$mail->Username = "leadeer5@gmail.com";
 		//Set gmail password
-			$mail->Password = "pukluzcpwobbxckq";
+			$mail->Password = 'npwpqjcjwzhcxsiy';
 		//Email subject
 			$mail->Subject = "Заявка на Вакансию";
 		//Set sender email
@@ -47,7 +47,7 @@
 		<span style="font-size: 20px;">Телефон</span>: <span style="color: red; font-size: 22px;">'.$phone. '</span> <br> 
 		<span style="font-size: 20px;"> Комментарий</span>: <span style="color: red; font-size: 20px;">'.$comment. '</span>';
 	//Add recipient
-		$mail->addAddress('arbih@mail.ru');
+	$mail->addAddress('arbih@mail.ru');
 	//Finally send email
 		if ( $mail->send() ) {
 			echo "Email Sent..!";

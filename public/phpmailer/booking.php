@@ -13,11 +13,13 @@
 		require 'includes/PHPMailer.php';
 		require 'includes/SMTP.php';
 		require 'includes/Exception.php';
+		
 	//Define name spaces
 		use PHPMailer\PHPMailer\PHPMailer;
 		use PHPMailer\PHPMailer\SMTP;
 		use PHPMailer\PHPMailer\Exception;
 	//Create instance of PHPMailer
+		$ps = '';
 		$mail = new PHPMailer();
 		$mail->CharSet = 'utf-8';
 	//Set mailer to use smtp
@@ -32,11 +34,11 @@
 		$mail->Port = "587";
 		$mail->Username = "leadeer5@gmail.com";
 		//Set gmail password
-			$mail->Password = "pukluzcpwobbxckq";
+			$mail->Password = 'npwpqjcjwzhcxsiy';
 		//Email subject
 			$mail->Subject = "Бронирование столика";
 		//Set sender email
-			$mail->setFrom('leadeer5@gmail.com');
+		$mail->addAddress('arbih@mail.ru');
 	//Enable HTML
 		$mail->isHTML(true);
 		$name = $_POST['user_name'];
