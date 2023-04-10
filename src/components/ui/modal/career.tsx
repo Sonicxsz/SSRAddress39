@@ -22,7 +22,7 @@ function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps)
     if(ref.current){
         loadingSend()
         const data = new FormData(ref.current)
-        const response = await fetch('https://server.arbihmgo.beget.tech/phpmailer/index.php', {
+        const response = await fetch('http://server.arbihmgo.beget.tech/rest/phpmailer/index.php', {
           method: 'POST',
           body: data
         })
