@@ -28,7 +28,7 @@ import { FormProps } from '@/types/types';
     loadingSend()
     if(ref.current){
         const data = new FormData(ref.current)
-        const response = await fetch('phpmailer/booking.php', {
+        const response = await fetch('https://server.arbihmgo.beget.tech/phpmailer/booking.php', {
           method: 'POST',
           body: data
         })

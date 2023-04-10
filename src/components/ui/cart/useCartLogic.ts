@@ -46,7 +46,7 @@ export function useCartLogic(succes:func, error:func, loading:func) {
       loading()
       if(ref){
         const data = new FormData(ref.current)
-        const response = await fetch('phpmailer/cart.php', {
+        const response = await fetch('https://server.arbihmgo.beget.tech/phpmailer/cart.php', {
           method: 'POST',
           body: data
         })
