@@ -9,14 +9,14 @@ import { useAppDispatch } from '@/common/hooks/useRedux';
 import { setCartModal } from '@/store/controlSlice';
 import {func} from '../../../common/hooks/withMessage'
 interface baseCartProps {
-  succes:func, 
+  success:func, 
   error: func, 
   loading: func
 }
 
 
 
-function Cart({ succes, error, loading}: baseCartProps) {
+function Cart({ success, error, loading}: baseCartProps) {
   const dispatch = useAppDispatch()
   const {interFaceLang, 
         items,
@@ -29,7 +29,7 @@ function Cart({ succes, error, loading}: baseCartProps) {
         formSend,
         order,
         modalFieldsInterface,
-        lang} = useCartLogic(succes, error, loading)
+        lang} = useCartLogic(success, error, loading)
 
         const closeCart = (e:any) => {
           if(e.target instanceof Element)
@@ -65,14 +65,14 @@ function Cart({ succes, error, loading}: baseCartProps) {
         <Formik
         initialValues={{
           user_name: '',
-          user_phone: '+7',
+          user_phone: '',
           user_address: '',
           user_type: 'Самовывоз',
           user_comment: ''
         }}
         validationSchema={validationSchema}
         validateOnBlur
-        onSubmit={values => formSend(form as unknown as React.MutableRefObject<HTMLFormElement>)}
+        onSubmit={values => formSend(values)}
         >
           {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
             
@@ -102,7 +102,7 @@ function Cart({ succes, error, loading}: baseCartProps) {
                           {touched.user_address && errors.user_address && <p className={styles.errorMessage}>{errors.user_address}</p>}
                       </div>
                       <div className={styles.bookDescription}>
-                          <textarea placeholder={modalFieldsInterface.comment} className={styles.bookInput}   onChange={(e) => { 
+                          <textarea  placeholder={modalFieldsInterface.comment} className={styles.bookInput}   onChange={(e) => { 
                             if(e.target.scrollHeight <= 85){
                               setHeight(e.target.scrollHeight)}
                             }
@@ -110,21 +110,17 @@ function Cart({ succes, error, loading}: baseCartProps) {
                       </div>
                     <div role="group" aria-labelledby="my-radio-group" className={`${styles.cartCheckbox} ${touched.user_type  &&  errors.user_type && styles.wrong}`}>
                     <label>{modalFieldsInterface.type.self}</label>
-                          <input type='radio' className={styles.bookInput}   value={'Самовывоз'}
+                          <input type='radio'   value={'Самовывоз'}
                             onChange={handleChange}    
                             checked={values.user_type === 'Самовывоз'}
                            name='user_type' />
                       <label>{modalFieldsInterface.type.delevery}</label>
-                          <input type='radio' className={styles.bookInput}   
+                          <input type='radio'   
                             value={'Доставка'}    
                             onChange={handleChange}   
                             checked={values.user_type === 'Доставка'}           
                             name='user_type' />
                     </div>
-                      <div className={styles.bookDescription}  style={{display: 'none'}}>
-                          <textarea readOnly placeholder='Комментарий' className={styles.bookInput}  value={order}   name='user_order' />
-                      </div>
-                  
                   </div>
                               
                 </div>

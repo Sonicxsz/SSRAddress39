@@ -44,7 +44,7 @@ function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps)
     <Formik
         initialValues={{
         user_name: '',
-        user_phone: '+7',
+        user_phone: '',
         user_comment: '',
         }}
         validationSchema={validationSchema}

@@ -18,22 +18,24 @@ function Message({
 
     return (
         <div className={styles.messageWrapper}>
-            <div className="book-wrapper">
-                <div className="book-label">
+            <div className={styles.bookWrapper}>
+                <div className={styles.bookLabel}>
                     {!loading && (
                         <>
                             <span>{interfaceLang.status} </span>
-                            <span className="logo black">
+                            <span className={`${styles.logo} ${styles.black}`}>
                                 <LogoComponent color="black" />
                             </span>
                         </>
                     )}
                 </div>
-                <div className="message-flex">
-                    <div>
-                        <Icon size={50} />
-                    <div className="message-text">{message}</div>
-                </div>
+                <div className={styles.messageFlex}>
+               
+                    <Icon size={50} />
+                    <div className={styles.messageText}>{message}</div>
+                
+            </div>
+            
                 {!loading && (
                     <div className={styles.messageBtn}>
                         <Link href={'/'}>
@@ -49,7 +51,6 @@ function Message({
                         </Link>
                     </div>
                 )}
-            </div>
         </div>
         </div>
     );

@@ -13,10 +13,12 @@
     text-align: center;
     padding: 0 30px;
     font-weight: 300;
+
 }
 
 .messageBtn {
     padding: 0 50px;
+   
 }
 
 .messageBtn button {
@@ -48,3 +50,47 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.914);
 }
+.logo {
+    width: 90px;
+    grid-area: 'logo';
+}
+
+.black {
+    color: var(--black);
+}
+
+.messageCenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bookWrapper {
+    display: grid;
+    grid-template-rows: 70px 1fr 90px;
+    grid-template-areas:
+        'label'
+        'main'
+        'control';
+    width: 520px;
+    min-height: 580px;
+    max-height: 850px;
+    background-color: var(--white);
+    margin: 40px auto 100px;
+    color: var(--black);
+    justify-content: center;
+    align-items: center;
+}
+.bookLabel {
+    display: flex;
+    grid-area: "label";
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 32px 0;
+    border-bottom: 1px solid var(--secondary);
+    font-family: var(--ibm);
+    color: rgba(50, 49, 49, 0.813);
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    width: 100%;
+  }

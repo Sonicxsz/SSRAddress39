@@ -28,7 +28,7 @@ import { FormProps } from '@/types/types';
     loadingSend()
     if(ref.current){
         const data = new FormData(ref.current)
-        const response = await fetch('http://server.arbihmgo.beget.tech/rest/phpmailer/booking.php', {
+        const response = await fetch('http:/saest/phpmailer/booking.php', {
           method: 'POST',
           body: data
         })
@@ -56,7 +56,7 @@ import { FormProps } from '@/types/types';
     <Formik
     initialValues={{
       user_name: '',
-      user_phone: '+7',
+      user_phone: '',
       user_comment: '',
       user_date: minDate,
       user_time: '11:00',

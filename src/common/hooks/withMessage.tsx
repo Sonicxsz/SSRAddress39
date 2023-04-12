@@ -38,7 +38,7 @@ function withMessage(BaseComponent:({loading, success, error, closeCart, closeCa
         };
       
           
-        const LoadComp = loading && <Message loading={loading} Icon={Spinner} message={loadingMessage} cart/>
+        const LoadComp = loading && <Message loading={loading}  Icon={Spinner} message={loadingMessage} cart/>
         const FailComp = error && <Message loading={loading} Icon={GrTime} message={failMessage} cart/>
         const succesComp = !loading && !send ? <BaseComponent  loading={loadingSend} success={succesSend} error={errorSend} /> : <Message  cart={cart} loading={loading} Icon={GrUserManager} message={succesMessage}/> 
         const final = LoadComp || FailComp || succesComp

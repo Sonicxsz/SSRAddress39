@@ -9,7 +9,8 @@ import {func} from '../../../common/hooks/withMessage'
         
         
 export function useCartLogic(succes:func, error:func, loading:func) {
-            
+         
+
   const [height, setHeight] = useState(42)
   const items = useAppSelector(state => state.cartItemsSlice.items)
   const lang = useAppSelector(state => state.languageSlice.language)
@@ -39,26 +40,41 @@ export function useCartLogic(succes:func, error:func, loading:func) {
 
 
 
+  async function formSend(values: any) {
+    loading()
+    const data = {
+      order: `
+      <span style="font-size: 20px;">Имя</span>: <span style="color: red; font-size: 22px;">${values.user_name} </span> <br> 
+      <span style="font-size: 20px;">Телефон</span>: <span style="color: red; font-size: 22px;">${values.user_phone} </span> <br> 
+      <span style="font-size: 20px;">Тип</span>: <span style="color: red; font-size: 22px;">${values.user_type}  </span> <br>
+      <span style="font-size: 20px;">Адрес</span>: <span style="color: red; font-size: 22px;">${values.user_address} </span> <br> <br> 
+      <span style="font-size: 20px;">Заказ</span>: <br> <span style="font-size: 22px;">${order} </span> <br> 
+      <span style="font-size: 20px;"> Комментарий</span>: <span style="color: red; font-size: 20px;">${values.user_comment} </span> <br>
+      <span style="font-size: 22px;"> Перезвоните клиенту для подтверждения </span>`,
+      type: 'ЗАКАЗ'
+    }
+    const response = await fetch('http://localhost:3001/mail', {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+    if(response.status !== 200){
+      error()
+    }
+    else{
+      succes()
+    }
+   
+}
+
   const totalSum = items.reduce((acc, i) => acc + (i.count * i.price), 0)
   const form = useRef(null)
-    ///Оптимизировать 
-    async function formSend(ref:React.MutableRefObject<HTMLFormElement>) {
-      loading()
-      if(ref){
-        const data = new FormData(ref.current)
-        const response = await fetch('http://server.arbihmgo.beget.tech/rest/phpmailer/cart.php', {
-          method: 'POST',
-          body: data
-        })
-        if(!response.ok){
-          error()
-      }
-      
-      }else{
-        succes()
-      }
-      
-    }
+   
+
+
+ 
 
     return {
         interFaceLang,
