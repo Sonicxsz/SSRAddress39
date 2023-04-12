@@ -109,7 +109,7 @@ import Head from "next/head";
 		
 		<div className={styles.pageWrapper}>
 			 <CartButton openCart={openCart} />
-			{showCart && <CartFull   />}
+			{showCart && <CartFull  />}
 			<div className={styles.titleWrapper}>
 				<h1 className={styles.title}>{deleveryLang.title}</h1>
 				<h2>{deleveryLang.conditionsTitle}</h2>
