@@ -21,7 +21,7 @@ export function Card({
     const [showTitle, setShowTitle] = useState(false);
     const [variable, setVariable] = useState<string | null>(null);
     const dispatch = useDispatch();
-
+   
     useEffect(() => {
         if (modifier) {
             setVariable(modifier[lang][0]);
@@ -112,7 +112,7 @@ export function Card({
                                 name,
                                 variable,
                                 price,
-                                id: variable && id + variable,
+                                id: variable ? id + variable : id,
                                 count,
                             }),
                         );

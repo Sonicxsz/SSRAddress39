@@ -18,7 +18,7 @@ function withMessage(BaseComponent:({loading, success, error, closeCart, closeCa
     const succesMessage = lang === 'EN' ? DialogModalMessagesEN.succesMessage : DialogModalMessagesRU.succesMessage;
     const failMessage = lang === 'EN' ? DialogModalMessagesEN.failMessage : DialogModalMessagesRU.failMessage;
     const loadingMessage = lang === 'EN' ? DialogModalMessagesEN.loadingMessage : DialogModalMessagesRU.loadingMessage;
-
+    
     return (props) => {
         const [send, setSend] = useState(false);
         const [error, setError] = useState(false);

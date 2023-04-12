@@ -17,29 +17,30 @@ function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps)
 
   const messFields = lang === 'EN' ? messFieldsEN : messFieldsRU
   const modalFieldsInterface = lang === 'EN' ? modalFieldsInterfaceEN : modalFieldsInterfaceRU
-
-  async function formSend(ref:React.MutableRefObject<null>) {
-    if(ref.current){
-        loadingSend()
-        const data = new FormData(ref.current)
-        const response = await fetch('http://server.arbihmgo.beget.tech/rest/phpmailer/index.php', {
-          method: 'POST',
-          body: data
-        })
-        if(!response.ok){
-          errorSend()
-        }else{
-          successSend()
-        }
-    }
     
-  }
+  
   const validationSchema = yup.object().shape({
     user_name: yup.string().min(3, messFields.name.min).matches(/^[^\d]+$/, messFields.name.type).typeError(messFields.name.type_error).required(messFields.required),
     user_phone:yup.string().min(17, messFields.phone.min).max(20, messFields.phone.max).required(messFields.required),
     user_comment: yup.string().required(messFields.required)
   })
- 
+    async function formSend(data: any) {
+      loadingSend()
+      const response = await fetch('http://localhost:3001/mail', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      if(response.status !== 200){ 
+      errorSend()
+      }
+      else{
+        successSend()
+      }
+    
+    }
   return (
     <Formik
         initialValues={{
@@ -49,7 +50,17 @@ function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps)
         }}
         validationSchema={validationSchema}
         validateOnBlur
-        onSubmit={values => formSend(form)}
+        onSubmit={values =>{
+          const data = {
+            order: `
+            <span style="font-size: 20px;">Имя</span>: <span style="color: red; font-size: 22px;">${values.user_name}</span> <br> 
+            <span style="font-size: 20px;">Телефон</span>: <span style="color: red; font-size: 22px;">${values.user_phone}</span> <br> 
+            <span style="font-size: 20px;"> Комментарий</span>: <span style="color: red; font-size: 20px;">${values.user_comment}</span>
+            `,
+            type: 'Заявка на работу'
+          }
+          formSend(data)
+        }}
         >
           {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
    

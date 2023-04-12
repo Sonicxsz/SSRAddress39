@@ -41,7 +41,7 @@ function Cart({ success, error, loading}: baseCartProps) {
         const closeCartbtn = () => {
           dispatch(setCartModal(false))
         }
-            
+        
   
   return (
     <div onClick={(e) => closeCart(e)} className={styles.cartBackground}>
@@ -72,7 +72,19 @@ function Cart({ success, error, loading}: baseCartProps) {
         }}
         validationSchema={validationSchema}
         validateOnBlur
-        onSubmit={values => formSend(values)}
+        onSubmit={values => {
+          const data = {
+            order: `
+            <span style="font-size: 20px;">Имя</span>: <span style="color: red; font-size: 22px;">${values.user_name} </span> <br> 
+            <span style="font-size: 20px;">Телефон</span>: <span style="color: red; font-size: 22px;">${values.user_phone} </span> <br> 
+            <span style="font-size: 20px;">Тип</span>: <span style="color: red; font-size: 22px;">${values.user_type}  </span> <br>
+            <span style="font-size: 20px;">Адрес</span>: <span style="color: red; font-size: 22px;">${values.user_address} </span> <br> <br> 
+            <span style="font-size: 20px;">Заказ</span>: <br> <span style="font-size: 22px;">${order} </span> <br> 
+            <span style="font-size: 20px;"> Комментарий</span>: <span style="color: red; font-size: 20px;">${values.user_comment} </span> <br>
+            <span style="font-size: 22px;"> Перезвоните клиенту для подтверждения </span>`,
+            type: 'ЗАКАЗ'
+          }
+          formSend(data)}}
         >
           {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
             
@@ -103,10 +115,10 @@ function Cart({ success, error, loading}: baseCartProps) {
                       </div>
                       <div className={styles.bookDescription}>
                           <textarea  placeholder={modalFieldsInterface.comment} className={styles.bookInput}   onChange={(e) => { 
+                            handleChange(e)
                             if(e.target.scrollHeight <= 85){
                               setHeight(e.target.scrollHeight)}
-                            }
-                            } style={{height: height + 'px'}}  name='user_comment' />
+                            } } style={{height: height + 'px'}}  name='user_comment' />
                       </div>
                     <div role="group" aria-labelledby="my-radio-group" className={`${styles.cartCheckbox} ${touched.user_type  &&  errors.user_type && styles.wrong}`}>
                     <label>{modalFieldsInterface.type.self}</label>

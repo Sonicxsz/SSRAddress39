@@ -1,4 +1,6 @@
-import { useAppSelector } from '@/common/hooks/useRedux';
+import { useAppSelector, useAppDispatch } from '@/common/hooks/useRedux';
+import { clearCart } from '@/store/cartSlice';
+import { setCartModal } from '@/store/controlSlice';
 import { messageProps } from '../../../types/types';
 import LogoComponent from '../../svg/LogoComponent';
 import styles from './message.module.css';
@@ -10,17 +12,17 @@ function Message({
     message,
     Icon,
     loading,
-    clearCart,
     cart = false,
 }: messageProps) {
     const lang = useAppSelector((state) => state.languageSlice.language);
+    const dispacth = useAppDispatch()
     const interfaceLang = lang === 'RU' ? messageRu : messageEn;
-
+   
     return (
         <div className={styles.messageWrapper}>
             <div className={styles.bookWrapper}>
                 <div className={styles.bookLabel}>
-                    {!loading && (
+                    { (
                         <>
                             <span>{interfaceLang.status} </span>
                             <span className={`${styles.logo} ${styles.black}`}>
@@ -41,8 +43,9 @@ function Message({
                         <Link href={'/'}>
                             <button
                                 onClick={() => {
-                                    if (cart && clearCart) {
-                                        clearCart();
+                                    if (cart) {
+                                        dispacth(clearCart());
+                                        dispacth(setCartModal(false))
                                     }
                                 }}
                             >

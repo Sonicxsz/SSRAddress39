@@ -120,7 +120,7 @@
   }
   .bookControl button {
     border-radius: 5px;
-    height: 35px;
+    height: 45px;
     background: unset;
     border: 2px solid var(--secondary);
     color: var(--secondary);
@@ -179,12 +179,12 @@
     display: flex;
     flex-direction: column;
     width: 520px;
-    min-height: 620px;
+    min-height: 550px;
     background-color: var(--white);
     margin: 40px auto 100px;
-    padding: 20px 30px;
+    padding: 20px 30px 4px;
     color: var(--black);
-    
+    justify-content: center;
   }
 
   .cartTitle{
@@ -238,10 +238,7 @@
         padding: 5px 10px;
         
       }
-      .bookControl button{
-        width: 180px;
-        height: 40px;
-      }
+   
     
     }
 

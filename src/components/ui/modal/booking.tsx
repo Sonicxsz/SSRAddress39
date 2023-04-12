@@ -24,21 +24,7 @@ import { FormProps } from '@/types/types';
   const modalFieldsInterface = lang === 'EN' ? modalFieldsInterfaceEN : modalFieldsInterfaceRU
 
 
-  async function formSend(ref:React.MutableRefObject<null>) {
-    loadingSend()
-    if(ref.current){
-        const data = new FormData(ref.current)
-        const response = await fetch('http:/saest/phpmailer/booking.php', {
-          method: 'POST',
-          body: data
-        })
-        if(!response.ok){
-          errorSend()
-        }else{
-          successSend()
-        }
-    }
-  }
+
   
   const validationSchema = yup.object().shape({
     user_name: yup.string().min(3, messFields.name.min).matches(/^[^\d]+$/, messFields.name.type).typeError(messFields.name.type_error).required(messFields.required),
@@ -50,7 +36,23 @@ import { FormProps } from '@/types/types';
   const minDate = getDateToday()
   const maxDate = getDateToday(2)
   
+  async function formSend(data: any) {
+    loadingSend()
+    const response = await fetch('http://localhost:3001/mail', {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+    if(response.status !== 200){ 
+    errorSend()
+    }
+    else{
+      successSend()
+    }
   
+  }
   
   return (
     <Formik
@@ -66,8 +68,18 @@ import { FormProps } from '@/types/types';
     validationSchema={validationSchema}
     validateOnBlur
     onSubmit={(values) => {
-            formSend(form)
-        
+        const data = {
+          order: `
+          <span style="font-size: 20px;">Имя</span>: <span style="color: red; font-size: 22px;">${values.user_name} </span> <br> 
+          <span style="font-size: 20px;">Телефон</span>: <span style="color: red; font-size: 22px;">${values.user_phone} </span> <br> 
+          <span style="font-size: 20px;">Дата и время</span>: <span style="color: red; font-size: 22px;">${values.user_date} : ${values.user_time} </span> <br>
+          <span style="font-size: 20px;">Колличество мест</span>: <span style="color: red; font-size: 22px;">${values.user_count} </span> <br> 
+          <span style="font-size: 20px;"> Комментарий</span>: <span style="color: red; font-size: 20px;">${values.user_comment}</span> <br>
+          <span style="font-size: 22px;"> Перезвоните клиенту для подтверждения </span>'
+          `,
+          type: 'БРОНИРОВАНИЕ'
+        }
+        formSend(data)
     }}
     >
       {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(

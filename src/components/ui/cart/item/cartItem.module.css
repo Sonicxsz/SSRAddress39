@@ -137,3 +137,8 @@ margin: 0;
   
   }
   
+  @media (max-width: 350px) {
+    .wrapper{
+        gap: 4px;
+    }
+  }
