@@ -20,11 +20,11 @@
     z-index: 100;
 }
 
-.menuItemWrapper img {
+
+.img{
     width: 100%;
     object-fit: contain;
 }
-
 .menuPageTitle {
     width: 100%;
     text-align: center;
@@ -69,7 +69,7 @@
         overflow: hidden;
       
     }
-    .menuItemWrapper img {
+    .img {
         object-fit: cover;
     }
 
