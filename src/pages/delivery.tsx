@@ -17,7 +17,7 @@ export default function Delevery({data}:deleveryProps) {
 
 
 export  const getStaticProps: GetStaticProps<deleveryProps> = async (context) => {
-	const res = await fetch('http://90.156.209.94:3001/api/v1/items')
+	const res = await fetch('https://90.156.209.94:3001/api/v1/items')
 	const data = await res.json() 
 	
 	return {

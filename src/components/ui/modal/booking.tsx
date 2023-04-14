@@ -38,7 +38,7 @@ import { FormProps } from '@/types/types';
   
   async function formSend(data: any) {
     loadingSend()
-    const response = await fetch('http://90.156.209.94:3001/mail', {
+    const response = await fetch('https://90.156.209.94:3001/mail', {
       headers: {
         'Content-Type': 'application/json'
       },
