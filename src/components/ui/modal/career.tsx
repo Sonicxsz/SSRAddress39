@@ -26,7 +26,7 @@ function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps)
   })
     async function formSend(data: any) {
       loadingSend()
-      const response = await fetch('http://90.156.209.94:3001/mail', {
+      const response = await fetch('http://localhost:3001/mail', {
         headers: {
           'Content-Type': 'application/json'
         },
