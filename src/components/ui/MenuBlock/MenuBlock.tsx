@@ -18,7 +18,7 @@ function MainMenu() {
                     alt="Imagdwadaw"
                 />
             </div>
-            <Link href={'/menu'}>
+            <Link href={'/menuPage'}>
                 <button className={styles.mainMenuBtn}>{langMenu}</button>
             </Link>
         </div>

@@ -142,18 +142,18 @@ export const countOfPeopleEN = [
  export const MainMenuEN = [
 		{
 			name: "Children's menu",
-			img: "assets/mainMenu/3.jpg",
-			src: "assets/pdf/Child.pdf",
+			img: "/assets/mainMenu/3.jpg",
+			src: "/assets/pdf/Child.pdf",
 		},
 		{
 			name: "Main menu",
-			img: "assets/mainMenu/2.jpg",
-			src: "assets/pdf/Food.pdf",
+			img: "/assets/mainMenu/2.jpg",
+			src: "/assets/pdf/Food.pdf",
 		},
 		{
 			name:  "Wine",
-			img: "assets/mainMenu/1.jpg",
-			src: "assets/pdf/Wine.pdf",
+			img: "/assets/mainMenu/1.jpg",
+			src: "/assets/pdf/Wine.pdf",
 		},
 	];
 
