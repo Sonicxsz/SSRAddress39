@@ -3,9 +3,31 @@
     width: 100%;
     margin-top: 200px;
     gap: 20px;
-    padding: 0 50px 100px;
+    padding: 0 50px 130px;
+    position: relative;
 }
 
+.whiteLine{
+    background: url('../../../../public/assets/svg/arrowD.svg') no-repeat 50% 25%;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 80px;
+    height: 80px;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: height 0.1s ease-out;
+}
+.whiteLine:hover{
+    width: 83px;
+    height: 83px;
+}
 @media (max-width: 1024px) {
     .mainContent {
         margin-top: 130px;
@@ -16,6 +38,9 @@
     .mainContent {
         margin-top: 100px;
         padding: 10px 10px;
+    }
+    .whiteLine{
+        display: none;
     }
 }
 

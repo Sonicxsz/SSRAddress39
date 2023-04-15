@@ -2,11 +2,13 @@ import { useAppSelector } from '@/common/hooks/useRedux';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './menuBlock.module.css';
-
+import { useEffect } from 'react';
 function MainMenu() {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const langMenu = lang === 'EN' ? 'Open full menu' : 'Открыть полное меню';
+    useEffect(() => {
 
+    }, [])
     return (
         <div className={styles.mainMenuWrapper}>
             <div className={styles.mainMenuItem}>
