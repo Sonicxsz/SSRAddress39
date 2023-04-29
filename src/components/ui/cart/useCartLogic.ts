@@ -7,10 +7,7 @@ import {func} from '../../../common/hooks/withMessage'
         
         
         
-        
 export function useCartLogic(succes:func, error:func, loading:func) {
-         
-
   const [height, setHeight] = useState(42)
   const items = useAppSelector(state => state.cartItemsSlice.items)
   const lang = useAppSelector(state => state.languageSlice.language)

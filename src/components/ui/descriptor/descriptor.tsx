@@ -2,13 +2,12 @@ import styles from './descriptor.module.css';
 import { descriptorEN } from '@/lang/en';
 import { descriptorRU } from '@/lang/ru';
 import { useAppDispatch, useAppSelector } from '@/common/hooks/useRedux';
-import { setModalDelevery, setModalBooking, setModalCarreer } from '@/store/controlSlice';
-import { openModal, closeModal } from '../../../common/utils/setters'
+import { setModalDelevery, setModalBooking } from '@/store/controlSlice';
+import { openModal } from '../../../common/utils/setters'
 
 function Descriptor() {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const data = lang === 'EN' ? descriptorEN : descriptorRU;
-    const {modalBooking, modalCarreer, modalDelevery} = useAppSelector(state => state.controlSlice)
     const dispatch = useAppDispatch();
 
 

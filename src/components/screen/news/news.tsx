@@ -1,13 +1,18 @@
 import React from 'react'
 import styles from './news.module.css'
 import Image from 'next/image'
+import UnderBook from '@/components/ui/underBook/underBook'
+import { useAppSelector } from '@/common/hooks/useRedux'
  function News() {
   return (
     <div className={styles.container}>
-        <h2 className={styles.date}>Апрель 2023</h2>
+        <h2 className={styles.mainDate}>Апрель 2023</h2>
         <h1 className={styles.mainTitle}>Пасхальное предложение от команды ресторана Адрес39</h1>
+
         <div className={styles.content}>
+
             <div className={styles.description}>
+                
                 <p>
                 По сложившейся традиции ужины проводят каждую вторую среду месяца. В зависимости от тематики бренд-шеф Виктор Белей разрабатывает спешл меню, которое становится идеальным гастрономическим сопровождением для изысканных вин. Расписание на апрель уже определено:
                 </p>
@@ -19,8 +24,11 @@ import Image from 'next/image'
                     <li>
                     26 апреля — «В преддверии 1 мая». «Мир! Труд! Май!» — гласит лозунг праздника, который изначально посвящался трудящимся, а в нашей стране немалую их часть составили труженики сельского хозяйства. Потому в преддверии даты «Ухват» проведет знакомство с крестьянскими винами. Для дегустации подобраны экземпляры из Бургундии и других регионов.
                     </li>
+                    
+                    
+                    
                 </ul>
-                <p>
+                <p className={styles.last}>
                 Количество мест для каждого ужина ограничено, поэтому о брони стоит позаботиться заранее. Подробнее по телефону — +7 (977) 125-51-77.
                     Сбор гостей — 17:30
                     Начало — 18:00
@@ -28,9 +36,11 @@ import Image from 'next/image'
                 </p>
             </div>
             <div className={styles.image}>
-                <Image alt='someImage' width={400} height={1200} src={'https://thumb.tildacdn.com/tild3434-6538-4531-b431-326532323133/-/resize/460x/-/format/webp/_.jpg'} />  
+                <Image alt='someImage' width={600} height={760} src={'/assets/news/easter.jpg'} />  
             </div>
         </div>
+        <UnderBook/>
+
     </div>
   )
 }

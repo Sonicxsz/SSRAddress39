@@ -31,7 +31,7 @@ export default function HomePage() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           
             window.scrollTo({
-                top: rect.top + scrollTop,
+                top: rect.top + scrollTop + 82,
                 behavior: 'smooth'
               });
            
@@ -68,13 +68,16 @@ export default function HomePage() {
                         <Corousel />
                     </div>
                     <div onClick={handleDownClick} className={styles.whiteLine}></div>
+                    
                 </div>
                 <div
-                    style={{ backgroundColor: '#fff', padding: '20px 0 20px' }}
+                    // style={{ backgroundColor: '#fff', padding: '20px 0 20px' }}
                 >
                     <MainMenu />
                 </div>
                 <Contacts refs={contactsRef} />
+                <div>
+                </div>
             </div>
         </>
     );

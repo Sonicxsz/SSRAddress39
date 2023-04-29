@@ -13,7 +13,8 @@ import { withMessageArgs } from '@/types/types';
     closeCart?: (e:any) => void,
     closeCartbtn?: func
 }
-export type func = () => void
+export type func = (arg?: any) => void
+
 function withMessage(BaseComponent:({loading, success, error, closeCart, closeCartbtn}:newModalProps) => JSX.Element, cart:boolean=false, lang:string): React.ComponentType<newModalProps> {
     const succesMessage = lang === 'EN' ? DialogModalMessagesEN.succesMessage : DialogModalMessagesRU.succesMessage;
     const failMessage = lang === 'EN' ? DialogModalMessagesEN.failMessage : DialogModalMessagesRU.failMessage;

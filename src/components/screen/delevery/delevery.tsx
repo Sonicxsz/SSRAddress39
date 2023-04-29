@@ -107,7 +107,7 @@ import Head from "next/head";
                     content="Адрес39,ресторан,винный бар,винные бары,ресторан в Москве,разная кухня москва,МО ресторан,лучшие блюда в Москве,доставка,самовывоз,официальный сайт ресторана Адрес39,ресторан вино меню, бронирование стола"
                 />
                 <link rel="icon" href="/favicon.ico" />
-          </Head>
+        </Head>
 		
 		<div className={styles.pageWrapper}>
 			 <CartButton openCart={openCart} />

@@ -7,6 +7,8 @@ import * as yup from "yup";
 import styles from './form.module.css'
 import { useAppSelector } from '@/common/hooks/useRedux';
 import { FormProps } from '@/types/types';
+import { func } from '@/common/hooks/withMessage';
+import { mainService } from '@/service/main.service';
 
 
 function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps) {
@@ -18,29 +20,13 @@ function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps)
   const messFields = lang === 'EN' ? messFieldsEN : messFieldsRU
   const modalFieldsInterface = lang === 'EN' ? modalFieldsInterfaceEN : modalFieldsInterfaceRU
     
-  
+  const {formSend} = mainService
   const validationSchema = yup.object().shape({
     user_name: yup.string().min(3, messFields.name.min).matches(/^[^\d]+$/, messFields.name.type).typeError(messFields.name.type_error).required(messFields.required),
     user_phone:yup.string().min(17, messFields.phone.min).max(20, messFields.phone.max).required(messFields.required),
     user_comment: yup.string().required(messFields.required)
   })
-    async function formSend(data: any) {
-      loadingSend()
-      const response = await fetch('http://localhost:3001/mail', {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: JSON.stringify(data)
-      })
-      if(response.status !== 200){ 
-      errorSend()
-      }
-      else{
-        successSend()
-      }
-    
-    }
+  
   return (
     <Formik
         initialValues={{
@@ -59,7 +45,7 @@ function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps)
             `,
             type: 'Заявка на работу'
           }
-          formSend(data)
+          formSend(data, loadingSend, errorSend, successSend)
         }}
         >
           {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
