@@ -40,13 +40,13 @@
     margin-top: 25px;
     color: var(--whiteHover);
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .timeWorkText {
     color: var(--white);
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     margin-top: 5px;
 }
 
@@ -54,13 +54,13 @@
     margin-top: 25px;
     color: var(--whiteHover);
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .contactsAdressText {
     color: var(--white);
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     margin-top: 5px;
 }
 

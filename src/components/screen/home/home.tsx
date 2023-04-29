@@ -6,6 +6,7 @@ import Descriptor from '@/components/ui/descriptor/descriptor';
 import Corousel from '@/components/ui/carousel/carousel';
 import MainMenu from '@/components/ui/MenuBlock/MenuBlock';
 import styles from './mainPage.module.css';
+import NewsBar from '@/components/ui/newsBar/NewsBar';
 const Contacts = dynamic(() => import('../../ui/contacts/contacs'));
 
 
@@ -67,14 +68,13 @@ export default function HomePage() {
                     <div className={styles.corouselMain}>
                         <Corousel />
                     </div>
-                    <div onClick={handleDownClick} className={styles.whiteLine}></div>
+                    {/* <div onClick={handleDownClick} className={styles.whiteLine}></div> */}
                     
                 </div>
-                <div
-                    // style={{ backgroundColor: '#fff', padding: '20px 0 20px' }}
-                >
+                <div>
                     <MainMenu />
                 </div>
+                
                 <Contacts refs={contactsRef} />
                 <div>
                 </div>
