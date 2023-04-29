@@ -14,7 +14,7 @@
 .navItem {
     display: inline-block;
     font-family: var(--ibm);
-    font-weight: 300;
+    font-weight: 400;
     cursor: pointer;
     transition: color 0.2s linear;
 }

@@ -8,7 +8,7 @@ const Spinner = (props) => (
             xmlSpace="preserve"
             {...props}
         >
-            <rect width="100%" height="100%" fill="#FFF" />
+            <rect width="100%" height="100%" fill="#fff0" />
             <g>
                 <path d="M38.52 33.37 21.36 16.2A63.6 63.6 0 0 1 59.5.16v24.3a39.5 39.5 0 0 0-20.98 8.92z" />
                 <path

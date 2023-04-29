@@ -49,7 +49,7 @@ function Cart({ success, error, loading}: baseCartProps) {
           <AiOutlineClose onClick={closeCartbtn}/>
       </div>
         <div className={styles.cartWrapper}>
-        <div className={styles.cartTitle}>
+        {/* <div className={styles.cartTitle}>
             <h2>{interFaceLang.order}:</h2>
         </div>
         <div className={styles.cartItems}>
@@ -148,7 +148,7 @@ function Cart({ success, error, loading}: baseCartProps) {
           )}
         
         </Formik>
-        </div>
+        </div> */}
     </div>
     </div>
   )

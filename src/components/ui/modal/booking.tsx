@@ -10,6 +10,7 @@ import { messFieldsEN, modalFieldsInterfaceEN} from '@/lang/en';
 import { messFieldsRU, modalFieldsInterfaceRU } from '@/lang/ru';
 import { useAppSelector } from '@/common/hooks/useRedux';
 import { FormProps } from '@/types/types';
+import { mainService } from '@/service/main.service';
 
 
 
@@ -35,24 +36,8 @@ import { FormProps } from '@/types/types';
   
   const minDate = getDateToday()
   const maxDate = getDateToday(2)
-  
-  async function formSend(data: any) {
-    loadingSend()
-    const response = await fetch('https://server.xn--39-6kcqf9di.xn--p1ai/mail', {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify(data)
-    })
-    if(response.status !== 200){ 
-    errorSend()
-    }
-    else{
-      successSend()
-    }
-  
-  }
+  const {formSend} = mainService
+
   
   return (
     <Formik
@@ -79,7 +64,7 @@ import { FormProps } from '@/types/types';
           `,
           type: 'БРОНИРОВАНИЕ'
         }
-        formSend(data)
+        formSend(data, loadingSend, errorSend, successSend)
     }}
     >
       {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(

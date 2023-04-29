@@ -27,16 +27,17 @@
     min-height: 100vh;
     background: linear-gradient(
             0deg,
-            rgba(0, 0, 0, 0.3) 0%,
-            rgba(0, 0, 0, 0.3) 100%
+            rgba(0, 0, 0, 0.377) 0%,
+            rgba(0, 0, 0, 0.381) 100%
         ),
-        url('../../public/assets/bg/bg1.jpg');
+        url('../../public/assets/bg/bgnew1.jpg');
+    
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    color: white;
+    color: rgb(255, 255, 255);
     position: relative;
 }

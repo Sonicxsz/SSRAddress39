@@ -1,0 +1,138 @@
+.container{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: auto;
+    padding: 20px 10px; 
+    grid-area: booking;
+}
+.group{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.container h2{
+    font-weight: 300;
+}
+.wrapper{
+    display: flex;
+    gap: 20px;
+}
+.underInput{
+    -webkit-appearance: none;
+    border:0.5px solid black;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px;
+    font-weight: 300;
+    width: 100%;
+}
+
+.btnSend{
+    width: 330px;
+    background-color: var(--green);
+    height: 40px;
+    border: none;
+    font-size: 17px;
+    color: var(--white);
+    cursor: pointer;
+    padding: 5px;
+    transition: background 0.2s linear;
+    border-radius: 5px;
+    
+}
+.arrow{
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.arrow:after{
+    content: '\0025BC';
+    color: rgb(24, 24, 24);
+    right: 5px;
+    top: -5px;
+    height: 20px;
+    font-size: 14px;
+    padding: 15px 0 0 8px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+
+}
+
+.btnSend:hover{
+    background-color: #34d707;
+}
+
+@media (max-width: 1060px) {
+    .container{
+     
+       margin: 0 auto;
+       color: black;
+        background-color: #fff;
+    }
+    .wrapper{
+        flex-direction: column;
+        width: 80%;
+        align-items:center;
+    }
+    .btnSend{
+        height: 45px;
+        width: 80%;
+    }
+    .underInput{
+        height: 45px;
+        width: 100%;
+        
+    }
+}
+
+@media (max-width: 720px) {
+
+    .wrapper{
+        flex-direction: column;
+        width: 100%;
+    }
+ 
+}
+
+
+
+@media (max-width: 420px) {
+    .container{
+        width: 100%;
+    }
+    .group{
+        flex-direction: column;
+    }
+    .wrapper{
+        flex-direction: column;
+    }
+    .btnSend{
+        height: 50px;
+        width: 100%;
+    }
+    .underInput{
+        height: 50px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 340px) {
+  
+    .wrapper{
+        flex-direction: column;
+    }
+    .btnSend{
+        height: 50px;
+        width: 100%;
+    }
+    .underInput{
+        height: 50px;
+        width: 100%;
+        text-align: center;
+    }
+}

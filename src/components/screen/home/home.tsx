@@ -1,17 +1,18 @@
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLayoutLogic } from '@/layout/useLayoutLogic';
 import Descriptor from '@/components/ui/descriptor/descriptor';
 import Corousel from '@/components/ui/carousel/carousel';
 import MainMenu from '@/components/ui/MenuBlock/MenuBlock';
 import styles from './mainPage.module.css';
-
-
+import NewsBar from '@/components/ui/newsBar/NewsBar';
 const Contacts = dynamic(() => import('../../ui/contacts/contacs'));
+
+
 export default function HomePage() {
     const { scroll, toContact, contactsRef } = useLayoutLogic();
-
+    const [arrow, setArrow] = useState(false)
     useEffect(() => {
         let timeout: any;
         if (toContact) {
@@ -24,6 +25,20 @@ export default function HomePage() {
         };
     }, [toContact]);
 
+    function handleDownClick(e:React.MouseEvent<HTMLDivElement>){
+        if(e.target){
+            const node = e.target as HTMLDivElement
+            const rect = node.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+            window.scrollTo({
+                top: rect.top + scrollTop + 82,
+                behavior: 'smooth'
+              });
+           
+        } 
+    }
+    
     return (
         <>
             <Head>
@@ -48,18 +63,21 @@ export default function HomePage() {
             </Head>
 
             <div>
-                <div className={styles.mainContent}>
+                <div id='firstSection' className={styles.mainContent}>
                     <Descriptor />
                     <div className={styles.corouselMain}>
                         <Corousel />
                     </div>
+                    {/* <div onClick={handleDownClick} className={styles.whiteLine}></div> */}
+                    
                 </div>
-                <div
-                    style={{ backgroundColor: '#fff', padding: '20px 0 20px' }}
-                >
+                <div>
                     <MainMenu />
                 </div>
+                
                 <Contacts refs={contactsRef} />
+                <div>
+                </div>
             </div>
         </>
     );

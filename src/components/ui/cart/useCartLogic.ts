@@ -7,10 +7,7 @@ import {func} from '../../../common/hooks/withMessage'
         
         
         
-        
 export function useCartLogic(succes:func, error:func, loading:func) {
-         
-
   const [height, setHeight] = useState(42)
   const items = useAppSelector(state => state.cartItemsSlice.items)
   const lang = useAppSelector(state => state.languageSlice.language)
@@ -38,11 +35,11 @@ export function useCartLogic(succes:func, error:func, loading:func) {
       
     }).join('')
 
-
+    //https://server.xn--39-6kcqf9di.xn--p1ai/mail
 
    async function formSend(data: any) {
     loading()
-    const response = await fetch('https://server.xn--39-6kcqf9di.xn--p1ai/mail', {
+    const response = await fetch('http://localhost:3001/mail', {
       headers: {
         'Content-Type': 'application/json'
       },

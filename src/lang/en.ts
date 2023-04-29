@@ -167,3 +167,5 @@ export const countOfPeopleEN = [
 			yandex: 'Yandex Food'
 		
 	}
+
+
