@@ -8,7 +8,7 @@
     background: url('/assets/menu/menufull.jpg');
     background-size: cover;
     background-repeat:no-repeat;
-    background-position: center bottom;
+    background-position: center center;
 
 }
 .menuHeader{
@@ -49,7 +49,7 @@
     cursor: pointer;
     transition: background-color 0.3s linear;
     justify-self: flex-end;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .mainMenuBtn:hover {
     background-color: rgb(49, 234, 24);
@@ -114,7 +114,7 @@
         background: url('/assets/menu/menufull600.jpg');
         background-size: cover;
         background-repeat:no-repeat;
-        background-position: center bottom;
+        background-position: left bottom;
     
     }
 }
