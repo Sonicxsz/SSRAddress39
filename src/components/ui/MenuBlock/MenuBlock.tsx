@@ -12,15 +12,15 @@ function MainMenu() {
     return (
         <div className={styles.mainMenuWrapper}>
           
-            {/* <div className={styles.mainMenuItem}>
-                <Image
+           <div className={styles.mainMenuItem}>
+                {/* <Image
                     className={styles.img}
                     width={1600}
-                    height={1600}
-                    src="/assets/menu/menu.webp"
+                    height={1200}
+                    src="/assets/menu/menuimg.jpg"
                     alt="Imagdwadaw"
-                />
-            </div> */}
+                /> */}
+            </div> 
             <Link href={'/menuPage'}>
                 <button className={styles.mainMenuBtn}>{langMenu}</button>
             </Link>

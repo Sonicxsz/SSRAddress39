@@ -25,19 +25,7 @@ export default function HomePage() {
         };
     }, [toContact]);
 
-    function handleDownClick(e:React.MouseEvent<HTMLDivElement>){
-        if(e.target){
-            const node = e.target as HTMLDivElement
-            const rect = node.getBoundingClientRect();
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          
-            window.scrollTo({
-                top: rect.top + scrollTop + 82,
-                behavior: 'smooth'
-              });
-           
-        } 
-    }
+    
     
     return (
         <>
@@ -68,13 +56,13 @@ export default function HomePage() {
                     <div className={styles.corouselMain}>
                         <Corousel />
                     </div>
-                    {/* <div onClick={handleDownClick} className={styles.whiteLine}></div> */}
                     
                 </div>
+               
                 <div>
                     <MainMenu />
                 </div>
-                
+               
                 <Contacts refs={contactsRef} />
                 <div>
                 </div>
