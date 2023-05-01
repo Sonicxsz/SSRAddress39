@@ -46,3 +46,20 @@
     position: relative;
 }
 
+@media (max-width: 480) {
+    .main{
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+        position: relative;
+    }
+}
