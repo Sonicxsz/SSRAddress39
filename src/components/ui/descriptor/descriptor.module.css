@@ -54,6 +54,13 @@
         padding: 0 10px;
     }
 }
+@media (max-width: 1480px) {
+    .wrapperDescriptor {
+
+        margin-top: 2%;
+      
+    }
+}
 
 @media (max-width: 1440px) {
     .wrapper-descriptor {
