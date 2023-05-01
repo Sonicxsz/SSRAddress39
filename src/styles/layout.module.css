@@ -31,6 +31,10 @@
             rgba(0, 0, 0, 0.381) 100%
         ),
         url('../../public/assets/bg/bg2.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     
     background-position: center center;
     background-repeat: no-repeat;
@@ -41,3 +45,4 @@
     color: rgb(255, 255, 255);
     position: relative;
 }
+
