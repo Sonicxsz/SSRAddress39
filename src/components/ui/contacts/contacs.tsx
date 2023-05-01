@@ -7,7 +7,6 @@ import { contactsEN } from '@/lang/en';
 import { ContactsProps } from '@/types/types';
 function Contacts({ refs }: ContactsProps) {
     const lang = useAppSelector((state) => state.languageSlice.language);
-    const isMidl = useAppSelector((state) => state.languageSlice.middle);
     
     const defaultState = {
         center: [55.7744855, 37.471647],
@@ -40,7 +39,7 @@ function Contacts({ refs }: ContactsProps) {
             <div className={styles.timeWork}>
                 {langData.worktime}
                 <div className={styles.timeWorkText}>
-                    {langData.days} 11:00 - 00:00
+                    {langData.days} 09:00 - 00:00
                 </div>
             </div>
             <div className={styles.contactsAdress}>
