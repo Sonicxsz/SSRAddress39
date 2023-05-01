@@ -24,7 +24,7 @@
 
 .main {
     width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     background: linear-gradient(
             0deg,
             rgba(0, 0, 0, 0.377) 0%,
