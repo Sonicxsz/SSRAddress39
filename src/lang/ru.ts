@@ -175,6 +175,11 @@ export const cartRU = {
 			img: "/assets/mainMenu/3.jpg",
 			src: "/assets/pdf/Child.pdf",
 		},
+    {
+			name: "Летнее меню",
+			img: "/assets/mainMenu/1.jpg",
+			src: "/assets/pdf/Wine.pdf",
+		},
 		{
 			name: "Основное меню",		
 			img: "/assets/mainMenu/2.jpg",
@@ -185,6 +190,7 @@ export const cartRU = {
 			img: "/assets/mainMenu/1.jpg",
 			src: "/assets/pdf/Wine.pdf",
 		},
+  
 	];
 
   export const DeleveryLangRu = {
