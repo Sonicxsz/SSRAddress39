@@ -147,8 +147,8 @@ export const countOfPeopleEN = [
 		},
     {
 			name:  "Summer menu",
-			img: "/assets/mainMenu/1.jpg",
-			src: "/assets/pdf/Wine.pdf",
+			img: "/assets/mainMenu/summer.jpg",
+			src: "/assets/pdf/summer.pdf",
 		},
 		{
 			name: "Main menu",
