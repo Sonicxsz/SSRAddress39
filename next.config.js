@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['avatars.mds.yandex.net', 'eda.yandex.ru', 'thumb.tildacdn.com']
+    domains: ['avatars.mds.yandex.net', 'eda.yandex.ru', 'thumb.tildacdn.com', 'eda.yandex']
   },
   i18n: {
     locales: ['en', 'ru'],
