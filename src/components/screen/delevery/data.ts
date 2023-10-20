@@ -1,7 +1,7 @@
 
 export const filters = [
 	{name:{"EN":'Breakfast',"RU":'Завтрак'}, data:'breakfast'},
-	{name:{"EN":'Summer menu',"RU":'Летнее меню'}, data:'summer'},
+	{name:{"EN":'Autumn menu',"RU":'Осеннее меню'}, data:'autumn'},
  	{name:{"EN":'RAW BAR',"RU":'RAW BAR'}, data: 'rawbar'}, 
   {name:{"EN":'Sushi',"RU":'Суши'}, data: 'susi'},
   {name:{"EN":'Rolls',"RU":'Роллы'}, data: 'roll'}, 
@@ -15,14 +15,15 @@ export const filters = [
 	{name:{"EN":'Meat and poultry',"RU":'Мясо и птица' }, data: 'meatPoultry'},  
 	{name:{"EN":'Side dishes',"RU":'Гарниры' }, data:'sideDishes'},
   {name:{"EN": 'Desserts', "RU": 'Десерты'}, data:'desserts'},  
-	{name:{"EN":'Children`s menu',"RU":'Детское меню' }, data:'children'}]
+	{name:{"EN":'Children`s menu',"RU":'Детское меню' }, data:'children'}
+]
 
 
 export type filter = typeof filters[0]
 
 export const categories = {
   breakfast:{"EN":'Breakfasts until 14:00',"RU":'Завтраки до 14:00'} ,
-  summer:{"EN":'Summer menu',"RU":'Летнее меню'} ,
+  autumn:{"EN":'Autumn menu',"RU":'Осеннее меню'} ,
   rowbar:{"EN":'RAW BAR',"RU":'RAW BAR'} ,
   sushi:{"EN":'Sushi',"RU":'Суши'} ,
   rolls:{"EN":'Rolls',"RU":'Роллы'} ,

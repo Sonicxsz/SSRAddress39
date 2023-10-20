@@ -146,9 +146,9 @@ export const countOfPeopleEN = [
 			src: "/assets/pdf/Child.pdf",
 		},
     {
-			name:  "Summer menu",
-			img: "/assets/mainMenu/summer.jpg",
-			src: "/assets/pdf/summer.pdf",
+			name:  "Autumn menu",
+			img: "/assets/mainMenu/autumn.jpg",
+			src: "/assets/pdf/Autumn.pdf",
 		},
 		{
 			name: "Main menu",
