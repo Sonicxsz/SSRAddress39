@@ -136,7 +136,7 @@ import Head from "next/head";
 					return <CardMini count={i.count} gramm={i.grams} id={i.id} img={i.img} lang={lang}  name={i.name} price={i.price} key={i.id} />
 				})
 				: i.items.map((i) => {                                      
-					return <Card lang={lang} gramm={i.grams} title={i.title[lang]} count={i.count} modifier={i.modifier} key={i.id} id={i.id} name={i.name} price={i.price} img={i.img}  />;
+					return <Card lang={lang} gramm={i.grams} title={i?.title && i?.title[lang]} count={i.count} modifier={i.modifier} key={i.id} id={i.id} name={i.name} price={i.price} img={i.img}  />;
 				})}
 				</div>
 			</div>)
