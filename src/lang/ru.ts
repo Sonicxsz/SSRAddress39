@@ -183,7 +183,7 @@ export const cartRU = {
 		{
 			name: "Основное меню",		
 			img: "/assets/mainMenu/2.jpg",
-			src: "assets/pdf/Food.pdf",
+			src: "/assets/pdf/Food.pdf",
 		},
 		{
 			name: "Вино",
