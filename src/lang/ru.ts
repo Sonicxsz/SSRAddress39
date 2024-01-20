@@ -176,9 +176,9 @@ export const cartRU = {
 			src: "/assets/pdf/Child.pdf",
 		},
     {
-			name: "Осеннее меню",
-      img: "/assets/mainMenu/autumn.jpg",
-			src: "/assets/pdf/Autumn.pdf",
+			name: "Зимнее меню",
+      img: "/assets/mainMenu/season.jpg",
+			src: "/assets/pdf/winter.pdf",
 		},
 		{
 			name: "Основное меню",		

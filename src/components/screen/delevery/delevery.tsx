@@ -85,7 +85,6 @@ import Head from "next/head";
 
 	const openCart = () =>{
 		dispacth(setCartModal(true))
-		console.log('hello')
 	}
 
 	
