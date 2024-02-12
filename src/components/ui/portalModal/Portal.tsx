@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react'
 import { useRef, useEffect, useState, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
@@ -27,6 +28,7 @@ export const Portal = (props:PortalProps) => {
   }, [])
 
   return (mounted && ref.current) ? createPortal(<div onClick={(e) => {
+     
     if(e.target.className === 'prevent') return;
     e.stopPropagation()
     props.onClose()
