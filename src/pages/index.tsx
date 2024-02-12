@@ -9,6 +9,7 @@ export default function Home() {
     return (
         <Layout>
             <HomePage />
+            <div id="portal" />
         </Layout>
     );
 }
