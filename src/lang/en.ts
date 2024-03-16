@@ -145,11 +145,7 @@ export const countOfPeopleEN = [
 			img: "/assets/mainMenu/3.jpg",
 			src: "/assets/pdf/Child.pdf",
 		},
-    {
-			name:  "Winter menu",
-			img: "/assets/mainMenu/season.jpg",
-			src: "/assets/pdf/winter.pdf",
-		},
+ 
 		{
 			name: "Main menu",
 			img: "/assets/mainMenu/2.jpg",

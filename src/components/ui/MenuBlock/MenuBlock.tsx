@@ -1,18 +1,14 @@
 import { useAppSelector } from '@/common/hooks/useRedux';
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './menuBlock.module.css';
 import { useEffect } from 'react';
 function MainMenu() {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const langMenu = lang === 'EN' ? 'Open full menu' : 'Открыть полное меню';
-    useEffect(() => {
-
-    }, [])
+    useEffect(() => {}, []);
     return (
         <div className={styles.mainMenuWrapper}>
-          
-           <div className={styles.mainMenuItem}>
+            <div className={styles.mainMenuItem}>
                 {/* <Image
                     className={styles.img}
                     width={1600}
@@ -20,7 +16,7 @@ function MainMenu() {
                     src="/assets/menu/menuimg.jpg"
                     alt="Imagdwadaw"
                 /> */}
-            </div> 
+            </div>
             <Link href={'/menuPage'}>
                 <button className={styles.mainMenuBtn}>{langMenu}</button>
             </Link>
