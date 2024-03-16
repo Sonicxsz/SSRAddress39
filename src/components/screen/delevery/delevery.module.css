@@ -160,22 +160,3 @@
         }
 	
 }
-/* 
-// @media (max-width: 1140px) {
-// 	.delivery-filters{
-// 		display: flex;
-// 		height: 50px;
-// 		min-width: 100%;
-// 		justify-content: center;
-// 		gap: 10px;
-// 		transition: color 0.2s linear;
-// 		margin-bottom: 20px;
-// 		padding: 5px 0;
-// 		overflow-x: auto;
-// 		.filters-item{
-// 			min-width: 155px;
-// 			font-size: 13px;
-// 		}
-			
-// 	}
-// } */
