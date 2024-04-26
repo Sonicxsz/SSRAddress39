@@ -1,5 +1,4 @@
 .menuItemWrapper {
-    width: 33%;
     height: 80%;
     position: relative;
     transition: all 0.2s linear;
@@ -21,11 +20,12 @@
     width: 100%;
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 56%;
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    font-size: 28px;
+    font-size: 1.5rem;
+    text-shadow: -1px 7px 14px rgba(0,0,0,0.51);
 }
 
 .menuItemWrapper::after {
@@ -47,19 +47,22 @@
 .menuItemWrapper:hover .line {
     width: 100%;
 }
+.black{
+    color: #1a182f;
+}
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .menuPageTitle {
         font-size: 18px;
     }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .menuItemWrapper {
         width: 80%;
         height: 500px;
         border-radius: 10px;
         overflow: hidden;
-      
+
     }
     .img {
         object-fit: cover;

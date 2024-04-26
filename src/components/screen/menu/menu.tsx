@@ -34,7 +34,7 @@ function Menu() {
 		className={styles.wrapper}>
 			<div className={styles.flex}>
 				{menuPageArr.map((i, ind) => {		
-					return <MenuItem key={ind} name={i.name} img={i.img} src={i.src} />;
+					return <MenuItem black={i.blackColor} key={ind} name={i.name} img={i.img} src={i.src} />;
 				})}
 			</div>
 	</motion.div>

@@ -25,6 +25,7 @@ export interface MenuItemProps {
     name: string;
     img: string;
     src: string;
+    black?: boolean;
 }
 
 export interface CardBase {

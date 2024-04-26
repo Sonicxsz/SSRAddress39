@@ -140,22 +140,41 @@ export const countOfPeopleEN = [
 
 
  export const MainMenuEN = [
+         {
+             name: "Lenten menu",
+             img: "/assets/mainMenu/post.jpg",
+             src: "/assets/pdf/post.pdf",
+             blackColor: true,
+         },
 		{
 			name: "Children's menu",
 			img: "/assets/mainMenu/3.jpg",
 			src: "/assets/pdf/Child.pdf",
+            blackColor: false,
+
 		},
  
 		{
 			name: "Main menu",
 			img: "/assets/mainMenu/2.jpg",
 			src: "/assets/pdf/Food.pdf",
+            blackColor: false,
+
 		},
 		{
 			name:  "Wine",
-			img: "/assets/mainMenu/1.jpg",
-			src: "/assets/pdf/Wine.pdf",
+            img: "/assets/mainMenu/1.jpg",
+            src: "/assets/pdf/Wine.pdf",
+            blackColor: false,
+
 		},
+
+         {
+             name:  "Wine by the glass",
+             img: "/assets/mainMenu/wineglass.jpg",
+             src: "/assets/pdf/wineglass.pdf",
+             blackColor: true,
+         }
    
 	];
 

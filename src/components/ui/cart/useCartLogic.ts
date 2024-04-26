@@ -39,7 +39,7 @@ export function useCartLogic(succes:func, error:func, loading:func) {
 
    async function formSend(data: any) {
     loading()
-    const response = await fetch('https://server.xn--39-6kcqf9di.xn--p1ai/mail', {
+    const response = await fetch('http://localhost:3001/mail', {
       headers: {
         'Content-Type': 'application/json'
       },

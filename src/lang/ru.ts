@@ -170,6 +170,12 @@ export const cartRU = {
 
 
   export const MainMenuRU= [
+      {
+          name: "Постное меню",
+          img: "/assets/mainMenu/post.jpg",
+          src: "/assets/pdf/post.pdf",
+          blackColor: true,
+      },
 		{
 			name: "Детское меню",
 			img: "/assets/mainMenu/3.jpg",
@@ -186,6 +192,13 @@ export const cartRU = {
 			img: "/assets/mainMenu/1.jpg",
 			src: "/assets/pdf/Wine.pdf",
 		},
+
+      {
+          name: "Вино по бокалам",
+          img: "/assets/mainMenu/wineglass.jpg",
+          src: "/assets/pdf/wineglass.pdf",
+          blackColor: true,
+      }
   
 	];
 
