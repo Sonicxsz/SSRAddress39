@@ -11,7 +11,7 @@ export const mainService = {
     },
     async  formSend<T extends object>(data: T, load:func, err:func, succ:func){
         load()
-        const response = await fetch('http://localhost:3001/mail', {
+        const response = await fetch('https://server.xn--39-6kcqf9di.xn--p1ai/mail', {
           headers: {
             'Content-Type': 'application/json'
           },
