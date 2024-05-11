@@ -140,12 +140,7 @@ export const countOfPeopleEN = [
 
 
  export const MainMenuEN = [
-         {
-             name: "Lenten menu",
-             img: "/assets/mainMenu/post.jpg",
-             src: "/assets/pdf/post.pdf",
-             blackColor: true,
-         },
+
 		{
 			name: "Children's menu",
 			img: "/assets/mainMenu/3.jpg",

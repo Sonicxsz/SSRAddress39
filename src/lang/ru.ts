@@ -170,12 +170,7 @@ export const cartRU = {
 
 
   export const MainMenuRU= [
-      {
-          name: "Постное меню",
-          img: "/assets/mainMenu/post.jpg",
-          src: "/assets/pdf/post.pdf",
-          blackColor: true,
-      },
+
 		{
 			name: "Детское меню",
 			img: "/assets/mainMenu/3.jpg",
