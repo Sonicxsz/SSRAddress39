@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     height: 1300px;
-    background: url('/assets/menu/menufull.jpg');
+    background: url('/assets/menu/menu.jpg');
     background-size: cover;
     background-repeat:no-repeat;
     background-position: center left;
@@ -70,7 +70,7 @@
     
         width: 100%;
         height: 1300px;
-        background: url('/assets/menu/menufull1200.jpg');
+        background: url('/assets/menu/menu.jpg');
         background-size: cover;
         background-repeat:no-repeat;
         background-position: center left;
@@ -109,7 +109,7 @@
     
         width: 100%;
         height: 1300px;
-        background: url('/assets/menu/menufull600.jpg');
+        background: url('/assets/menu/menu.jpg');
         background-size: cover;
         background-repeat:no-repeat;
         background-position: center left;
@@ -127,7 +127,7 @@
     
         width: 100%;
         height: 1300px;
-        background: url('/assets/menu/menufull577.jpg');
+        background: url('/assets/menu/menu.jpg');
         background-size: cover;
         background-repeat:no-repeat;
         background-position: center center;
