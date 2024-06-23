@@ -6,10 +6,10 @@ import Descriptor from '@/components/ui/descriptor/descriptor';
 import Corousel from '@/components/ui/carousel/carousel';
 import MainMenu from '@/components/ui/MenuBlock/MenuBlock';
 import styles from './mainPage.module.css';
-import NewsBar from '@/components/ui/newsBar/NewsBar';
+import IconsBar from '@/components/ui/iconBar/iconBar';
 const Contacts = dynamic(() => import('../../ui/contacts/contacs'));
-
-
+import {createPortal} from 'react-dom';
+import { UpperContacts } from '@/components/ui/upperContacts/UpperContacts';
 export default function HomePage() {
     const { scroll, toContact, contactsRef } = useLayoutLogic();
     const [arrow, setArrow] = useState(false)
@@ -31,11 +31,11 @@ export default function HomePage() {
         <>
             <Head>
                 <title>Адрес39 - Главная страница ресторана:Бронирование, Доставка, Контакты</title>
-                
-                <meta name="description" 
+
+                <meta name="description"
                     content='Адрес39 – это уникальное место в Москве, включающее в себя ресторан и бар. Огромное разнообразие блюд и напитков разных культур. Душевная атмосфера'
                 />
-                <meta name='keywords' 
+                <meta name='keywords'
                     content="Адрес39,ресторан,винный бар,ЖК комплекс, Wellton Park ,винные бары,ресторан в Москве,разная кухня москва,МО ресторан,лучшие блюда в Москве,детское меню,японское меню,классическое меню,доставка,самовывоз,официальный сайт ресторана Адрес39,ресторан блюда меню, бронирование стола"
                 />
                 <meta name="yandex-verification" content="b664a6bb74ee0f23" />
@@ -45,28 +45,37 @@ export default function HomePage() {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-               
+
 
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <div>
-                <div id='firstSection' className={styles.mainContent}>
+
+                <div>
+
+
+                </div>
+                <div id="firstSection" className={styles.mainContent}>
                     <Descriptor />
+
                     <div className={styles.corouselMain}>
                         <Corousel />
                     </div>
-                    
+
                 </div>
-               
+                {<UpperContacts scroll={scroll}/>}
                 <div>
                     <MainMenu />
                 </div>
-               
+
                 <Contacts refs={contactsRef} />
                 <div>
                 </div>
             </div>
+
         </>
     );
 }
+
+

@@ -11,7 +11,7 @@ function IconsBar() {
                 </a>
             </div>
             <div className={styles.icon}>
-                <a href="https://t.me/+79850390039">
+                <a href="https://t.me/rest39">
                     <BsTelegram color="#428bff" size={26} />
                 </a>
             </div>

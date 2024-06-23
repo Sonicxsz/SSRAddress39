@@ -5,8 +5,9 @@ import { useAppSelector } from '@/common/hooks/useRedux';
 import { contactsRU } from '@/lang/ru';
 import { contactsEN } from '@/lang/en';
 import { ContactsProps } from '@/types/types';
-import { Portal } from '../portalModal/Portal';
+
 import { useState } from 'react';
+import { Portal } from '@/components/ui/portalModal/portalModal';
 function Contacts({ refs }: ContactsProps) {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const [imgModal, setImgModal] = useState('')
@@ -16,7 +17,6 @@ function Contacts({ refs }: ContactsProps) {
     };
     const langData = lang === 'EN' ? contactsEN : contactsRU;
     const onClose = () => setImgModal('')
-    console.log(imgModal)
     return (
         <>
         <div className={styles.contactsWrapper} ref={refs}>
@@ -54,7 +54,7 @@ function Contacts({ refs }: ContactsProps) {
 
             </div>
             <div className={styles.helperWrapper}>
-                <p>Как к нам пройти ?</p>
+                <p id={'addressTarget'}>Как к нам пройти ?</p>
                 <div className={styles.helper}>
                     <div className={styles.helperItem}>
                         <div onClick={() => setImgModal('/assets/map/map1.jpg')} className={styles.helperImage}>
@@ -93,9 +93,7 @@ function Contacts({ refs }: ContactsProps) {
 
         {imgModal && (
         <Portal onClose={onClose}>
-
             <div className={styles.fullImage}>
-
                 <img className='prevent' src={imgModal} alt="" />
             </div>
         </Portal>

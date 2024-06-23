@@ -1,0 +1,52 @@
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 10000;
+}
+
+.wrapper img{
+    width: 100%;
+    height: 100%;
+}
+
+.closeBtn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+
+@media (min-width: 100px) {
+    .wrapper { width: 95%}
+}
+@media (min-width: 700px) {
+    .wrapper { width: 80%}
+}
+@media (min-width: 980px) {
+    .wrapper { width: 70%}
+}
+@media (min-width: 1100px) {
+    .wrapper { width: 60%}
+}
+@media (min-width: 1300px) {
+    .wrapper { width: 50%}
+}
+@media (min-width: 1600px) {
+    .wrapper { width: 45%}
+}
+@media (min-width: 1700px) {
+    .wrapper { width: 45%}
+}
+
+@media (min-width: 1800px) {
+    .wrapper { width: 40%}
+}

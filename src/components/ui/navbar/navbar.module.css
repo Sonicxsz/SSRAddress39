@@ -68,7 +68,9 @@
 .navLangButton:active {
     background-color: #ffffffdc;
 }
-
+.menuDropdown{
+    position: relative;
+}
 @media (max-width: 1024px) {
     .navItems {
         flex-direction: column;

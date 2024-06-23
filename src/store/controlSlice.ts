@@ -7,12 +7,19 @@ const controlSlice = createSlice({
         modalCarreer: false,
         modalBooking: false,
         modalDelevery: false,
+        menuModal: {
+            visible: false,
+            type: ''
+        },
         toContact: false,
         modalCart: false
     },
     reducers: {
         setModalCarreer(state, action) {
             state.modalCarreer = action.payload;
+        },
+        setMenuModal(state, action){
+          state.menuModal = action.payload
         },
         setModalBooking(state, action) {
             state.modalBooking = action.payload;
@@ -29,6 +36,6 @@ const controlSlice = createSlice({
     },
 });
 
-export const { setModalDelevery, setModalBooking, setModalCarreer, setToContact, setCartModal } = controlSlice.actions;
+export const { setModalDelevery, setModalBooking, setModalCarreer, setToContact, setCartModal,setMenuModal } = controlSlice.actions;
 export default controlSlice.reducer;
 

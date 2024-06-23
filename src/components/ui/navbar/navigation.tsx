@@ -1,4 +1,4 @@
-import { useAppSelector } from '@/common/hooks/useRedux';
+import { useAppDispatch, useAppSelector } from '@/common/hooks/useRedux';
 import Link from 'next/link';
 import React, { useState, useMemo } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -8,6 +8,9 @@ import styles from './navbar.module.css';
 import { NavbarEN } from '@/lang/en';
 import { NavbarRu } from '@/lang/ru';
 import { NavBarProps } from '@/types/types';
+import { setMenuModal } from '@/store/controlSlice';
+import { DropdownMenu } from '@/components/ui/navbar/dropdown/dropdown';
+import cn from 'classnames';
 
 function Navigation({
     moveToContact,
@@ -16,6 +19,8 @@ function Navigation({
     openModalDelevery,
 }: NavBarProps) {
     const [nav, setNav] = useState(false);
+    const [menuDropVisible, setMenuDropVisible] = useState(false)
+
     const lang = useAppSelector((state) => state.languageSlice.language);
     const handleCloseNav = (cb = () => {}) => {
         return () => {
@@ -25,12 +30,21 @@ function Navigation({
             cb();
         };
     };
-
+    const toogleDropdown = () => {
+        setMenuDropVisible(val => !val)
+    }
     const currentMenu = useMemo(
         () => (lang === 'RU' ? NavbarRu : NavbarEN),
         [lang],
     );
-
+    const dispatch = useAppDispatch()
+    const handleOpenMenu = (type:string) => {
+        setMenuDropVisible(false)
+        if (nav) {
+            setNav(false);
+        }
+        dispatch(setMenuModal({visible: true, type}))
+    }
     return (
         <div className={styles.navWrapper}>
             <div className={styles.navLogo}>
@@ -85,9 +99,25 @@ function Navigation({
                                     >
                                         {item.name}
                                     </span>
-                                ) : (
+                                ) : item.link === '/menuPage' ?
+                                    (
+                                        <span
+                                            onClick={(e) => {
+                                                e.stopPropagation()
+                                                handleCloseNav()
+                                                toogleDropdown()
+                                            }}
+                                            className={cn(styles.menuLink, styles.menuDropdown)}
+                                        >
+                                            {item.name}
+                                            {<DropdownMenu visible={menuDropVisible} onClose={() => setMenuDropVisible(false)} onClick={handleOpenMenu} items={menuItems}/>}
+                                        </span>
+                                    )
+                                    :(
                                     <Link
-                                        onClick={handleCloseNav()}
+                                        onClick={() => {
+                                            handleCloseNav()
+                                        }}
                                         href={item.link}
                                         className={styles.menuLink}
                                     >
@@ -112,3 +142,25 @@ function Navigation({
 }
 
 export default Navigation;
+
+
+
+
+const menuItems = [
+    {
+        title: 'Основное меню',
+        type: 'main'
+    },
+    {
+        title: 'Вино',
+        type: 'wine'
+    },
+    {
+        title: 'Вино по бокалам',
+        type: 'additionalVine'
+    },
+    {
+        title: 'Детское меню',
+        type: 'children'
+    }
+]

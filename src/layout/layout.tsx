@@ -6,6 +6,8 @@ import { useLayoutLogic } from './useLayoutLogic';
 import { useAppDispatch } from '@/common/hooks/useRedux';
 import { openModal, closeModal } from '../common/utils/setters'
 import Modal from '@/components/ui/modal/modal';
+import MenuModal from '@/components/ui/menuModal/Portal';
+
 function Layout({ children }: { children: React.ReactNode }) {
     const dispatch =useAppDispatch()
     const {
@@ -13,12 +15,14 @@ function Layout({ children }: { children: React.ReactNode }) {
         modalLang,
         isMidl,
         toContact,
+        menuModalVisible,
         modalBooking, 
         modalCarreer, 
         modalDelevery,
         setModalDelevery, 
         setModalBooking, 
-        setModalCarreer 
+        setModalCarreer ,
+        setMenuModal
     } = useLayoutLogic();
     
     
@@ -35,6 +39,8 @@ function Layout({ children }: { children: React.ReactNode }) {
                 <Modal label={modalLang.vacancy} showModal={modalCarreer} closeModal={() => closeModal(dispatch, setModalCarreer)} type="career"/>
 				<Modal label={modalLang.booking} showModal={modalBooking} closeModal={() => closeModal(dispatch,setModalBooking)} type="booking"/>
 				<Modal label={modalLang.delevery} showModal={modalDelevery} closeModal={() => closeModal(dispatch,setModalDelevery)} type="delivery"/>
+                <Modal label={modalLang.delevery} showModal={modalDelevery} closeModal={() => closeModal(dispatch,setModalDelevery)} type="delivery"/>
+                <MenuModal showModal={menuModalVisible} closeModal={() => dispatch(setMenuModal({visible:false, type: ''}))} />
                 {children}
             </div>
             <Footer>
