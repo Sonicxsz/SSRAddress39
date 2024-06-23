@@ -51,7 +51,7 @@ function MenuModal({showModal, closeModal}:MenuModal) {
             <Carousel   showThumbs={false}
                         infiniteLoop={true}
                         showStatus={false} responsive={{ }}
-                        swipeable={true}
+                        swipeable={false}
             >
                 {menus[menuType]?.map((i, ind) => {
                     return  <img key={i} src={i} alt={i} />

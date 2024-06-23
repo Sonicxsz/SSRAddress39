@@ -77,13 +77,18 @@
 	}
 }
 @media (max-width: 620px) {
-	.firstSection{
-	}
 
 	.right{
 		font-size: 14px;
 	}
-	.infoBlock{
 
+}
+
+@media (max-width: 390px) {
+
+
+	.right{
+		font-size: 12px;
 	}
+
 }
