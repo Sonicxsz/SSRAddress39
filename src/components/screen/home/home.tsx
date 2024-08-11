@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useLayoutLogic } from '@/layout/useLayoutLogic';
 import Descriptor from '@/components/ui/descriptor/descriptor';
 import Corousel from '@/components/ui/carousel/carousel';
-import MainMenu from '@/components/ui/MenuBlock/MenuBlock';
 import styles from './mainPage.module.css';
 import IconsBar from '@/components/ui/iconBar/iconBar';
 const Contacts = dynamic(() => import('../../ui/contacts/contacs'));
@@ -52,8 +51,9 @@ export default function HomePage() {
 
             <div>
 
-                <div>
 
+                <div className={styles.upperIcons}>
+                    <IconsBar />
 
                 </div>
                 <div id="firstSection" className={styles.mainContent}>
@@ -64,9 +64,29 @@ export default function HomePage() {
                     </div>
 
                 </div>
-                {<UpperContacts scroll={scroll}/>}
-                <div>
-                    <MainMenu />
+                {/*{<UpperContacts scroll={scroll}/>}*/}
+                <div className={styles.videoBlock}>
+                    <div className={styles.videoTextContainer}>
+                        <h3>Приглашаем вас провести свою пятницу в уютной атмосфере ресторана «Адрес 39».</h3>
+                        <p>Погрузитесь в настроение зажигательных каверов на полюбившиеся хиты в исполнении талантливых
+                            артистов, которых мы тщательно отбираем специально для вас. В сочетании с нашими авторскими
+                            коктейлями и изысканными блюдами такой вечер затронет самые глубокие душевные струны,
+                            оставив приятное послевкусие на все выходные!</p>
+
+                        <p>Субботний вечер в «Адрес 39» — это не просто ужин, а настоящее путешествие в мир гармонии и
+                            изысканных вкусов. Наша команда создает особую атмосферу, где музыка играет главную роль.
+                            Живые мелодии саксофона, скрипки, флейты и гитары наполняют пространство волшебством и
+                            уютом, а аккомпанемент в виде изысканного бокала вина. Отдайтесь вдохновению и наслаждайтесь
+                            каждым моментом этого уникального гастрономического праздника, который мы создаем специально
+                            для вас!
+                        </p>
+                        <p>Приходите к нам и откройте для себя идеальное сочетание музыки и гастрономии!</p>
+                    </div>
+                    <div className={styles.videoContainer}>
+                        <video loop={true} playsInline webkit-playsInline controls={true} autoPlay={true}
+                               src={'/assets/video/present.mp4'} />
+                    </div>
+
                 </div>
 
                 <Contacts refs={contactsRef} />

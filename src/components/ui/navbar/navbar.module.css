@@ -1,6 +1,7 @@
 .navWrapper {
     display: flex;
-    justify-content: space-between;
+
+    justify-content: flex-end;
     padding: 10px 50px;
 }
 .navItems {
@@ -24,6 +25,9 @@
 }
 
 .navLogo {
+    position: absolute;
+    top: 10px;
+    left: 50px;
     width: 185px;
     cursor: pointer;
 }
