@@ -65,7 +65,8 @@ const [fullImages, setFullImages] = useState<string[]>([])
         <Carousel 
         draggable={false}
         infinite={true}
-        autoPlay={true}
+        autoPlay={false}
+        className={styles.calouselWrapper}
         itemClass={styles.carouselItem}
         responsive={responsive}>
           {fullImages.map((i, ind) => {

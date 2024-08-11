@@ -1,22 +1,23 @@
 
 
 .galleryImgWrapper{
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
-    max-height: 85vh;
     width: 100%;
     overflow: hidden;
     user-select:none;
     margin-right: 10px;
     margin-top: 80px;
-   
+    background-color: black;
   }
   .galleryImg{
-    max-width: 100%;
-    max-height: 1000px;
+      width: 700px;
+    height: 500px;
     object-fit: contain;
    }
 .carouselItem{
- margin-right: 10px;
+  margin-right: 10px;
 }
 
 @media (max-width: 765px) {
@@ -24,7 +25,9 @@
     margin-right: 0;
    }
 }
-
+.calouselWrapper{
+    height: 80vh;
+}
 .galleryButton{
   width: 200px;
   height: 30px;
