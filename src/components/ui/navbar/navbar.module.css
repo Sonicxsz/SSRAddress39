@@ -126,5 +126,6 @@
     }
     .navLogo {
         width: 120px;
+        left: 15px;
     }
 }
