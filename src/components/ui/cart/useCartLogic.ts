@@ -28,17 +28,21 @@ export function useCartLogic(succes:func, error:func, loading:func) {
 
     const order = items.map((i,ind) => {
       if(i.variable){
-        return `№ ${ind +1}: ${i.name['RU']} ${i.variable}: ${i.count}шт  <br/>`
+        return `№ ${ind +1}: ${i.name['RU']} ${i.variable}: ${i.count}шт   \n`
       }else{
-        return `№ ${ind +1}: ${i.name['RU']}: ${i.count}шт  <br/>`
+        return `№ ${ind +1}: ${i.name['RU']}: ${i.count}шт   \n`
       }
       
     }).join('')
+
 
     //https://server.xn--39-6kcqf9di.xn--p1ai/mail
 
    async function formSend(data: any) {
     loading()
+       //prod https://server.xn--39-6kcqf9di.xn--p1ai/mail
+       //local http://localhost:3001/mail
+
     const response = await fetch('https://server.xn--39-6kcqf9di.xn--p1ai/mail', {
       headers: {
         'Content-Type': 'application/json'

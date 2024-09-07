@@ -82,7 +82,9 @@ function Cart({ success, error, loading}: baseCartProps) {
             <span style="font-size: 20px;">Заказ</span>: <br> <span style="font-size: 22px;">${order} </span> <br> 
             <span style="font-size: 20px;"> Комментарий</span>: <span style="color: red; font-size: 20px;">${values.user_comment} </span> <br>
             <span style="font-size: 22px;"> Перезвоните клиенту для подтверждения </span>`,
-            type: 'ЗАКАЗ'
+            type: 'ЗАКАЗ',
+              telegrammOrder: `<b>Новый заказ!</b> 🎉\n<b>🙍‍♂️ Имя:</b> ${values.user_name}\n<b>📞 Телефон:</b> ${values.user_phone}\n<b>📦 Тип:</b> ${values.user_type}\n<b>🏠 Адрес:</b> ${values.user_address}\n<b>🛍️ Заказ:</b>\n${order}\n<b>💬 Комментарий:</b> ${values.user_comment || 'Отсутствует'}\n`
+
           }
           formSend(data)}}
         >

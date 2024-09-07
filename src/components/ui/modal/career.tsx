@@ -43,6 +43,8 @@ function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps)
             <span style="font-size: 20px;">Телефон</span>: <span style="color: red; font-size: 22px;">${values.user_phone}</span> <br> 
             <span style="font-size: 20px;"> Комментарий</span>: <span style="color: red; font-size: 20px;">${values.user_comment}</span>
             `,
+              telegrammOrder: `<b>ЗАЯВКА НА РАБОТУ!</b> 🎉\n<b>🙍‍♂️ Имя:</b> ${values.user_name}\n<b>📞 Телефон:</b> ${values.user_phone}\n<b>💬 Комментарий:</b> ${values.user_comment || 'Отсутствует'}\n`,
+
             type: 'Заявка на работу'
           }
           formSend(data, loadingSend, errorSend, successSend)
