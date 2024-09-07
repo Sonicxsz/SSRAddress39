@@ -25,8 +25,9 @@ export function useCartLogic(succes:func, error:func, loading:func) {
       user_address: yup.string().min(3, messFields.address.min).required(messFields.name.type_error),
       user_type: yup.string().required(messFields.name.type_error)
     }) 
-
+    let sum = 0;
     const order = items.map((i,ind) => {
+       sum += i.price
       if(i.variable){
         return `№ ${ind +1}: ${i.name['RU']} ${i.variable}: ${i.count}шт   \n`
       }else{
@@ -69,6 +70,7 @@ export function useCartLogic(succes:func, error:func, loading:func) {
     return {
         interFaceLang,
         order,
+        sum,
         items,
         btns,
         lang,

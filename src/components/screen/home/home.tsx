@@ -83,7 +83,7 @@ export default function HomePage() {
                         <p>Приходите к нам и откройте для себя идеальное сочетание музыки и гастрономии!</p>
                     </div>
                     <div className={styles.videoContainer}>
-                        <video loop={true} playsInline webkit-playsInline controls={true} autoPlay={true}
+                        <video loop={true} playsInline webkit-playsInline controls={true} autoPlay={false}
                                src={'/assets/video/present.mp4'} />
                     </div>
 
