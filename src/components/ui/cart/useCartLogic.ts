@@ -27,7 +27,7 @@ export function useCartLogic(succes:func, error:func, loading:func) {
     }) 
     let sum = 0;
     const order = items.map((i,ind) => {
-       sum += i.price
+       sum += (i.price * i.count)
       if(i.variable){
         return `№ ${ind +1}: ${i.name['RU']} ${i.variable}: ${i.count}шт   \n`
       }else{
