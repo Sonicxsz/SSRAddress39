@@ -9,6 +9,7 @@ import IconsBar from '@/components/ui/iconBar/iconBar';
 const Contacts = dynamic(() => import('../../ui/contacts/contacs'));
 import {createPortal} from 'react-dom';
 import { UpperContacts } from '@/components/ui/upperContacts/UpperContacts';
+import { Ribbon } from '@/components/Ribbon/Ribbon';
 export default function HomePage() {
     const { scroll, toContact, contactsRef } = useLayoutLogic();
     const [arrow, setArrow] = useState(false)
@@ -32,10 +33,10 @@ export default function HomePage() {
                 <title>Адрес39 - Главная страница ресторана:Бронирование, Доставка, Контакты</title>
 
                 <meta name="description"
-                    content='Адрес39 – это уникальное место в Москве, включающее в себя ресторан и бар. Огромное разнообразие блюд и напитков разных культур. Душевная атмосфера'
+                      content="Адрес39 – это уникальное место в Москве, включающее в себя ресторан и бар. Огромное разнообразие блюд и напитков разных культур. Душевная атмосфера"
                 />
-                <meta name='keywords'
-                    content="Адрес39,ресторан,винный бар,ЖК комплекс, Wellton Park ,винные бары,ресторан в Москве,разная кухня москва,МО ресторан,лучшие блюда в Москве,детское меню,японское меню,классическое меню,доставка,самовывоз,официальный сайт ресторана Адрес39,ресторан блюда меню, бронирование стола"
+                <meta name="keywords"
+                      content="Адрес39,ресторан,винный бар,ЖК комплекс, Wellton Park ,винные бары,ресторан в Москве,разная кухня москва,МО ресторан,лучшие блюда в Москве,детское меню,японское меню,классическое меню,доставка,самовывоз,официальный сайт ресторана Адрес39,ресторан блюда меню, бронирование стола"
                 />
                 <meta name="yandex-verification" content="b664a6bb74ee0f23" />
                 <meta name="google-site-verification" content="XdcYYiQGcFglG_yHs9TA9hdTERv-SBJq1XT0Lq8Xbfc" />
@@ -45,7 +46,7 @@ export default function HomePage() {
                     content="width=device-width, initial-scale=1"
                 />
 
-
+                <link href="https://awards.infcdn.net/2024/circle_v2.css" rel="stylesheet" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
@@ -53,7 +54,7 @@ export default function HomePage() {
 
 
                 <div className={styles.upperIcons}>
-                    <IconsBar />
+                <IconsBar />
 
                 </div>
                 <div id="firstSection" className={styles.mainContent}>
@@ -64,6 +65,7 @@ export default function HomePage() {
                     </div>
 
                 </div>
+                <Ribbon/>
                 {/*{<UpperContacts scroll={scroll}/>}*/}
                 <div className={styles.videoBlock}>
                     <div className={styles.videoTextContainer}>
