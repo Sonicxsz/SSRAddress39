@@ -12,7 +12,7 @@ export function useCartLogic(succes:func, error:func, loading:func) {
   const items = useAppSelector(state => state.cartItemsSlice.items)
   const lang = useAppSelector(state => state.languageSlice.language)
   const btns = useAppSelector(state => state.languageSlice.btns)
-
+    console.log(btns)
 
    const interFaceLang = lang === 'EN' ? cartEN : cartRU
    const messFields = lang === 'EN' ? messFieldsEN : messFieldsRU
@@ -40,6 +40,9 @@ export function useCartLogic(succes:func, error:func, loading:func) {
     //https://server.xn--39-6kcqf9di.xn--p1ai/mail
 
    async function formSend(data: any) {
+        if(sum < 1000){
+            return null
+        }
     loading()
        //prod https://server.xn--39-6kcqf9di.xn--p1ai/mail
        //local http://localhost:3001/mail

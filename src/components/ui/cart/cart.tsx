@@ -90,7 +90,7 @@ function Cart({ success, error, loading}: baseCartProps) {
           formSend(data)}}
         >
           {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
-            
+
             <form onSubmit={handleSubmit} ref={form}>
                 <div className='book-label'>
                 
@@ -142,10 +142,10 @@ function Cart({ success, error, loading}: baseCartProps) {
     
                 <div className={styles.bookControl}>
                       <button
-                        className={isValid && dirty ? `${styles.order} ${styles.buttonActive}` : styles.order}
-                        disabled={!isValid && !dirty}
+                        className={!isValid && !dirty ? styles.order : `${styles.order} ${styles.buttonActive} ${sum < 1000 && styles.order_minSum} `}
+                        disabled={!isValid && !dirty || sum < 1000}
                         type='submit'
-                      >{btns.btnSend[lang]}</button>
+                      >{sum >= 1000 ? btns.btnSend[lang] : btns.btnMinSum[lang]}</button>
                 </div>
             </form>
           )}

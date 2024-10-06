@@ -16,7 +16,8 @@ export const filters = [
 	{name:{"EN":'Meat and poultry',"RU":'Мясо и птица' }, data: 'meatPoultry'},  
 	{name:{"EN":'Side dishes',"RU":'Гарниры' }, data:'sideDishes'},
   {name:{"EN": 'Desserts', "RU": 'Десерты'}, data:'desserts'},  
-	{name:{"EN":'Children`s menu',"RU":'Детское меню' }, data:'children'}
+	{name:{"EN":'Children`s menu',"RU":'Детское меню' }, data:'children'},
+  {name: {"EN":'Autumn menu',"RU":'Осеннее меню' }, data: 'autumn'}
 ]
 
 
