@@ -42,8 +42,10 @@ function Cart({ success, error, loading}: baseCartProps) {
         const closeCartbtn = () => {
           dispatch(setCartModal(false))
         }
-        
-  
+        const minSumBtn =   {
+     RU: 'Мин сумма заказа 1000руб',
+        EN: 'Min order amount 1000 rub.',
+  }
   return (
     <div onClick={(e) => closeCart(e)} className={styles.cartBackground}>
       <div className={styles.cartCloseBtn}>
@@ -145,7 +147,7 @@ function Cart({ success, error, loading}: baseCartProps) {
                         className={!isValid && !dirty ? styles.order : `${styles.order} ${styles.buttonActive} ${sum < 1000 && styles.order_minSum} `}
                         disabled={!isValid && !dirty || sum < 1000}
                         type='submit'
-                      >{sum >= 1000 ? btns.btnSend[lang] : btns.btnMinSum[lang]}</button>
+                      >{sum >= 1000 ? btns.btnSend[lang] : minSumBtn[lang]}</button>
                 </div>
             </form>
           )}

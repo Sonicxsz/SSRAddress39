@@ -13,10 +13,7 @@ interface languageI {
             RU: string,
             EN: string
         },
-        btnMinSum: {
-            RU: string,
-            EN: string
-        },
+     
     },
     middle: boolean
 }
@@ -31,10 +28,7 @@ const initialState: languageI  = {
             RU: 'Отправить',
             EN: 'Send',
         },
-        btnMinSum: {
-            RU: 'Мин сумма заказа 1000руб',
-            EN: 'Min order amount 1000 rub.',
-        }
+
     },
     middle: false,
 }
