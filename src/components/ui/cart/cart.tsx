@@ -125,7 +125,9 @@ function Cart({ success, error, loading}: baseCartProps) {
                               setHeight(e.target.scrollHeight)}
                             } } style={{height: height + 'px'}}  name='user_comment' />
                       </div>
+
                     <div role="group" aria-labelledby="my-radio-group" className={`${styles.cartCheckbox} ${touched.user_type  &&  errors.user_type && styles.wrong}`}>
+
                     <label>{modalFieldsInterface.type.self}</label>
                           <input type='radio'   value={'Самовывоз'}
                             onChange={handleChange}    
@@ -139,7 +141,7 @@ function Cart({ success, error, loading}: baseCartProps) {
                             name='user_type' />
                     </div>
                   </div>
-                              
+                  {values.user_type === 'Доставка' && <span className={styles.notice}>Доставка осуществляется c 11:00 по МСК</span>}
                 </div>
     
                 <div className={styles.bookControl}>

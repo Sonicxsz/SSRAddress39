@@ -135,7 +135,7 @@
     height: 45px;
     background: unset;
     border: 2px solid var(--secondary);
-    color: var(--secondary);
+    color: black;
     transition: background 0.2s linear;
     cursor: pointer;
   }
@@ -152,7 +152,12 @@
     background: #30d004;
   }
   
-  
+  .notice{
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+      margin-bottom: 10px;
+  }
   
   
   .cartBackground{
