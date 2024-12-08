@@ -25,8 +25,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         setMenuModal
     } = useLayoutLogic();
     
-    
-    
+
     return (
         <div className={styles.app}>
             <div className={styles.main}>

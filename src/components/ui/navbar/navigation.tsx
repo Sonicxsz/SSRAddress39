@@ -152,6 +152,10 @@ const menuItems = [
         type: 'main'
     },
     {
+        title: 'Зимнее',
+        type: 'winter'
+    },
+    {
         title: 'Вино',
         type: 'wine'
     },

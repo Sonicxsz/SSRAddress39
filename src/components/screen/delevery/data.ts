@@ -1,7 +1,6 @@
 
 export const filters = [
-    {name:{"EN":'autumn',"RU":'Осеннее'}, data:'autumn'},
-
+    {name:{"EN":'Winter',"RU":'Зимнее'}, data:'winter'},
 	{name:{"EN":'Breakfast',"RU":'Завтрак'}, data:'breakfast'},
  	{name:{"EN":'RAW BAR',"RU":'RAW BAR'}, data: 'rawbar'},
   {name:{"EN":'Sushi',"RU":'Суши'}, data: 'susi'},
@@ -23,25 +22,7 @@ export const filters = [
 
 export type filter = typeof filters[0]
 
-export const categories = {
-    season: {'EN': 'Autumn menu', 'RU':  'Осеннее меню'},
-  breakfast:{"EN":'Breakfasts until 14:00',"RU":'Завтраки до 14:00'} ,
-  rowbar:{"EN":'RAW BAR',"RU":'RAW BAR'} ,
-  sushi:{"EN":'Sushi',"RU":'Суши'} ,
-  rolls:{"EN":'Rolls',"RU":'Роллы'} ,
-  starters:{"EN":'Starters',"RU":'Закуски'} ,
-  salads:{"EN":'Salads',"RU":'Салаты'} ,
-  bruschetta:{"EN":'Bruschetta',"RU":'Брускетты'},
-  deserts: {"EN": 'Desserts', "RU": 'Десерты'},
-  soups:{"EN":'Soups',"RU":'Супы' } ,
-  pastaandrisotta:{"EN":'Pasta and risotto',"RU":'Паста и ризотто'} ,
-  noodles:{"EN":'Noodles',"RU":'Лапша' } ,
-  fishandseafood:{"EN":'Fish and seafood',"RU":'Рыба и морепродукты' } ,
-  meatandpoultry:{"EN":'Meat and poultry',"RU":'Мясо и птица' } ,
-  sidedishes:{"EN":'Side dishes',"RU":'Гарниры' } ,
-  childrens:{"EN":'Children`s menu',"RU":'Детское меню' } ,
 
-}
 
 
 
