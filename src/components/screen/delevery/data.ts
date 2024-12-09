@@ -1,6 +1,6 @@
 
 export const filters = [
-    {name:{"EN":'Winter',"RU":'Зимнее'}, data:'winter'},
+    {name:{"EN":'Seasonal offer',"RU":'Сезонное предложение'}, data:'season'},
 	{name:{"EN":'Breakfast',"RU":'Завтрак'}, data:'breakfast'},
  	{name:{"EN":'RAW BAR',"RU":'RAW BAR'}, data: 'rawbar'},
   {name:{"EN":'Sushi',"RU":'Суши'}, data: 'susi'},
@@ -16,7 +16,6 @@ export const filters = [
 	{name:{"EN":'Side dishes',"RU":'Гарниры' }, data:'sideDishes'},
   {name:{"EN": 'Desserts', "RU": 'Десерты'}, data:'desserts'},  
 	{name:{"EN":'Children`s menu',"RU":'Детское меню' }, data:'children'},
-  {name: {"EN":'Autumn menu',"RU":'Осеннее меню' }, data: 'autumn'}
 ]
 
 
