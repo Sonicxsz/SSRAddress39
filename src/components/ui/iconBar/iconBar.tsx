@@ -5,11 +5,7 @@ import { IoCall } from 'react-icons/io5';
 function IconsBar() {
     return (
         <div className={styles.wrapperIcons}>
-            <div className={styles.icon}>
-                <a href="https://instagram.com/address39.rest?igshid=YmMyMTA2M2Y=">
-                    <FaInstagram color="#e31460" size={26} />
-                </a>
-            </div>
+
             <div className={styles.icon}>
                 <a href="https://t.me/rest39">
                     <BsTelegram color="#428bff" size={26} />

@@ -52,10 +52,37 @@ function MenuModal({showModal, closeModal}:MenuModal) {
   return (
       <div className={css.overlay} suppressHydrationWarning={true} >
         <div className={css.wrapper}>
-            <Carousel   showThumbs={false}
-                        infiniteLoop={true}
-                        showStatus={false} responsive={{ }}
-                        swipeable={false}
+            <Carousel
+                showThumbs={false}
+                infiniteLoop={true}
+                showStatus={false}
+                swipeable={true}
+                className={css.carSty}
+                showArrows={false}
+                renderIndicator={(onClickHandler, isSelected, index, label) => {
+                    const defStyle = {
+                        marginLeft: 10,
+                        display: "inline-block",
+                        width: "15px",  // Размер индикатора
+                        height: "15px", // Размер индикатора
+                        borderRadius: '50%', // Делает индикатор круглым
+                        backgroundColor: isSelected ? '#e0224a' : 'rgba(0, 0, 0, 0.2)', // Красный для активного индикатора
+                        cursor: 'pointer',
+                        transition: 'background-color 0.3s', // Плавное изменение цвета
+                    };
+                    return (
+                        <span
+                            style={defStyle}
+                            onClick={onClickHandler}
+                            onKeyDown={onClickHandler}
+                            value={index}
+                            key={index}
+                            role="button"
+                            tabIndex={0}
+                            aria-label={`${label} ${index + 1}`}
+                        />
+                    );
+                }}
             >
                 {menus[menuType]?.map((i, ind) => {
                     return  <img key={i} src={i} alt={i} />

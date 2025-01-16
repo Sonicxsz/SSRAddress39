@@ -90,15 +90,6 @@ function Navigation({
                                     >
                                         {item.name}
                                     </span>
-                                ) : item.link === '/delivery' ? (
-                                    <span
-                                        onClick={handleCloseNav(
-                                            openModalDelevery,
-                                        )}
-                                        className={styles.menuLink}
-                                    >
-                                        {item.name}
-                                    </span>
                                 ) : item.link === '/menuPage' ?
                                     (
                                         <span
