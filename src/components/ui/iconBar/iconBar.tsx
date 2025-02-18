@@ -17,7 +17,7 @@ function IconsBar() {
                 </a>
             </div>
             <div className={styles.icon}>
-                <a href="tel:+79998887766">
+                <a href="tel:+79850390039">
                     <IoCall color="#141313" size={26} />
                 </a>
             </div>
