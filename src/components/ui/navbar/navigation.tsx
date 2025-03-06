@@ -134,18 +134,18 @@ function Navigation({
 
 export default Navigation;
 
-
-
+//
+// {
+//     title: 'Постное',
+//         type: 'post'
+// },
 
 const menuItems = [
     {
         title: 'Основное меню',
         type: 'main'
     },
-    {
-        title: 'Зимнее',
-        type: 'winter'
-    },
+
     {
         title: 'Вино',
         type: 'wine'

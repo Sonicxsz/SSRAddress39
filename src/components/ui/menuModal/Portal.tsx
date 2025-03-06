@@ -24,9 +24,7 @@ const vine = [
     '/assets/menu/wine/1.jpg',
     '/assets/menu/wine/2.jpg',
 ];
-const winter =  [
-    '/assets/menu/winter/winter.jpg',
-]
+
 const children = [
     '/assets/menu/child/1.jpg',
 ];
@@ -38,7 +36,6 @@ const menus = {
     wine: vine,
     children: children,
     additionalVine: additionalVine,
-    winter:winter
 }
 
 interface MenuModal {
