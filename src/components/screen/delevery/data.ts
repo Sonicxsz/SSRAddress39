@@ -1,6 +1,6 @@
 
 export const filters = [
-    {name:{"EN":'Seasonal offer',"RU":'Сезонное предложение'}, data:'season'},
+    {name:{"EN":'Seasonal',"RU":'Сезонное'}, data:'season'},
 	{name:{"EN":'Breakfast',"RU":'Завтрак'}, data:'breakfast'},
  	{name:{"EN":'RAW BAR',"RU":'RAW BAR'}, data: 'rawbar'},
   {name:{"EN":'Sushi',"RU":'Суши'}, data: 'susi'},
