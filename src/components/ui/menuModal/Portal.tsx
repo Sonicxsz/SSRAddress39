@@ -31,9 +31,15 @@ const children = [
 const additionalVine = [
     '/assets/menu/wineglass/1.jpg',
 ];
+
+
+const post = [
+    '/assets/menu/post/1.jpg',
+]
 const menus = {
     main: main,
     wine: vine,
+    post:post,
     children: children,
     additionalVine: additionalVine,
 }
