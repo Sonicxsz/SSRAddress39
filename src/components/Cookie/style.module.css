@@ -1,0 +1,54 @@
+
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 300px;
+	height: 150px;
+	background-color: #dedddd;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	padding: 10px 15px;
+	border-radius: 15px;
+	z-index: 999;
+	color: black;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+
+
+.wrapper button {
+	background: #222225;
+	color: white;
+	height: 30px;
+	border-radius: 10px;
+	width: 100px;
+	border: none;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.link{
+	color:black;
+	text-decoration: underline;
+}
+@media (max-width: 450px) {
+	.wrapper{
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		font-size: 16px;
+		padding: 15px 20px;
+		height: 180px;
+	}
+
+	.wrapper button {
+		width: 100%;
+		height: 40px;
+	}
+}

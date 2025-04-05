@@ -6,6 +6,7 @@ import styles from "./styles.module.css"
 interface PortalProps {
     children: ReactNode,
     onClose: () => void;
+    overlayOff?: boolean;
 }
 
 
@@ -22,12 +23,18 @@ export const Portal = (props:PortalProps) => {
         setMounted(true)
     }, [])
 
-    return (mounted && ref.current) ? createPortal(<div onClick={(e) => {
+    const onClick = (e) => {
 
-        if(e.target.className === 'prevent') return;
+        if (e.target.className === 'prevent') return;
         e.stopPropagation()
         props.onClose()
     }
-    } className={styles.overlay}>{props.children}</div>, ref.current) : null
-}
+
+
+
+        return (mounted && ref.current) ? createPortal(
+            props.overlayOff ? props.children :
+        <div onClick={onClick} className={styles.overlay}>{props.children}</div>
+        , ref.current) : null
+        }
 

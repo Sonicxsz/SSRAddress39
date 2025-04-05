@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Spinner from '@/components/svg/Spinner';
 import { func } from '@/common/hooks/withMessage';
+import { Cookie } from '@/components/Cookie/Cookie';
 
 function Loading () {
     const [loading, setLoading] = useState(false)
@@ -40,9 +41,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
     return ( <>
                 <Loading />
-                <Provider store={store}>
+            <Provider store={store}>
                 <Component {...pageProps} />
-                 </Provider>
-            </> 
+
+            </Provider>
+        </>
     );
 }

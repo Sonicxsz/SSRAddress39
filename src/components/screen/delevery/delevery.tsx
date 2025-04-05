@@ -116,7 +116,6 @@ import Head from "next/head";
 				<h1 className={styles.title}>{deleveryLang.title}</h1>
 				<h2>{deleveryLang.conditionsTitle}</h2>
 				<h3>{deleveryLang.deleveyWelton}</h3>
-				<h3>{deleveryLang.deleveryYandex} <a className={styles.link} href="https://eda.yandex.ru/moscow/r/adres_39?placeSlug=adres_39_ewrhd&utm_campaign=rest_card&utm_content=desktop&utm_medium=yp&utm_source=ymaps">{deleveryLang.yandex} </a></h3>
 				<h3>{deleveryLang.conditions} + 7 (985) 039-00-39</h3>
 			</div>
 			<div className={clazz}>
