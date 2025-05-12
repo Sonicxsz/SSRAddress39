@@ -142,10 +142,7 @@ const menuItems = [
         title: 'Основное меню',
         type: 'main'
     },
-    {
-        title: 'Постное',
-        type: 'post'
-    },
+
     {
         title: 'Вино',
         type: 'wine'

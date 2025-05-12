@@ -14,14 +14,19 @@
 
 
 .closeBtn{
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 20px;
     right: 20px;
     cursor: pointer;
+    z-index: 10001;
+    background-color: #303030;
+    border-radius: 5px;
+
 }
 
 .wrapper {
-    height: 100vh; /* Слайдер будет занимать 100% высоты экрана */
     position: relative; /* Для правильного позиционирования кнопок */
 }
 

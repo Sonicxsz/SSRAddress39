@@ -33,13 +33,10 @@ const additionalVine = [
 ];
 
 
-const post = [
-    '/assets/menu/post/1.jpg',
-]
+
 const menus = {
     main: main,
     wine: vine,
-    post:post,
     children: children,
     additionalVine: additionalVine,
 }
