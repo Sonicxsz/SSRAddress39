@@ -8,6 +8,7 @@ import { useCartLogic } from './useCartLogic';
 import { useAppDispatch } from '@/common/hooks/useRedux';
 import { setCartModal } from '@/store/controlSlice';
 import {func} from '../../../common/hooks/withMessage'
+import Link from 'next/link';
 interface baseCartProps {
   success:func, 
   error: func, 
@@ -43,7 +44,7 @@ function Cart({ success, error, loading}: baseCartProps) {
           dispatch(setCartModal(false))
         }
         const minSumBtn =   {
-     RU: 'Мин сумма заказа 1000руб',
+        RU: 'Мин сумма заказа 1000руб',
         EN: 'Min order amount 1000 rub.',
   }
   return (
@@ -143,7 +144,9 @@ function Cart({ success, error, loading}: baseCartProps) {
                   </div>
                   {values.user_type === 'Доставка' && <span className={styles.notice}>Доставка осуществляется c 11:00 по МСК</span>}
                 </div>
-    
+                <div className={styles.conf}>
+                  Оформляя заказ, Вы даете согласие на обработку персональных данных и соглашаетесь  <Link target={'_blank'} href={"/Terms"}>с Политикой конфиденциальности</Link>
+                 </div>
                 <div className={styles.bookControl}>
                       <button
                         className={!isValid && !dirty ? styles.order : `${styles.order} ${styles.buttonActive} ${sum < 1000 && styles.order_minSum} `}

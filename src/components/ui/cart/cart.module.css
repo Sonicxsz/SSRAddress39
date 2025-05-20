@@ -216,7 +216,16 @@
     font-family: var(--open);
     font-weight: 500;
 }
-  
+
+  .conf{
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+  }
+.conf a {
+    text-decoration: underline;
+    color: black
+}
   @media (max-width: 460px) {
     .cartWrapper {
       padding: 20px 10px;

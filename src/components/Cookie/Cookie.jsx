@@ -24,7 +24,7 @@ export const Cookie = () => {
     return (
         <Portal overlayOff  onClose={() => {}}>
             <div className={css.wrapper}>
-                <div> Пользуясь сайтом, вы соглашаетесь с использованием cookies и <Link className={css.link} href={'/Terms'}>политикой конфиденциальности.</Link></div>
+                <div> Пользуясь сайтом, вы соглашаетесь с использованием <Link className={css.link} href={'/Terms'}>cookies и политикой конфиденциальности.</Link></div>
                 <button onClick={onClick}>Хорошо</button>
             </div>
         </Portal>
