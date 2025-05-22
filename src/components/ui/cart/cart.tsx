@@ -145,7 +145,7 @@ function Cart({ success, error, loading}: baseCartProps) {
                   {values.user_type === 'Доставка' && <span className={styles.notice}>Доставка осуществляется c 11:00 по МСК</span>}
                 </div>
                 <div className={styles.conf}>
-                  Оформляя заказ, Вы даете согласие на обработку персональных данных и соглашаетесь  <Link target={'_blank'} href={"/Terms"}>с Политикой конфиденциальности</Link>
+                  Оформляя заказ, Вы даете согласие на обработку персональных данных и соглашаетесь  с <Link target={'_blank'} href={"/Terms"}>Политикой конфиденциальности</Link> и <Link target={'_blank'} href={"/Cookies"}>Cookies</Link>
                  </div>
                 <div className={styles.bookControl}>
                       <button
