@@ -9,7 +9,7 @@ export const UpperContacts = ({scroll}:UpperContacts) => {
             <div className={styles.right}>
                 <div className={styles.infoBlock}>
                     <span>Время работы:</span>
-                    <span>Пн-Вс 09:00 - 00:00</span>
+                    <span>Пн-Вс 11:00 - 00:00</span>
                 </div>
                 <div className={styles.infoBlock}>
                     <span>Наш адрес:</span>
