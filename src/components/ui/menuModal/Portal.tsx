@@ -17,7 +17,6 @@ interface PortalProps {
 const main = [
     '/assets/menu/main/1.jpg',
     '/assets/menu/main/2.jpg',
-    '/assets/menu/main/3.jpg',
 ];
 
 const vine = [
