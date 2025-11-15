@@ -55,14 +55,12 @@ export const contactsRU = {
     addressTitle: 'Адрес:',
 };
 
-
 export const cartRU = {
     order: 'Ваш заказ',
-    sum: 'Сумма заказа'
-  }
+    sum: 'Сумма заказа',
+};
 
-
-  export const countOfPeopleRU = [
+export const countOfPeopleRU = [
     'на 1 человека',
     'на 2 человека',
     'на 3 человека',
@@ -73,10 +71,10 @@ export const cartRU = {
     'на 8 человек',
     'на 9 человек',
     'на 10 человек',
-    'больше 10 человек'
-  ]
-  
- export const timePickCommon = [
+    'больше 10 человек',
+];
+
+export const timePickCommon = [
     '11:00',
     '11:30',
     '12:00',
@@ -101,108 +99,68 @@ export const cartRU = {
     '21:30',
     '22:00',
     '22:30',
-    '23:00'
-]
+    '23:00',
+];
 
+export const DialogModalMessagesRU = {
+    succesMessage:
+        'Ваша заявка успешно отправлена. В ближайшее время вам перезвонит наш менеджер',
+    failMessage:
+        'Что-то пошло не так, пожалуйста попробуйте позже или позвоните нам по номеру: + 7(985)039-00-39',
+    loadingMessage: 'Идет отправка данных',
+    notice: 'Отправляя форму вы соглашаетесь на обработку ваших данных',
+    description: 'в ресторане Адрес 39',
+};
 
-  export const DialogModalMessagesRU = {
-    succesMessage:'Ваша заявка успешно отправлена. В ближайшее время вам перезвонит наш менеджер',
-    failMessage:'Что-то пошло не так, пожалуйста попробуйте позже или позвоните нам по номеру: + 7(985)039-00-39',
-    loadingMessage:'Идет отправка данных',
-    notice:'Отправляя форму вы соглашаетесь на обработку ваших данных',
-    description:'в ресторане Адрес 39' 
-  }
-
-
-
-
-
-  export const messFieldsRU = {
+export const messFieldsRU = {
     name: {
-      min:'Минимум 3 символа',
-      type: 'Должны быть только буквы',
-      type_error: 'Должно быть строкой',
-     
+        min: 'Минимум 3 символа',
+        type: 'Должны быть только буквы',
+        type_error: 'Должно быть строкой',
     },
     phone: {
-      min: 'Укажите полный номер телефона 10 цифр',
-      max: 'Введите корректный номер',
-     
+        min: 'Укажите полный номер телефона 10 цифр',
+        max: 'Введите корректный номер',
     },
-    comment: {
-     
-    },
+    comment: {},
     date: {
-      typeError: 'Выберите актуальную дату'
+        typeError: 'Выберите актуальную дату',
     },
     required: 'Обязательное поле',
     address: {
-      min: 'Минимум 3 символа',
-    },  
-  }
-  
-  
-  export const modalFieldsInterfaceRU = {
-      name: 'Имя',
-      name_Title: 'Имя и фамилия',
-      phone: 'Телефон',
-      address: 'Адрес',
-      comment:'Комментарий к заказу',
-      commentCareer: 'Расскажи нам о себе и вашем опыте работе(при наличии)',
-      date: 'Дата',
-      datemm: 'дд:мм:гггг',
-      commentBooking: 'Пожелания, будут учтены по возможности',
-      time: 'Время',
-      type: {
-          self: 'Самовывоз',
-          delevery: 'Доставка'
-      }
-  } 
-  
-  
-  export const deleveryModalRU = {
-    delevery:'Доставка по ЖК Wellton Park', 
-    or:'или', 
-    self:'Самовывоз', 
-    yandex:'Доставка через Яндекс еду', 
-  }
+        min: 'Минимум 3 символа',
+    },
+};
 
+export const modalFieldsInterfaceRU = {
+    name: 'Имя',
+    name_Title: 'Имя и фамилия',
+    phone: 'Телефон',
+    address: 'Адрес',
+    comment: 'Комментарий к заказу',
+    commentCareer: 'Расскажи нам о себе и вашем опыте работе(при наличии)',
+    date: 'Дата',
+    datemm: 'дд:мм:гггг',
+    commentBooking: 'Пожелания, будут учтены по возможности',
+    time: 'Время',
+    type: {
+        self: 'Самовывоз',
+        delevery: 'Доставка',
+    },
+};
 
+export const deleveryModalRU = {
+    delevery: 'Доставка по ЖК Wellton Park',
+    or: 'или',
+    self: 'Самовывоз',
+    yandex: 'Доставка через Яндекс еду',
+};
 
-  export const MainMenuRU= [
-
-		{
-			name: "Детское меню",
-			img: "/assets/mainMenu/3.jpg",
-			src: "/assets/pdf/Child.pdf",
-		},
- 
-		{
-			name: "Основное меню",		
-			img: "/assets/mainMenu/2.jpg",
-			src: "/assets/pdf/Food.pdf",
-		},
-		{
-			name: "Вино",
-			img: "/assets/mainMenu/1.jpg",
-			src: "/assets/pdf/Wine.pdf",
-		},
-
-      {
-          name: "Вино по бокалам",
-          img: "/assets/mainMenu/wineglass.jpg",
-          src: "/assets/pdf/wineglass.pdf",
-          blackColor: true,
-      }
-  
-	];
-
-  export const DeleveryLangRu = {
-			title: "Меню доставки",
-			conditionsTitle: "Условия доставки:",
-			deleveyWelton: "Доставка по ЖК Wellton park бесплатная",
-			deleveryYandex: "Доставка по Москве и МО осуществляется сервисом",
-			conditions: "Условия уточняйте по телефону ресторана",
-			yandex: 'Яндекс еда'	
-	
-	}
+export const DeleveryLangRu = {
+    title: 'Меню доставки',
+    conditionsTitle: 'Условия доставки:',
+    deleveyWelton: 'Доставка по ЖК Wellton park бесплатная',
+    deleveryYandex: 'Доставка по Москве и МО осуществляется сервисом',
+    conditions: 'Условия уточняйте по телефону ресторана',
+    yandex: 'Яндекс еда',
+};

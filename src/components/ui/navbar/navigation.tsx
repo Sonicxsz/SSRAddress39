@@ -16,10 +16,9 @@ function Navigation({
     moveToContact,
     openModalCarrer,
     openModalBooking,
-    openModalDelevery,
 }: NavBarProps) {
     const [nav, setNav] = useState(false);
-    const [menuDropVisible, setMenuDropVisible] = useState(false)
+    const [menuDropVisible, setMenuDropVisible] = useState(false);
 
     const lang = useAppSelector((state) => state.languageSlice.language);
     const handleCloseNav = (cb = () => {}) => {
@@ -31,20 +30,20 @@ function Navigation({
         };
     };
     const toogleDropdown = () => {
-        setMenuDropVisible(val => !val)
-    }
+        setMenuDropVisible((val) => !val);
+    };
     const currentMenu = useMemo(
         () => (lang === 'RU' ? NavbarRu : NavbarEN),
         [lang],
     );
-    const dispatch = useAppDispatch()
-    const handleOpenMenu = (type:string) => {
-        setMenuDropVisible(false)
+    const dispatch = useAppDispatch();
+    const handleOpenMenu = (type: string) => {
+        setMenuDropVisible(false);
         if (nav) {
             setNav(false);
         }
-        dispatch(setMenuModal({visible: true, type}))
-    }
+        dispatch(setMenuModal({ visible: true, type }));
+    };
     return (
         <div className={styles.navWrapper}>
             <div className={styles.navLogo}>
@@ -90,24 +89,34 @@ function Navigation({
                                     >
                                         {item.name}
                                     </span>
-                                ) : item.link === '/menuPage' ?
-                                    (
-                                        <span
-                                            onClick={(e) => {
-                                                e.stopPropagation()
-                                                handleCloseNav()
-                                                toogleDropdown()
-                                            }}
-                                            className={cn(styles.menuLink, styles.menuDropdown)}
-                                        >
-                                            {item.name}
-                                            {<DropdownMenu visible={menuDropVisible} onClose={() => setMenuDropVisible(false)} onClick={handleOpenMenu} items={menuItems}/>}
-                                        </span>
-                                    )
-                                    :(
+                                ) : item.link === '/menuPage' ? (
+                                    <span
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleCloseNav();
+                                            toogleDropdown();
+                                        }}
+                                        className={cn(
+                                            styles.menuLink,
+                                            styles.menuDropdown,
+                                        )}
+                                    >
+                                        {item.name}
+                                        {
+                                            <DropdownMenu
+                                                visible={menuDropVisible}
+                                                onClose={() =>
+                                                    setMenuDropVisible(false)
+                                                }
+                                                onClick={handleOpenMenu}
+                                                items={menuItems}
+                                            />
+                                        }
+                                    </span>
+                                ) : (
                                     <Link
                                         onClick={() => {
-                                            handleCloseNav()
+                                            handleCloseNav();
                                         }}
                                         href={item.link}
                                         className={styles.menuLink}
@@ -134,25 +143,26 @@ function Navigation({
 
 export default Navigation;
 
-
-
-
 const menuItems = [
     {
         title: 'Основное меню',
-        type: 'main'
+        type: 'main',
     },
 
     {
         title: 'Вино',
-        type: 'wine'
+        type: 'wine',
     },
     {
         title: 'Вино по бокалам',
-        type: 'additionalVine'
+        type: 'additionalVine',
+    },
+    {
+        title: 'Бар',
+        type: 'bar',
     },
     {
         title: 'Детское меню',
-        type: 'children'
-    }
-]
+        type: 'children',
+    },
+];

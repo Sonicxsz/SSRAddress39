@@ -55,11 +55,10 @@ export const contactsEN = {
     addressTitle: 'Address:',
 };
 
-
 export const cartEN = {
     order: 'Your order',
-    sum: 'Order amount'
-}
+    sum: 'Order amount',
+};
 
 export const countOfPeopleEN = [
     'for 1 person',
@@ -72,116 +71,69 @@ export const countOfPeopleEN = [
     'for 8 persons',
     'for 9 persons',
     'for 10 people',
-    'more than 10 people'
-]
-  
+    'more than 10 people',
+];
 
+export const DialogModalMessagesEN = {
+    succesMessage:
+        'Your application has been successfully sent. Our manager will call you back shortly',
+    failMessage:
+        'Something went wrong, please try again later or call us at the number: + 7(985)039-00-39',
+    loadingMessage: 'Data sending in progress',
+    notice: 'By submitting the form you agree to the processing of your data',
+    description: 'at the restaurant Address 39',
+};
 
-  export const DialogModalMessagesEN = {
-    succesMessage:'Your application has been successfully sent. Our manager will call you back shortly',
-    failMessage:'Something went wrong, please try again later or call us at the number: + 7(985)039-00-39',
-    loadingMessage:'Data sending in progress',
-    notice:'By submitting the form you agree to the processing of your data',
-    description: 'at the restaurant Address 39' 
-  }
-  
-
-  export const messFieldsEN = {
+export const messFieldsEN = {
     name: {
-      min:'Minimum of 3 characters',
-      type: 'There should only be letters',
-      type_error: 'It should be a line',
-     
+        min: 'Minimum of 3 characters',
+        type: 'There should only be letters',
+        type_error: 'It should be a line',
     },
     phone: {
-      min: 'Provide a full 10-digit phone number',
-      max: 'Enter the correct number',
-     
+        min: 'Provide a full 10-digit phone number',
+        max: 'Enter the correct number',
     },
-    comment: {
-     
-    },
+    comment: {},
     date: {
-      typeError: 'Select the actual date'
+        typeError: 'Select the actual date',
     },
     required: 'Required field',
     address: {
-      min: 'Minimum of 3 characters',
-    }  
-  }
-  
-  
-  export const modalFieldsInterfaceEN = {
-      name: 'Name',
-      name_Title: 'First name and last name',
-      phone: 'Phone',
-      address: 'Address',
-      comment: 'Comment to order',
-      commentCareer: 'Tell us about yourself and your work experience (if any)',
-      date: 'Date',
-      datemm: 'dd:mm:yyyy',
-      commentBooking: 'Wishes, will be taken into account if possible',
-      time: 'Time',
-      type: {
-          self: 'Self-delivery',
-          delevery: 'Delevery'
-      }
-  } 
-  
-  
+        min: 'Minimum of 3 characters',
+    },
+};
 
-  export const deleveryModalEN = {
-    delevery:'Delivery on Wellton Park Complex', 
-    or: 'or', 
-    self:'Self-delivery', 
-    yandex:'Delivery via Yandex food', 
-  }
+export const modalFieldsInterfaceEN = {
+    name: 'Name',
+    name_Title: 'First name and last name',
+    phone: 'Phone',
+    address: 'Address',
+    comment: 'Comment to order',
+    commentCareer: 'Tell us about yourself and your work experience (if any)',
+    date: 'Date',
+    datemm: 'dd:mm:yyyy',
+    commentBooking: 'Wishes, will be taken into account if possible',
+    time: 'Time',
+    type: {
+        self: 'Self-delivery',
+        delevery: 'Delevery',
+    },
+};
 
+export const deleveryModalEN = {
+    delevery: 'Delivery on Wellton Park Complex',
+    or: 'or',
+    self: 'Self-delivery',
+    yandex: 'Delivery via Yandex food',
+};
 
-
- export const MainMenuEN = [
-
-		{
-			name: "Children's menu",
-			img: "/assets/mainMenu/3.jpg",
-			src: "/assets/pdf/Child.pdf",
-            blackColor: false,
-
-		},
- 
-		{
-			name: "Main menu",
-			img: "/assets/mainMenu/2.jpg",
-			src: "/assets/pdf/Food.pdf",
-            blackColor: false,
-
-		},
-		{
-			name:  "Wine",
-            img: "/assets/mainMenu/1.jpg",
-            src: "/assets/pdf/Wine.pdf",
-            blackColor: false,
-
-		},
-
-         {
-             name:  "Wine by the glass",
-             img: "/assets/mainMenu/wineglass.jpg",
-             src: "/assets/pdf/wineglass.pdf",
-             blackColor: true,
-         }
-   
-	];
-
-
-  export const DeleveryLangEN = {
-			title: "Delivery menu",
-			conditionsTitle: "Delivery terms:",
-			deleveyWelton: "Wellton park residential delivery free",
-			deleveryYandex: "Delivery in Moscow and Moscow region is carried out by the service",
-			conditions: "Check terms and conditions by phone",
-			yandex: 'Yandex Food'
-		
-	}
-
-
+export const DeleveryLangEN = {
+    title: 'Delivery menu',
+    conditionsTitle: 'Delivery terms:',
+    deleveyWelton: 'Wellton park residential delivery free',
+    deleveryYandex:
+        'Delivery in Moscow and Moscow region is carried out by the service',
+    conditions: 'Check terms and conditions by phone',
+    yandex: 'Yandex Food',
+};
