@@ -1,20 +1,34 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useAppSelector, useAppDispatch } from '../common/hooks/useRedux';
 import { changeMidl } from '@/store/language';
 import { modalEnTitle } from '@/lang/en';
 import { modalRuTitle } from '@/lang/ru';
 import { closeModal, openModal } from '@/common/utils/setters';
-import { setModalDelevery, setModalBooking,setMenuModal, setModalCarreer, setToContact } from '@/store/controlSlice';
+import {
+    setModalDelevery,
+    setModalBooking,
+    setMenuModal,
+    setModalCarreer,
+    setToContact,
+} from '@/store/controlSlice';
 export function useLayoutLogic() {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const isMidl = useAppSelector((state) => state.languageSlice.middle);
-    const modalBooking = useAppSelector(state => state.controlSlice.modalBooking)
-    const modalCarreer = useAppSelector(state => state.controlSlice.modalCarreer)
-    const modalDelevery = useAppSelector(state => state.controlSlice.modalDelevery)
-    const toContact = useAppSelector(state => state.controlSlice.toContact)
+    const modalBooking = useAppSelector(
+        (state) => state.controlSlice.modalBooking,
+    );
+    const modalCarreer = useAppSelector(
+        (state) => state.controlSlice.modalCarreer,
+    );
+    const modalDelevery = useAppSelector(
+        (state) => state.controlSlice.modalDelevery,
+    );
+    const toContact = useAppSelector((state) => state.controlSlice.toContact);
     const dispatch = useAppDispatch();
     const contactsRef = useRef<HTMLInputElement>(null);
-    const menuModalVisible = useAppSelector(state => state.controlSlice.menuModal.visible)
+    const menuModalVisible = useAppSelector(
+        (state) => state.controlSlice.menuModal.visible,
+    );
 
     const modalLang = lang === 'EN' ? modalEnTitle : modalRuTitle;
 
@@ -60,13 +74,12 @@ export function useLayoutLogic() {
         isMidl,
         contactsRef,
         toContact,
-        modalBooking, 
-        modalCarreer, 
+        modalBooking,
+        modalCarreer,
         modalDelevery,
-        setModalDelevery, 
-        setModalBooking, 
+        setModalDelevery,
+        setModalBooking,
         setModalCarreer,
-        setMenuModal
-
+        setMenuModal,
     };
 }
