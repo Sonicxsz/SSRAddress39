@@ -21,6 +21,7 @@ const children = ['/assets/menu/child/1.jpg'];
 const additionalVine = ['/assets/menu/wineglass/1.jpg'];
 
 const bar = ['/assets/menu/bar/1.jpg'];
+const season = ['/assets/menu/special/1.jpg'];
 
 const menus = {
     main: main,
@@ -28,6 +29,7 @@ const menus = {
     children: children,
     additionalVine: additionalVine,
     bar: bar,
+    season: season,
 };
 
 interface MenuModal {

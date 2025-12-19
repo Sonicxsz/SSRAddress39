@@ -148,7 +148,10 @@ const menuItems = [
         title: 'Основное меню',
         type: 'main',
     },
-
+    {
+        title: 'Сезонное',
+        type: 'season',
+    },
     {
         title: 'Вино',
         type: 'wine',
