@@ -9,8 +9,11 @@ import IconsBar from '@/components/ui/iconBar/iconBar';
 const Contacts = dynamic(() => import('../../ui/contacts/contacs'));
 
 import { Ribbon } from '@/components/Ribbon/Ribbon';
+import RepeatOrder from '@/components/ui/repeatOrder/RepeatOrder';
+
 export default function HomePage() {
     const { scroll, toContact, contactsRef } = useLayoutLogic();
+
     useEffect(() => {
         let timeout: any;
         if (toContact) {
@@ -69,7 +72,9 @@ export default function HomePage() {
                     </div>
                 </div>
                 <Ribbon />
-                <div className={styles.videoBlock}></div>
+                <div className={styles.videoBlock}>
+                    <RepeatOrder />
+                </div>
 
                 <Contacts refs={contactsRef} />
                 <div></div>

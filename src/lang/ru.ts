@@ -58,6 +58,7 @@ export const contactsRU = {
 export const cartRU = {
     order: 'Ваш заказ',
     sum: 'Сумма заказа',
+    goToCheckout: 'Перейти к оформлению',
 };
 
 export const countOfPeopleRU = [
@@ -154,6 +155,13 @@ export const deleveryModalRU = {
     or: 'или',
     self: 'Самовывоз',
     yandex: 'Доставка через Яндекс еду',
+};
+
+export const repeatOrderRU = {
+    title: 'Повторить заказ',
+    subtitle: 'Из вашего прошлого визита',
+    addAll: 'Добавить все',
+    addOne: 'Добавить',
 };
 
 export const DeleveryLangRu = {

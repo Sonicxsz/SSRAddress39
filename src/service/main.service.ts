@@ -1,17 +1,15 @@
 import { func } from "@/common/hooks/withMessage"
+import { API } from "@/common/config/api"
 import axios from "axios"
 
-// http://localhost:3001/api/v1/items
-// https://server.xn--39-6kcqf9di.xn--p1ai/api/v1/images
-// https://server.xn--39-6kcqf9di.xn--p1ai/mail
 export const mainService = {
     async getImages(){
-        const {data} = await axios.get<string[]>('https://server.xn--39-6kcqf9di.xn--p1ai/api/v1/images')
+        const {data} = await axios.get<string[]>(API.images)
         return data
     },
     async  formSend<T extends object>(data: T, load:func, err:func, succ:func){
         load()
-        const response = await fetch('https://server.xn--39-6kcqf9di.xn--p1ai/mail', {
+        const response = await fetch(API.mail, {
           headers: {
             'Content-Type': 'application/json'
           },

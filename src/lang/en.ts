@@ -58,6 +58,7 @@ export const contactsEN = {
 export const cartEN = {
     order: 'Your order',
     sum: 'Order amount',
+    goToCheckout: 'Go to checkout',
 };
 
 export const countOfPeopleEN = [
@@ -126,6 +127,13 @@ export const deleveryModalEN = {
     or: 'or',
     self: 'Self-delivery',
     yandex: 'Delivery via Yandex food',
+};
+
+export const repeatOrderEN = {
+    title: 'Repeat your order',
+    subtitle: 'From your last visit',
+    addAll: 'Add all',
+    addOne: 'Add',
 };
 
 export const DeleveryLangEN = {

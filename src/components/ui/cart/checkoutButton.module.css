@@ -1,0 +1,38 @@
+.checkoutBtn {
+    position: fixed;
+    top: 260px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--green);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.checkoutBtn:hover {
+    background-color: #30d004;
+    transform: scale(1.02);
+}
+
+.checkoutBtn:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 650px) {
+    .checkoutBtn {
+        top: 230px;
+        right: 12px;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}

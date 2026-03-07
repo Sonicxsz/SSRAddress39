@@ -4,6 +4,8 @@ import { cartEN, messFieldsEN, modalFieldsInterfaceEN } from "@/lang/en"
 import { useAppSelector } from "@/common/hooks/useRedux"
 import { useRef, useState } from 'react'
 import {func} from '../../../common/hooks/withMessage'
+import { saveLastOrder } from '@/common/utils/lastOrder'
+import { API } from '@/common/config/api'
         
         
         
@@ -49,7 +51,7 @@ export function useCartLogic(succes:func, error:func, loading:func) {
     loading()
 
     try {
-      const response = await fetch('https://server.xn--39-6kcqf9di.xn--p1ai/mail', {
+      const response = await fetch(API.mail, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -60,6 +62,7 @@ export function useCartLogic(succes:func, error:func, loading:func) {
         error()
       }
       else{
+        saveLastOrder(items)
         succes()
       }
     } catch {
