@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import {GrUserManager, GrTime} from 'react-icons/gr'
 import LogoComponent from '../../svg/LogoComponent'
+import {AiOutlineClose} from 'react-icons/ai'
 
 import { motion, AnimatePresence } from "framer-motion"
 import NewMessage from '../newMessage/newMessage';
@@ -63,6 +64,12 @@ function Modal({ showModal, type, closeModal, label}:ModalProps) {
     closeModal()
   }
 
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      finalClose()
+    }
+  }
+
   const Component = type === 'career' ? CareerForm : type === 'delivery' ? DeleveryModal : Booking
 
   return (
@@ -72,6 +79,7 @@ function Modal({ showModal, type, closeModal, label}:ModalProps) {
     initial={{opacity: 0}}
     whileInView={{ opacity: 1 }}
     exit={{ opacity: 0 }}
+    onClick={handleOverlayClick}
     >
   
         <motion.div  className={styles.modal}
@@ -79,6 +87,9 @@ function Modal({ showModal, type, closeModal, label}:ModalProps) {
           animate={{ y: "0" }}
           exit={{ y: '-30%' }}
         >
+        <div className={styles.closeBtn} onClick={finalClose}>
+          <AiOutlineClose />
+        </div>
         <div className={styles.modalHead}>
              <div> <p className={styles.modalTitle}>{label}</p>
                     <span className={styles.modalSubtitle}>{interfaceModalMessages.description}</span>

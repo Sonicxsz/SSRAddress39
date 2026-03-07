@@ -166,6 +166,57 @@
     color: white;
     cursor: pointer;
     transition: background-color 0.2s linear;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.quantityControl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 185px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #ac6c4a;
+    overflow: hidden;
+}
+
+.quantityControlMini {
+    width: 140px;
+    height: 44px;
+}
+
+.quantityBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.quantityBtn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.quantityBtn:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.quantityValue {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    min-width: 32px;
+    text-align: center;
+    user-select: none;
 }
 .cardMiniControl {
     display: flex;
@@ -254,6 +305,9 @@
     .miniCardButton {
         margin: 0;
         width: 180px;
+    }
+    .quantityControlMini {
+        width: 150px;
     }
 }
 

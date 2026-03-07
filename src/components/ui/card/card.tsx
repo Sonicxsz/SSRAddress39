@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { addItem } from '../../../store/cartSlice';
+import { addItem, incItem, decItem, removeItem } from '../../../store/cartSlice';
 import { useDispatch } from 'react-redux';
 import { cardInterfaceEN } from '../../../lang/en';
 import { cardInterfaceRU } from '../../../lang/ru';
 import Image from 'next/image';
 import { CardProps } from '@/types/types';
+import { useAppSelector } from '@/common/hooks/useRedux';
 import styles from './card.module.css';
 
 export function Card({
@@ -28,7 +29,29 @@ export function Card({
         }
     }, []);
 
+    const cartId = variable ? id + variable : id;
+    const cartItem = useAppSelector(state =>
+        state.cartItemsSlice.items.find(item => item.id === cartId)
+    );
+    const cartCount = cartItem?.count || 0;
+
     const currentLang = lang === 'RU' ? cardInterfaceRU : cardInterfaceEN;
+
+    const handleAdd = () => {
+        dispatch(addItem({ img, name, variable, price, id: cartId, count }));
+    };
+
+    const handleInc = () => {
+        dispatch(incItem({ id: cartId }));
+    };
+
+    const handleDec = () => {
+        if (cartCount <= 1) {
+            dispatch(removeItem({ id: cartId }));
+        } else {
+            dispatch(decItem({ id: cartId }));
+        }
+    };
 
     return (
         <div className={styles.deliveryItem}>
@@ -104,23 +127,30 @@ export function Card({
                     </span>
                 </div>
 
-                <button
-                    onClick={() => {
-                        dispatch(
-                            addItem({
-                                img,
-                                name,
-                                variable,
-                                price,
-                                id: variable ? id + variable : id,
-                                count,
-                            }),
-                        );
-                    }}
-                    className={styles.deliveryItemButton}
-                >
-                    {currentLang.addbtn}
-                </button>
+                {cartCount > 0 ? (
+                    <div className={styles.quantityControl}>
+                        <button
+                            className={styles.quantityBtn}
+                            onClick={handleDec}
+                        >
+                            &minus;
+                        </button>
+                        <span className={styles.quantityValue}>{cartCount}</span>
+                        <button
+                            className={styles.quantityBtn}
+                            onClick={handleInc}
+                        >
+                            +
+                        </button>
+                    </div>
+                ) : (
+                    <button
+                        onClick={handleAdd}
+                        className={styles.deliveryItemButton}
+                    >
+                        {currentLang.addbtn}
+                    </button>
+                )}
             </div>
         </div>
     );

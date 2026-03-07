@@ -19,6 +19,8 @@ export interface PhoneInputProps {
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     value: string;
     clazz: string;
+    placeholder?: string;
+    id?: string;
 }
 
 export interface MenuItemProps {

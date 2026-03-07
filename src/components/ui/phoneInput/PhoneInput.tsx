@@ -1,6 +1,6 @@
 import { PhoneInputProps } from '../../../types/types';
 
-export function PhoneInput({ handleChange, value, clazz }: PhoneInputProps) {
+export function PhoneInput({ handleChange, value, clazz, placeholder, id }: PhoneInputProps) {
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target) {
             const formattedPhoneNumber = formatPhoneNumber(e.target.value, e);
@@ -12,8 +12,10 @@ export function PhoneInput({ handleChange, value, clazz }: PhoneInputProps) {
     return (
         <input
             type={'tel'}
+            id={id}
             name="user_phone"
-            placeholder='Телефон'
+            placeholder={placeholder || 'Телефон'}
+            autoComplete="tel"
             className={clazz}
             onChange={(e) => handleInput(e)}
             value={value}

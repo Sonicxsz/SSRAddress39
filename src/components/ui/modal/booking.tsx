@@ -93,23 +93,24 @@ import { mainService } from '@/service/main.service';
               </div>
             
             <div className={styles.formInputWrapper}>
-                        <label className={styles.label}  htmlFor='user_date'>{modalFieldsInterface.date}</label>
+                        <label className={styles.label} htmlFor='user_date'>{modalFieldsInterface.date}</label>
                       
                           <input placeholder={modalFieldsInterface.datemm}  
                           onChange={(e) => {handleChange(e)}} 
                           value={values.user_date}  min={minDate} max={maxDate}  
-                          type={'date'} className={`${styles.formInput} ${touched.user_date  &&  errors.user_date && styles.wrong}`}  
-                          name='user_date'/>
-                      
-                        
+                          type={'date'} className={`${styles.formInput} ${touched.user_date && errors.user_date ? styles.wrong : ''}`}  
+                          name='user_date'
+                          id='user_date'/>
+                        {touched.user_date && errors.user_date && <p className={styles.errorMessage}>{String(errors.user_date)}</p>}
               </div>
               <div className={styles.formInputWrapper}>
                        
-                        <label className={styles.label}   htmlFor='user_time'>{modalFieldsInterface.time}</label>
+                        <label className={styles.label} htmlFor='user_time'>{modalFieldsInterface.time}</label>
                           <div className={styles.arrow}>
                             <select onChange={(e) => {handleChange(e)}} 
                               value={values.user_time}  
-                              className={styles.formTime}  name='user_time' >
+                              className={styles.formTime}  name='user_time'
+                              id='user_time'>
                             {timePickCommon.map((i, ind) => {
                               return (
                                 <option value={i} key={ind}>{i}</option>
@@ -124,15 +125,27 @@ import { mainService } from '@/service/main.service';
 
            <div className={styles.formDateWrapper}>
            <div className={styles.formInputWrapper}>
-                        <label htmlFor='user_name ' className='pr-20'>{modalFieldsInterface.name}</label>
+                        <label htmlFor='user_name'>{modalFieldsInterface.name}</label>
                         <input onChange={(e) => {handleChange(e)}} 
+                         onBlur={handleBlur}
                          value={values.user_name}   
-                         className={`${styles.formInput} ${touched.user_name  &&  errors.user_name && styles.wrong}`} 
-                         placeholder={modalFieldsInterface.name_Title}  name='user_name' />
+                         className={`${styles.formInput} ${touched.user_name && errors.user_name ? styles.wrong : ''}`} 
+                         placeholder={modalFieldsInterface.name_Title}
+                         autoComplete="name"
+                         name='user_name'
+                         id='user_name' />
+                        {touched.user_name && errors.user_name && <p className={styles.errorMessage}>{errors.user_name}</p>}
             </div>
             <div className={`${styles.formInputWrapper} ${styles.w100}`}>
                         <label htmlFor='user_phone' className={`${styles.mobileLabel} ${styles.p20}`}>{modalFieldsInterface.phone}</label>
-                        <PhoneInput clazz={`${styles.formInput} ${touched.user_phone  &&  errors.user_phone && styles.wrong}`}  value={values.user_phone} handleChange={handleChange}  />
+                        <PhoneInput
+                          id="user_phone"
+                          placeholder={modalFieldsInterface.phone}
+                          clazz={`${styles.formInput} ${touched.user_phone && errors.user_phone ? styles.wrong : ''}`}
+                          value={values.user_phone}
+                          handleChange={handleChange}
+                        />
+                        {touched.user_phone && errors.user_phone && <p className={styles.errorMessage}>{errors.user_phone}</p>}
             </div>
 
 

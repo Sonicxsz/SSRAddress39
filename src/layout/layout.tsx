@@ -55,12 +55,6 @@ function Layout({ children }: { children: React.ReactNode }) {
                     closeModal={() => closeModal(dispatch, setModalDelevery)}
                     type="delivery"
                 />
-                <Modal
-                    label={modalLang.delevery}
-                    showModal={modalDelevery}
-                    closeModal={() => closeModal(dispatch, setModalDelevery)}
-                    type="delivery"
-                />
                 <MenuModal
                     showModal={menuModalVisible}
                     closeModal={() =>

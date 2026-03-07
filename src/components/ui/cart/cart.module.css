@@ -60,30 +60,40 @@
 .bookDescription {
     display: flex;
     flex-direction: column;
-    font-size: 20px;
-    gap: 10px;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: 16px;
-    font-weight: 700;
+    gap: 4px;
+    text-align: left;
+    align-items: stretch;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 340px;
 }
 .bookDescription .label {
     color: rgba(50, 49, 49, 0.813);
 }
+
+.fieldLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(50, 49, 49, 0.75);
+    padding-left: 2px;
+    margin-bottom: 2px;
+}
+
 .bookInput {
     -webkit-appearance: none;
-    padding: 10px;
-    width: 300px;
+    padding: 12px;
+    width: 100%;
     font-size: 16px;
     outline: none;
     resize: none;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 2px solid var(--secondary);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
 }
 .wrong {
     border: 2px solid rgba(247, 85, 85, 0.891);
-    border-radius: 5px;
+    border-radius: 8px;
     outline: none;
 }
 .bookInput:focus {
@@ -96,6 +106,54 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.errorMessage {
+    font-size: 12px;
+    color: #e04444;
+    font-weight: 500;
+    margin: 2px 0 0;
+    padding-left: 2px;
+}
+
+.toggleGroup {
+    display: flex;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--secondary);
+    margin-bottom: 20px;
+}
+
+.toggleBtn {
+    flex: 1;
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    background: var(--white);
+    color: rgba(50, 49, 49, 0.7);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.toggleBtn:first-child {
+    border-right: 1px solid var(--secondary);
+}
+
+.toggleBtn:last-child {
+    border-left: 1px solid var(--secondary);
+}
+
+.toggleBtnActive {
+    background: var(--green);
+    color: var(--white);
 }
 
 .bookControl {
@@ -103,10 +161,9 @@
     grid: 'control';
     gap: 10px;
     align-items: center;
-    justify-content: space-between;
-    padding: 5px 32px 0;
+    justify-content: center;
+    padding: 5px 16px 0;
     margin-bottom: 10px;
-    border-top: 1px solid var(--secondary);
 }
 .bookControl p {
     font-size: 13px;
@@ -114,9 +171,10 @@
     color: var(--grey);
 }
 .order {
-    width: 80%;
-    margin: 15px auto 0;
-    height: 40px;
+    width: 100%;
+    max-width: 340px;
+    margin: 12px auto 0;
+    height: 48px;
 }
 
 .order_minSum:disabled {
@@ -130,13 +188,16 @@
     color: white !important;
 }
 .bookControl button {
-    border-radius: 5px;
-    height: 45px;
+    border-radius: 10px;
+    height: 48px;
     background: unset;
     border: 2px solid var(--secondary);
     color: black;
     transition: background 0.2s linear;
     cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .buttonActive {
@@ -153,9 +214,19 @@
 
 .notice {
     width: 100%;
+    max-width: 340px;
     text-align: center;
     font-size: 13px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    color: rgba(50, 49, 49, 0.7);
+}
+
+.minSumHint {
+    text-align: center;
+    font-size: 13px;
+    color: #ae2323;
+    font-weight: 600;
+    padding: 4px 0 0;
 }
 
 .cartBackground {
@@ -168,7 +239,13 @@
     right: 0;
     z-index: 1001;
     overflow-y: auto;
+    animation: overlayFadeIn 0.3s ease;
 }
+
+.cartBackgroundClosing {
+    animation: overlayFadeOut 0.3s ease forwards;
+}
+
 .cartCheckbox {
     width: 100%;
     display: flex;
@@ -179,26 +256,64 @@
 .cartCheckbox label {
     color: rgb(43, 42, 42);
 }
+
 .cartCloseBtn {
     position: fixed;
     top: 10px;
-    right: 20px;
-    font-size: 30px;
+    right: 10px;
+    font-size: 28px;
     cursor: pointer;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    animation: closeBtnFadeIn 0.4s ease 0.15s both;
 }
+
+.cartCloseBtn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .cartResult {
-    padding: 5px 0 10px;
+    padding: 8px 0 12px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
 }
+
+.cartItems {
+    max-height: 35vh;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.cartItems::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cartItems::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
 .cartWrapper {
     display: flex;
     flex-direction: column;
     width: 520px;
-    min-height: 550px;
     background-color: var(--white);
     margin: 40px auto 100px;
-    padding: 20px 30px 4px;
+    padding: 24px 30px 12px;
     color: var(--black);
-    justify-content: center;
+    border-radius: 12px;
+    animation: cartSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cartWrapperClosing {
+    animation: cartSlideDown 0.25s ease-in forwards;
 }
 
 .cartTitle {
@@ -214,43 +329,131 @@
 }
 
 .conf {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
     text-align: center;
+    color: rgba(50, 49, 49, 0.65);
+    padding: 8px 16px;
+    line-height: 1.5;
 }
 .conf a {
     text-decoration: underline;
-    color: black;
+    color: rgba(50, 49, 49, 0.85);
 }
-@media (max-width: 460px) {
-    .cartWrapper {
-        padding: 20px 10px;
+
+/* ===== Animations ===== */
+
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes overlayFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes cartSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes cartSlideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+}
+
+@keyframes closeBtnFadeIn {
+    from { opacity: 0; transform: rotate(-90deg); }
+    to { opacity: 1; transform: rotate(0deg); }
+}
+
+/* ===== Mobile ===== */
+
+@keyframes mobileSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mobileSlideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
     }
 }
 
 @media (max-width: 550px) {
     .cartWrapper {
         width: 100%;
-        margin-bottom: 0;
+        margin: 0;
+        border-radius: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 60px 16px 24px;
+        box-sizing: border-box;
+        animation: mobileSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cartWrapperClosing {
+        animation: mobileSlideDown 0.25s ease-in forwards;
     }
     .cartCloseBtn {
-        position: absolute;
-        top: 55px;
-        right: 5px;
-        font-size: 30px;
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        font-size: 28px;
         color: black;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .cartItems {
+        max-height: 30vh;
+    }
+    .bookDescription {
+        max-width: 100%;
+    }
+    .toggleGroup {
+        max-width: 100%;
+    }
+    .order {
+        max-width: 100%;
+    }
+    .notice {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 460px) {
+    .cartWrapper {
+        padding: 56px 12px 20px;
     }
 }
 
 @media (max-width: 430px) {
     .bookInput {
-        padding: 5px;
+        padding: 10px;
         height: 45px;
         font-size: 16px;
-    }
-
-    .bookControl {
-        padding: 5px 10px;
     }
 }
 

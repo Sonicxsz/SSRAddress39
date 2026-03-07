@@ -7,7 +7,6 @@ import * as yup from "yup";
 import styles from './form.module.css'
 import { useAppSelector } from '@/common/hooks/useRedux';
 import { FormProps } from '@/types/types';
-import { func } from '@/common/hooks/withMessage';
 import { mainService } from '@/service/main.service';
 
 
@@ -52,22 +51,46 @@ function CareerForm({closeModal, loadingSend, successSend, errorSend}:FormProps)
         >
           {({values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty}) =>(
    
-      <form ref={form} action='#' onSubmit={handleSubmit} className={styles.formWrapper}>
+      <form ref={form} onSubmit={handleSubmit} className={styles.formWrapper}>
 
            <div className={styles.formDateWrapper}>
            <div className={styles.formInputWrapper}>
-                        <label htmlFor='user_name ' className={styles.p20}>{modalFieldsInterface.name}</label>
-                        <input onChange={handleChange} value={values.user_name}   className={`${styles.formInput} ${touched.user_name  &&  errors.user_name && styles.wrong}`} placeholder={modalFieldsInterface.name_Title}  name='user_name' />
-                        
+                        <label htmlFor='user_name'>{modalFieldsInterface.name}</label>
+                        <input
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          value={values.user_name}
+                          className={`${styles.formInput} ${touched.user_name && errors.user_name ? styles.wrong : ''}`}
+                          placeholder={modalFieldsInterface.name_Title}
+                          autoComplete="name"
+                          name='user_name'
+                          id='user_name'
+                        />
+                        {touched.user_name && errors.user_name && <p className={styles.errorMessage}>{errors.user_name}</p>}
             </div>
             <div className={`${styles.formInputWrapper} ${styles.w100}`}>
                         <label htmlFor='user_phone' className={`${styles.mobileLabel} ${styles.p20}`}>{modalFieldsInterface.phone}</label>
-                        <PhoneInput clazz={`${styles.formInput} ${touched.user_phone  &&  errors.user_phone && styles.wrong}`} value={values.user_phone} handleChange={handleChange} />
+                        <PhoneInput
+                          id="user_phone"
+                          placeholder={modalFieldsInterface.phone}
+                          clazz={`${styles.formInput} ${touched.user_phone && errors.user_phone ? styles.wrong : ''}`}
+                          value={values.user_phone}
+                          handleChange={handleChange}
+                        />
+                        {touched.user_phone && errors.user_phone && <p className={styles.errorMessage}>{errors.user_phone}</p>}
             </div>
 
            </div>
            <div className={styles.formDateWrapper}>
-            <textarea onChange={handleChange} value={values.user_comment} className={`${styles.formInputTextArea} ${touched.user_comment && errors.user_comment && styles.wrong}`}  placeholder={modalFieldsInterface.commentCareer}  name='user_comment' />   
+            <textarea
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.user_comment}
+              className={`${styles.formInputTextArea} ${touched.user_comment && errors.user_comment ? styles.wrong : ''}`}
+              placeholder={modalFieldsInterface.commentCareer}
+              name='user_comment'
+            />
+            {touched.user_comment && errors.user_comment && <p className={styles.errorMessage}>{errors.user_comment}</p>}
            </div>
            <div className={`${styles.formControls} ${styles.w100}`}>
                <button type='button' onClick={closeModal} className={styles.danger}>{btns.btnClose[lang]}</button>
