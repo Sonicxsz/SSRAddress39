@@ -5,7 +5,7 @@ import css from './styles.module.css';
 import { useAppSelector } from '@/common/hooks/useRedux';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const main = ['/assets/menu/main/1.jpg', '/assets/menu/main/2.jpg'];
+const main = ['/assets/menu/main/1.jpg'];
 const vine = ['/assets/menu/wine/1.jpg', '/assets/menu/wine/2.jpg'];
 const children = ['/assets/menu/child/1.jpg'];
 const additionalVine = ['/assets/menu/wineglass/1.jpg'];
