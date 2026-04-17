@@ -18,7 +18,6 @@ const menus: Record<string, string[]> = {
     children,
     additionalVine,
     bar,
-    season,
 };
 
 interface MenuModalProps {
@@ -58,7 +57,9 @@ function MenuModal({ showModal, closeModal }: MenuModalProps) {
             className={`${css.overlay} ${isClosing ? css.overlayClosing : ''}`}
             onClick={handleOverlayClick}
         >
-            <div className={`${css.wrapper} ${isClosing ? css.wrapperClosing : ''}`}>
+            <div
+                className={`${css.wrapper} ${isClosing ? css.wrapperClosing : ''}`}
+            >
                 <Carousel
                     showThumbs={false}
                     infiniteLoop={true}
@@ -66,7 +67,12 @@ function MenuModal({ showModal, closeModal }: MenuModalProps) {
                     swipeable={true}
                     className={css.carSty}
                     showArrows={false}
-                    renderIndicator={(onClickHandler, isSelected, index, label) => {
+                    renderIndicator={(
+                        onClickHandler,
+                        isSelected,
+                        index,
+                        label,
+                    ) => {
                         const defStyle: React.CSSProperties = {
                             marginLeft: 10,
                             display: 'inline-block',
