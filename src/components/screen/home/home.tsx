@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useLayoutLogic } from '@/layout/useLayoutLogic';
 import Descriptor from '@/components/ui/descriptor/descriptor';
 import Corousel from '@/components/ui/carousel/carousel';
@@ -10,6 +11,16 @@ const Contacts = dynamic(() => import('../../ui/contacts/contacs'));
 
 import { Ribbon } from '@/components/Ribbon/Ribbon';
 import RepeatOrder from '@/components/ui/repeatOrder/RepeatOrder';
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
+};
+
+const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+};
 
 export default function HomePage() {
     const { scroll, toContact, contactsRef } = useLayoutLogic();
@@ -50,8 +61,9 @@ export default function HomePage() {
                 <meta name="robots" content="index, follow" />
                 <meta
                     name="viewport"
-                    content="width=device-width, initial-scale=1"
+                    content="width=device-width, initial-scale=1, viewport-fit=cover"
                 />
+                <meta name="theme-color" content="#0f0f12" />
 
                 <link
                     href="https://awards.infcdn.net/2024/circle_v2.css"
@@ -64,19 +76,49 @@ export default function HomePage() {
                 <div className={styles.upperIcons}>
                     <IconsBar />
                 </div>
-                <div id="firstSection" className={styles.mainContent}>
+                <motion.div
+                    id="firstSection"
+                    className={styles.mainContent}
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeUp}
+                    transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
+                >
                     <Descriptor />
 
                     <div className={styles.corouselMain}>
                         <Corousel />
                     </div>
-                </div>
-                <Ribbon />
-                <div className={styles.videoBlock}>
+                </motion.div>
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={fadeIn}
+                    transition={{ duration: 0.6 }}
+                >
+                    <Ribbon />
+                </motion.div>
+                <motion.div
+                    className={styles.videoBlock}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={fadeUp}
+                    transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
+                >
                     <RepeatOrder />
-                </div>
+                </motion.div>
 
-                <Contacts refs={contactsRef} />
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.15 }}
+                    variants={fadeUp}
+                    transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
+                >
+                    <Contacts refs={contactsRef} />
+                </motion.div>
                 <div></div>
             </div>
         </>
