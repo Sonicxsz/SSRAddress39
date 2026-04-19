@@ -4,64 +4,188 @@
     align-items: center;
     text-align: center;
     position: relative;
-    height: 950px;
-    padding-top: 60px;
+    padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 50px) 0;
+    color: var(--white);
 }
 
-.contactsConnection {
-    color: white;
-    flex-direction: column;
-    gap: 25px;
+.logoBlock {
+    width: clamp(140px, 14vw, 180px);
+    margin-bottom: var(--space-6);
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.4));
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-4);
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: var(--space-7);
+}
+
+.card {
     display: flex;
-    margin-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-5);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-lg);
+    color: var(--white);
+    text-decoration: none;
+    text-align: left;
+    transition: transform var(--t-base) var(--ease-out),
+        background-color var(--t-base) var(--ease-out),
+        border-color var(--t-base) var(--ease-out),
+        box-shadow var(--t-base) var(--ease-out);
 }
-.contactsConnection a {
+
+a.card {
+    cursor: pointer;
+}
+
+a.card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.cardWide {
+    grid-column: 1 / -1;
+}
+
+.cardIcon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    font-size: 22px;
+    margin-bottom: var(--space-2);
+    transition: transform var(--t-base) var(--ease-out),
+        background-color var(--t-base) var(--ease-out);
+}
+
+a.card:hover .cardIcon {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, var(--accent), var(--pink));
+}
+
+.cardIconAccent {
+    background: rgba(48, 240, 61, 0.15);
+    color: #4ade80;
+}
+
+a.card:hover .cardIconAccent {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    color: var(--white);
+}
+
+.cardLabel {
     font-family: var(--ibm);
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
+
+.cardValue {
+    font-family: var(--ibm);
+    font-size: clamp(15px, 1.4vw, 17px);
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.4;
+}
+
+.helperWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1100px;
+    align-items: center;
+    margin-bottom: var(--space-6);
+}
+
+.helperTitle {
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 500;
+    margin-bottom: var(--space-5);
+    color: var(--white);
+}
+
+.helper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-4);
+    width: 100%;
+}
+
+.helperItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    background: transparent;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    transition: transform var(--t-base) var(--ease-out);
+    font-family: inherit;
+}
+
+.helperItem:hover {
+    transform: translateY(-2px);
+}
+
+.helperImage {
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: clamp(110px, 12vw, 140px);
+    height: clamp(110px, 12vw, 140px);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color var(--t-base) var(--ease-out),
+        box-shadow var(--t-base) var(--ease-out);
+}
+
+.helperItem:hover .helperImage {
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(214, 145, 229, 0.3);
+}
+
+.helperImage > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--t-slow) var(--ease-out);
+}
+
+.helperItem:hover .helperImage > img {
+    transform: scale(1.06);
+}
+
+.helperLabel {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+}
+
 .mapWrapper {
-    margin-top: 10px;
-}
-
-.contactsNumber {
-    color: var(--white);
-}
-
-.contactsWhats {
-    color: var(--white);
-}
-
-.contactsMail {
-    color: var(--white);
-}
-
-.timeWork {
-    margin-top: 25px;
-    color: var(--whiteHover);
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.timeWorkText {
-    color: var(--white);
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 5px;
-}
-
-.contactsAdress {
-    margin-top: 25px;
-    color: var(--whiteHover);
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.contactsAdressText {
-    color: var(--white);
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 5px;
+    width: 100%;
+    height: clamp(280px, 40vh, 420px);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .map {
@@ -69,115 +193,26 @@
     height: 100%;
 }
 
-.mapWrapper {
-    display: block;
-    position: absolute;
-    margin-top: 10px;
-    height: 30%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-@media (max-width: 426px) {
-    .contactsWrapper {
-        margin-top: 40px;
-    }
-
-}
-
-
-.helperWrapper{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 180px;
-    margin-top: 20px;
-    align-items: center;
-}
-
-.helperWrapper > p {
-    font-size: 18px;
-}
-
-.helper{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-    height: 150px;
-    padding-top: 10px;
-}
-
-.helperItem{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 245px;
-}
-
-.helperImage{
-    cursor: pointer;
-    border: 2px solid rgb(243, 185, 240);
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-}
-
-.helperImage > img{
-    width: 100%;
-    height: 100%;
-}
-
-.fullImage{
-    width: 1187px;
-    height: 790px;
+.fullImage {
+    width: min(1187px, 95vw);
+    max-height: 90vh;
     overflow: hidden;
     position: relative;
     margin: 20px auto;
-
+    border-radius: var(--radius-md);
 }
 
-.fullImage > img{
+.fullImage > img {
     width: 100%;
+    height: auto;
+    display: block;
 }
 
-
-@media (max-width: 1255px) {
-    
-.fullImage{
-    width: 1030px;
-    height: 670px;
-
-}
-
-}
-
-@media (max-width: 1050px) {
-    
-    .fullImage{
-        width: 940px;
-        height: 670px;
-    
+@media (max-width: 560px) {
+    .card {
+        padding: var(--space-4);
     }
-
-
-}
-
-@media (max-width: 940px) {    
-    .fullImage{
-        width: 700px;
-        height: 400px;
-    
+    .helperLabel {
+        font-size: 13px;
     }
- 
-
-    
-}
-@media (max-width: 440px) {    
-    .helperItem{
-        font-size: 14px;
-    
-    }  
 }
