@@ -55,12 +55,15 @@ function Cart({ success, error, loading}: baseCartProps) {
   }
   return (
     <div onClick={(e) => closeCart(e)} className={`${styles.cartBackground} ${isClosing ? styles.cartBackgroundClosing : ''}`}>
-      <div className={styles.cartCloseBtn}>
-          <AiOutlineClose onClick={closeCartbtn}/>
-      </div>
         <div className={`${styles.cartWrapper} ${isClosing ? styles.cartWrapperClosing : ''}`}>
+        <button type="button" aria-label="Close cart" className={styles.cartCloseBtn} onClick={closeCartbtn}>
+            <AiOutlineClose/>
+        </button>
         <div className={styles.cartTitle}>
-            <h2>{interFaceLang.order}:</h2>
+            <h2>
+                {interFaceLang.order}
+                {items.length > 0 && <span className={styles.titleHint}>{items.length}</span>}
+            </h2>
         </div>
         <div className={styles.cartItems}>
                 { items.map((i) =>{

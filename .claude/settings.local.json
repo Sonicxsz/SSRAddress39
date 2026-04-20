@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(gh pr create --base main --head redesign --title 'UX/UI редизайн: дизайн-токены, sticky-навигация, новый Cookie-бар' --body ' *)"
+    ]
+  }
+}

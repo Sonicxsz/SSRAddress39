@@ -68,19 +68,21 @@ import Head from "next/head";
 
 	
 	const scrollToElem = (elem: Element) => {
-		const coord = elem.getBoundingClientRect().top + window.scrollY - 60
+		const headerVar = getComputedStyle(document.documentElement).getPropertyValue('--header-h')
+		const headerH = parseInt(headerVar, 10) || 70
+		const offset = headerH + 60
+		const coord = elem.getBoundingClientRect().top + window.scrollY - offset
 		window.scrollTo({top: coord, behavior: 'smooth'})
 		setScroll(false)
 	}
 	
 	useEffect(() => {
-		if(showCart){
+		if(showCart && window.matchMedia('(max-width: 768px)').matches){
 			document.body.style.overflow = 'hidden'
 		}else{
 			document.body.style.overflow = ''
-			
-			
 		}
+		return () => { document.body.style.overflow = '' }
 	}, [showCart])
 
 	const openCart = () =>{

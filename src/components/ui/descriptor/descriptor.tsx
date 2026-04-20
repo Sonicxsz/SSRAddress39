@@ -1,8 +1,9 @@
 import styles from './descriptor.module.css';
+import Link from 'next/link';
 import { descriptorEN } from '@/lang/en';
 import { descriptorRU } from '@/lang/ru';
 import { useAppDispatch, useAppSelector } from '@/common/hooks/useRedux';
-import { setModalDelevery, setModalBooking } from '@/store/controlSlice';
+import { setModalBooking } from '@/store/controlSlice';
 import { openModal } from '../../../common/utils/setters'
 
 function Descriptor() {
@@ -17,12 +18,12 @@ function Descriptor() {
                 <span>{data.title}</span> {data.description}{' '}
             </p>
             <div className={styles.flex}>
-                <button className={styles.descrButton} onClick={() => openModal(dispatch, setModalBooking)}>
-                    <span className="menu-link">{data.btnBooking}</span>
+                <button type="button" className={styles.descrButton} onClick={() => openModal(dispatch, setModalBooking)}>
+                    <span className={styles.descrButtonLabel}>{data.btnBooking}</span>
                 </button>
-                <button className={styles.descrButton} onClick={() => openModal(dispatch, setModalDelevery)}>
-                    {data.btnDelevery}
-                </button>
+                <Link href="/delivery" className={styles.descrButton}>
+                    <span className={styles.descrButtonLabel}>{data.btnDelevery}</span>
+                </Link>
             </div>
         </div>
     );

@@ -1,54 +1,119 @@
-
-
-.wrapper{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 300px;
-	height: 150px;
-	background-color: #dedddd;
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
-	padding: 10px 15px;
-	border-radius: 15px;
-	z-index: 999;
-	color: black;
-	font-weight: 600;
-	font-size: 14px;
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(120%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: var(--space-5);
+	max-width: min(560px, calc(100vw - 24px));
+	background-color: rgba(255, 255, 255, 0.96);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	position: fixed;
+	bottom: max(16px, env(safe-area-inset-bottom));
+	right: 16px;
+	padding: var(--space-4) var(--space-5);
+	border-radius: var(--radius-lg);
+	z-index: 999;
+	color: var(--black);
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.45;
+	box-shadow: var(--shadow-lg);
+	border: 1px solid rgba(0, 0, 0, 0.06);
+	animation: slideUp var(--t-slow) var(--ease-out) both;
+	animation-delay: 350ms;
+}
 
+.icon {
+	flex-shrink: 0;
+	width: 40px;
+	height: 40px;
+	display: grid;
+	place-items: center;
+	border-radius: var(--radius-pill);
+	background: linear-gradient(135deg, var(--accent), var(--pink));
+	color: var(--white);
+	font-size: 20px;
+}
 
-.wrapper button {
-	background: #222225;
-	color: white;
-	height: 30px;
-	border-radius: 10px;
-	width: 100px;
+.body {
+	flex: 1;
+	min-width: 0;
+}
+
+.text {
+	margin: 0 0 var(--space-3);
+}
+
+.actions {
+	display: flex;
+	gap: var(--space-2);
+	align-items: center;
+}
+
+.accept {
+	background: var(--black);
+	color: var(--white);
+	height: 36px;
+	border-radius: var(--radius-md);
+	padding: 0 var(--space-4);
 	border: none;
 	font-size: 14px;
 	font-weight: 600;
 	cursor: pointer;
+	transition: transform var(--t-fast) var(--ease-out),
+		background-color var(--t-fast) var(--ease-out);
 }
 
-.link{
-	color:black;
-	text-decoration: underline;
+.accept:hover {
+	background: #2d2d31;
+	transform: translateY(-1px);
 }
-@media (max-width: 450px) {
-	.wrapper{
-		bottom: 0;
-		left: 0;
-		right: 0;
-		width: 100%;
-		font-size: 16px;
-		padding: 15px 20px;
-		height: 180px;
+
+.accept:active {
+	transform: translateY(0);
+}
+
+.link {
+	color: var(--black);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	font-weight: 600;
+	transition: color var(--t-fast) var(--ease-out);
+}
+
+.link:hover {
+	color: var(--accent);
+}
+
+@media (max-width: 560px) {
+	.wrapper {
+		left: 12px;
+		right: 12px;
+		bottom: max(12px, env(safe-area-inset-bottom));
+		max-width: none;
+		padding: var(--space-4);
+		gap: var(--space-3);
+		font-size: 13px;
 	}
 
-	.wrapper button {
-		width: 100%;
+	.icon {
+		width: 36px;
+		height: 36px;
+		font-size: 18px;
+	}
+
+	.accept {
 		height: 40px;
+		flex: 1;
 	}
 }
