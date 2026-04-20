@@ -5,7 +5,7 @@ import { useAppSelector } from '@/common/hooks/useRedux';
 import { contactsRU } from '@/lang/ru';
 import { contactsEN } from '@/lang/en';
 import { ContactsProps } from '@/types/types';
-import { IoCallOutline, IoTimeOutline, IoLocationOutline, IoMailOutline, IoExpandOutline } from 'react-icons/io5';
+import { IoCallOutline, IoTimeOutline, IoLocationOutline, IoMailOutline, IoExpandOutline, IoArrowForwardOutline, IoOpenOutline } from 'react-icons/io5';
 import { BsWhatsapp } from 'react-icons/bs';
 
 import { useState } from 'react';
@@ -58,28 +58,37 @@ function Contacts({ refs }: ContactsProps) {
             </div>
 
             <div className={styles.cardsGrid}>
-                <a className={styles.card} href="tel:+79850390039">
+                <a className={styles.card} href="tel:+79850390039" aria-label={isEn ? 'Call us' : 'Позвонить нам'}>
                     <div className={styles.cardIcon} aria-hidden="true">
                         <IoCallOutline />
                     </div>
-                    <div className={styles.cardLabel}>{langData.phoneLabel || (lang === 'EN' ? 'Phone' : 'Телефон')}</div>
+                    <div className={styles.cardLabel}>{langData.phoneLabel || (isEn ? 'Phone' : 'Телефон')}</div>
                     <div className={styles.cardValue}>+ 7 (985) 039-00-39</div>
+                    <span className={styles.cardLinkBadge} aria-hidden="true">
+                        <IoArrowForwardOutline />
+                    </span>
                 </a>
 
-                <a className={styles.card} href="https://wa.me/+79850390039" target="_blank" rel="noreferrer">
+                <a className={styles.card} href="https://wa.me/+79850390039" target="_blank" rel="noreferrer" aria-label={isEn ? 'Open WhatsApp' : 'Открыть WhatsApp'}>
                     <div className={`${styles.cardIcon} ${styles.cardIconAccent}`} aria-hidden="true">
                         <BsWhatsapp />
                     </div>
                     <div className={styles.cardLabel}>WhatsApp</div>
                     <div className={styles.cardValue}>+ 7 (985) 039-00-39</div>
+                    <span className={styles.cardLinkBadge} aria-hidden="true">
+                        <IoOpenOutline />
+                    </span>
                 </a>
 
-                <a className={styles.card} href="mailto:addrest.39@mail.ru">
+                <a className={styles.card} href="mailto:addrest.39@mail.ru" aria-label={isEn ? 'Send email' : 'Написать e-mail'}>
                     <div className={styles.cardIcon} aria-hidden="true">
                         <IoMailOutline />
                     </div>
                     <div className={styles.cardLabel}>E-mail</div>
                     <div className={styles.cardValue}>addrest.39@mail.ru</div>
+                    <span className={styles.cardLinkBadge} aria-hidden="true">
+                        <IoArrowForwardOutline />
+                    </span>
                 </a>
 
                 <div className={styles.card}>
@@ -90,13 +99,22 @@ function Contacts({ refs }: ContactsProps) {
                     <div className={styles.cardValue}>{langData.days} 11:00 — 00:00</div>
                 </div>
 
-                <div className={`${styles.card} ${styles.cardWide}`}>
+                <a
+                    className={`${styles.card} ${styles.cardWide}`}
+                    href="https://yandex.ru/maps/?pt=37.471647,55.7744855&z=17&l=map"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={isEn ? 'Open address on Yandex Maps' : 'Открыть адрес в Яндекс.Картах'}
+                >
                     <div className={styles.cardIcon} aria-hidden="true">
                         <IoLocationOutline />
                     </div>
                     <div className={styles.cardLabel}>{langData.addressTitle}</div>
                     <div className={styles.cardValue}>{langData.address}</div>
-                </div>
+                    <span className={styles.cardLinkBadge} aria-hidden="true">
+                        <IoOpenOutline />
+                    </span>
+                </a>
             </div>
 
             <div className={styles.helperWrapper}>

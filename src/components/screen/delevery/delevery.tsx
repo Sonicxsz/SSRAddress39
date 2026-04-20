@@ -77,13 +77,12 @@ import Head from "next/head";
 	}
 	
 	useEffect(() => {
-		if(showCart){
+		if(showCart && window.matchMedia('(max-width: 768px)').matches){
 			document.body.style.overflow = 'hidden'
 		}else{
 			document.body.style.overflow = ''
-			
-			
 		}
+		return () => { document.body.style.overflow = '' }
 	}, [showCart])
 
 	const openCart = () =>{
