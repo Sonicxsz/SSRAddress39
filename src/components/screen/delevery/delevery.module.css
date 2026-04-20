@@ -2,8 +2,6 @@
 	margin: 0 auto;
 	background-color: #efefef;
 	padding: 20px 0;
-	margin-top: 80px;
-	
 }
 
 .title{
@@ -58,27 +56,40 @@
 	height: 50px;
 	justify-content: center;
 	gap: 10px;
-	transition: color 0.2s linear;
+	transition: color 0.2s linear, background-color var(--t-base) var(--ease-out),
+		box-shadow var(--t-base) var(--ease-out);
 	margin-bottom: 20px;
-	padding: 5px 0;
+	padding: 5px 16px;
 	min-width: 100%;
 	overflow-x: auto;
-	z-index: 100;	
-	
+	z-index: 900;
+	box-sizing: border-box;
 }
 
 .filtersItem{
-    color: black;
-    padding: 5px;
+    color: rgba(18, 18, 18, 0.85);
+    padding: 8px 14px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: var(--radius-pill);
     white-space: nowrap;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.04);
+    transition: background-color var(--t-fast) var(--ease-out),
+        color var(--t-fast) var(--ease-out),
+        transform var(--t-fast) var(--ease-out);
+    -webkit-tap-highlight-color: transparent;
+    align-self: center;
 }
 
 .filtersItem:hover{
     color: rgb(226, 135, 8);
+    background-color: rgba(248, 165, 49, 0.12);
+    transform: translateY(-1px);
+}
 
+.filtersItem:active{
+    transform: translateY(0);
 }
 
 .filters::-webkit-scrollbar {
@@ -102,11 +113,13 @@
 
 .filtersFixed{
 	position: sticky;
-	background-color: #efefef;
+	background-color: rgba(239, 239, 239, 0.92);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 	left: 0;
 	right: 0;
-	top: 0;
-	transition: background-color 0.3s linear;	
+	top: var(--header-h, 70px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 .categoryBlock{
 	margin-top: 20px;

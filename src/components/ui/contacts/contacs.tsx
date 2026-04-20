@@ -5,20 +5,51 @@ import { useAppSelector } from '@/common/hooks/useRedux';
 import { contactsRU } from '@/lang/ru';
 import { contactsEN } from '@/lang/en';
 import { ContactsProps } from '@/types/types';
-import { IoCallOutline, IoTimeOutline, IoLocationOutline, IoMailOutline } from 'react-icons/io5';
+import { IoCallOutline, IoTimeOutline, IoLocationOutline, IoMailOutline, IoExpandOutline } from 'react-icons/io5';
 import { BsWhatsapp } from 'react-icons/bs';
 
 import { useState } from 'react';
 import { Portal } from '@/components/ui/portalModal/portalModal';
+
+const routes = [
+    {
+        id: 'vkusvill',
+        src: '/assets/map/map1.jpg',
+        labelRu: 'Со стороны ВкусВилл',
+        labelEn: 'From VkusVill',
+        descRu: 'Удобный путь через двор',
+        descEn: 'Easy walk through the courtyard',
+    },
+    {
+        id: 'wellton',
+        src: '/assets/map/map2.jpg',
+        labelRu: 'Со стороны ЖК Wellton Towers',
+        labelEn: 'From Wellton Towers',
+        descRu: 'Прямой маршрут вдоль домов',
+        descEn: 'Straight along the buildings',
+    },
+    {
+        id: 'azbuka',
+        src: '/assets/map/map3.jpg',
+        labelRu: 'Со стороны Азбуки Вкуса',
+        labelEn: 'From Azbuka Vkusa',
+        descRu: 'Через парковую зону',
+        descEn: 'Through the park area',
+    },
+];
+
 function Contacts({ refs }: ContactsProps) {
     const lang = useAppSelector((state) => state.languageSlice.language);
     const [imgModal, setImgModal] = useState('')
+    const [activeRoute, setActiveRoute] = useState(routes[0].id)
     const defaultState = {
         center: [55.7744855, 37.471647],
         zoom: 16,
     };
     const langData = lang === 'EN' ? contactsEN : contactsRU;
     const onClose = () => setImgModal('')
+    const current = routes.find((r) => r.id === activeRoute) ?? routes[0]
+    const isEn = lang === 'EN'
     return (
         <>
         <div className={styles.contactsWrapper} ref={refs}>
@@ -69,33 +100,57 @@ function Contacts({ refs }: ContactsProps) {
             </div>
 
             <div className={styles.helperWrapper}>
-                <p id={'addressTarget'} className={styles.helperTitle}>Как к нам пройти?</p>
-                <div className={styles.helper}>
-                    <button type="button" className={styles.helperItem} onClick={() => setImgModal('/assets/map/map1.jpg')}>
-                        <div className={styles.helperImage}>
-                            <img src="/assets/map/map1.jpg" alt="Маршрут со стороны ВкусВилл" />
-                        </div>
-                        <span className={styles.helperLabel}>
-                            Со стороны ВкусВилл
-                        </span>
-                    </button>
-                    <button type="button" className={styles.helperItem} onClick={() => setImgModal('/assets/map/map2.jpg')}>
-                        <div className={styles.helperImage}>
-                            <img src="/assets/map/map2.jpg" alt="Маршрут со стороны ЖК Wellton Towers" />
-                        </div>
-                        <span className={styles.helperLabel}>
-                            Со стороны ЖК Wellton Towers
-                        </span>
-                    </button>
-                    <button type="button" className={styles.helperItem} onClick={() => setImgModal('/assets/map/map3.jpg')}>
-                        <div className={styles.helperImage}>
-                            <img src="/assets/map/map3.jpg" alt="Маршрут со стороны Азбуки Вкуса" />
-                        </div>
-                        <span className={styles.helperLabel}>
-                            Со стороны Азбуки Вкуса
-                        </span>
-                    </button>
+                <p id={'addressTarget'} className={styles.helperTitle}>
+                    {isEn ? 'How to find us' : 'Как к нам пройти?'}
+                </p>
+                <p className={styles.helperSubtitle}>
+                    {isEn
+                        ? 'Choose your starting point — we will show you the route'
+                        : 'Выберите ориентир — покажем удобный маршрут'}
+                </p>
+
+                <div className={styles.helperTabs} role="tablist">
+                    {routes.map((r, i) => (
+                        <button
+                            key={r.id}
+                            type="button"
+                            role="tab"
+                            aria-selected={activeRoute === r.id}
+                            className={`${styles.helperTab} ${activeRoute === r.id ? styles.helperTabActive : ''}`}
+                            onClick={() => setActiveRoute(r.id)}
+                        >
+                            <span className={styles.helperTabIndex}>{`0${i + 1}`}</span>
+                            <span className={styles.helperTabLabel}>
+                                {isEn ? r.labelEn : r.labelRu}
+                            </span>
+                        </button>
+                    ))}
                 </div>
+
+                <button
+                    type="button"
+                    className={styles.helperPreview}
+                    onClick={() => setImgModal(current.src)}
+                    aria-label={isEn ? 'Open route in full view' : 'Открыть маршрут целиком'}
+                >
+                    <img
+                        key={current.id}
+                        src={current.src}
+                        alt={isEn ? current.labelEn : current.labelRu}
+                        className={styles.helperPreviewImage}
+                    />
+                    <span className={styles.helperPreviewBadge}>
+                        <IoExpandOutline />
+                    </span>
+                    <div className={styles.helperPreviewCaption}>
+                        <span className={styles.helperPreviewLabel}>
+                            {isEn ? current.labelEn : current.labelRu}
+                        </span>
+                        <span className={styles.helperPreviewDesc}>
+                            {isEn ? current.descEn : current.descRu}
+                        </span>
+                    </div>
+                </button>
             </div>
 
             <div className={styles.mapWrapper}>

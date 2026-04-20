@@ -1,37 +1,23 @@
 .navWrapper {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding: var(--space-3) clamp(16px, 4vw, 50px);
+    gap: var(--space-4);
+    padding: var(--space-2) clamp(16px, 4vw, 50px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.45) 0%,
-        rgba(0, 0, 0, 0)
-    );
+    min-height: var(--header-h, 70px);
+    background-color: rgba(15, 15, 18, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     transition: background-color var(--t-base) var(--ease-out),
-        backdrop-filter var(--t-base) var(--ease-out);
+        border-color var(--t-base) var(--ease-out);
 }
 
-.navWrapper::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: rgba(20, 20, 22, 0);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    transition: background-color var(--t-base) var(--ease-out),
-        backdrop-filter var(--t-base) var(--ease-out);
-    pointer-events: none;
-    z-index: -1;
-}
-
-.navWrapper:hover::before {
-    background-color: rgba(20, 20, 22, 0.55);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+.navWrapper:hover {
+    background-color: rgba(15, 15, 18, 0.65);
 }
 
 .navItems {
@@ -85,17 +71,26 @@
 }
 
 .navLogo {
-    position: absolute;
-    top: 10px;
-    left: clamp(15px, 3vw, 50px);
-    width: clamp(120px, 14vw, 185px);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
     cursor: pointer;
-    z-index: 1002;
     transition: transform var(--t-base) var(--ease-out);
 }
 
 .navLogo:hover {
     transform: scale(1.03);
+}
+
+.navLogo a {
+    display: flex;
+    align-items: center;
+}
+
+.navLogo svg {
+    display: block;
+    width: auto;
+    height: clamp(34px, 4.6vw, 50px);
 }
 
 .navLink:hover {
@@ -186,9 +181,8 @@
     }
 
     .navLangButton {
-        position: absolute;
-        top: 22px;
-        right: 64px;
+        position: relative;
+        margin-right: 52px;
     }
 
     .navItem {
@@ -208,7 +202,8 @@
         justify-content: center;
         position: absolute;
         right: 12px;
-        top: 22px;
+        top: 50%;
+        transform: translateY(-50%);
         width: 40px;
         height: 40px;
         border-radius: var(--radius-pill);
@@ -224,7 +219,7 @@
     }
 
     .mobileBtn:active {
-        transform: scale(0.92);
+        transform: translateY(-50%) scale(0.92);
     }
 
     .active {
@@ -249,6 +244,10 @@
 
 @media (max-width: 768px) {
     .navWrapper {
-        padding: var(--space-3) var(--space-2);
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .navLogo svg {
+        height: clamp(28px, 9vw, 38px);
     }
 }
