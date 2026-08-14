@@ -1,4 +1,4 @@
-import Spinner from "@/components/svg/Spinner";
+import Spinner from '@/components/svg/Spinner';
 
 export type messageProps = {
     message: string;
@@ -71,71 +71,69 @@ export interface ContactsProps {
 }
 
 export interface item {
-    id: number,
-    name:{'EN': string, 'RU':string},
-    title:{'EN': string, 'RU':string},
-    price: number,
+    id: number;
+    name: { EN: string; RU: string };
+    title: { EN: string; RU: string };
+    price: number;
     modifier?: {
-      'RU':string[],
-      'EN': string[]
-    },
-    count: number,
-    grams: number,
-    img: string,
+        RU: string[];
+        EN: string[];
+    };
+    count: number;
+    grams: number;
+    img: string;
 }
-
 
 interface deleveryItem {
-    data: string,
-    cat: {'RU':string, 'EN':string}
-    mini: boolean,
-    items: item[]
+    data: string;
+    cat: { RU: string; EN: string };
+    mini: boolean;
+    items: item[];
+    disabled?: boolean;
 }
 
-
 export interface deleveryProps {
-	data: deleveryItem[]
+    data: deleveryItem[];
 }
 
 // export interface ModalProps {
-//      closeCart, 
-//      closeCartbtn, 
-//      succes:() => void, 
-//      error:() => void, 
+//      closeCart,
+//      closeCartbtn,
+//      succes:() => void,
+//      error:() => void,
 //      loading: () => void
 // }
 
 export interface withMessageArgs {
-    BaseComponent: JSX.Element,
-    cart: boolean,
-    lang: string
+    BaseComponent: JSX.Element;
+    cart: boolean;
+    lang: string;
 }
 
-export interface newMessageProps  {
-    Icon: Icon, 
-    message: string, 
-    loading: boolean , 
-    finalClose?: () => void
+export interface newMessageProps {
+    Icon: Icon;
+    message: string;
+    loading: boolean;
+    finalClose?: () => void;
 }
 
-type Icon = ({size}:{size:number}) => JSX.Element
+type Icon = ({ size }: { size: number }) => JSX.Element;
 
 export interface HomeProps {
-    openModalBooking: () => void, 
-    openModalDelevery: () => void
+    openModalBooking: () => void;
+    openModalDelevery: () => void;
 }
 
-
 export interface ModalProps {
-    showModal:boolean,
-    type: 'booking' | 'delivery' | 'career',
-    closeModal: () => void,
-    label: string
+    showModal: boolean;
+    type: 'booking' | 'delivery' | 'career';
+    closeModal: () => void;
+    label: string;
 }
 
 export interface FormProps {
-    closeModal: () => void,
-    loadingSend: () => void,
-    successSend: () => void,
-    errorSend: () => void
+    closeModal: () => void;
+    loadingSend: () => void;
+    successSend: () => void;
+    errorSend: () => void;
 }

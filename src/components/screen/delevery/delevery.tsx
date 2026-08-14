@@ -124,6 +124,8 @@ const DeliveryPage: NextPage<deleveryProps> = ({ data }: deleveryProps) => {
                 </div>
 
                 {data.map((i, ind) => {
+                    if (i.disabled) return null;
+
                     const clazz = !i.mini
                         ? styles.itemsWrapper
                         : `${styles.itemsWrapper} ${styles.mini}`;
